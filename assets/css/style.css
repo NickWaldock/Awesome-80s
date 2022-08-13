@@ -1,3 +1,7 @@
 body {
+    background: url("/assets/images/background.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     background-color: blueviolet;
 }
