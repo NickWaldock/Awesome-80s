@@ -16,6 +16,17 @@
 
 }
 
+/* Title Animation */
+
+@keyframes title-zoom {
+    from{
+        transform: scale(0.1)
+    } to {
+        transform: scale(1);
+    }
+
+}
+
 /* General Format & Styling */
 body {
     background: url("/assets/images/background.webp");
@@ -45,17 +56,23 @@ body {
     grid-row: 1 / 2;
     margin: 0;
     height: 100%;
+    
 }
 
 .title h1, h3  {
     margin: 0;
     letter-spacing: 3px;
 
+    /* Zoom Effect */
+    animation-name: title-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+
 }
 
-.instructions {
+.controls {
     grid-column: 2 / 3;
-    grid-row-start: 2;
+    grid-row-start: 5;
     height: auto;
     width: auto;
     border: 5px solid black;
@@ -73,7 +90,7 @@ body {
 
 .game-area {
     grid-column: 2;
-    grid-row: 3 / 6;
+    grid-row: 2 / 5;
     background-color: rgba(138, 43, 226, 0.7);
     border: solid 7px black;
     height: auto;
@@ -90,6 +107,7 @@ body {
 
 .game-area button {
     border: 5px solid black;
+    border-radius: 10%;
     background-color: rgba(127, 255, 212);
     width: 20%;
     height: auto;

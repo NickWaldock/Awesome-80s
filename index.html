@@ -11,15 +11,11 @@
 </head>
 <body>
 <div class="grid">
-    <div class="title">
+    <div class="title" id="heading">
         <h1>The Awesome 80s</h1>
         <h3>Drum Machine!</h3>
     </div>
-    <div class="instructions">
-        <p>
-        Click the buttons for drums!
-        </p>
-    </div>
+   
 
     <div class="game-area">
         <button class="trigger" id="bass-drum">
@@ -42,9 +38,16 @@
             <img src="/assets/images/tom.png" alt="High tom drum">
         </button>
 
+        <button class="trigger" id="rest">
+            <img src="/assets/images/rest.png" alt="High tom drum">
+        </button>
+
         <button class="trigger" id="tom2">
             <img src="/assets/images/tom.png" alt="Low tom drum">
         </button>
+    </div>
+
+    <div class="controls">
     </div>
 
     <div class="footer">
@@ -59,6 +62,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js" 
 integrity="sha512-L6Z/YtIPQ7eU3BProP34WGU5yIRk7tNHk7vaC2dB1Vy1atz6wl9mCkTPPZ2Rn1qPr+vY2mZ9odZLdGYuaBk7dQ==" 
 crossorigin="anonymous"></script>
-<script src="assets/js/script.js"></script>
+<script src="/assets/js/script.js"></script>
 </body>
 </html>
