@@ -76,7 +76,7 @@ body {
 
 .trigger {
     margin: 0.5em; 
-    border: solid 2px black;
+    border: solid 7px black;
     width: 8rem;
     height: 5em;
     flex-shrink: 3;
@@ -90,7 +90,8 @@ body {
 .trigger img {
 
     height: 4em;
-    color: blueviolet;
+    
+    
     
     
 }
