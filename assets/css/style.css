@@ -1,13 +1,22 @@
-
+/* Fonts */
 @font-face {
     font-family: 'hauserbold';
-    src: url('/assets/css/hauser-webfontkit/hauser_bold-webfont.woff2') format('woff2'), 
-        url('/assets/css/hauser-webfontkit/.woff') format('woff');
+    src: url('/assets/css/fonts/hauser-webfontkit/hauser_bold-webfont.woff2') format('woff2'), 
+        url('/assets/css/fonts/hauser-webfontkit/hauser_bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
 }
 
+@font-face {
+    font-family: 'arcade';
+    src: url('/assets/css/fonts/ARCADECLASSIC.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* General Format & Styling */
 body {
     background: url("/assets/images/background.webp");
     background-repeat: no-repeat;
@@ -22,6 +31,7 @@ body {
     display: grid;
     grid-template-columns: 10% auto 10%;
     grid-template-rows: repeat(6, auto);
+    row-gap: 1em;
     height: 100vh;
 
 }
@@ -34,6 +44,7 @@ body {
     grid-column: 2;
     grid-row: 1 / 2;
     margin: 0;
+    height: 100%;
 }
 
 .title h1, h3  {
@@ -42,25 +53,30 @@ body {
 
 }
 
-
-.footer {
-    
-    grid-column: 1 / 4;
-    grid-row-start: 6;
+.instructions {
+    grid-column: 2 / 3;
+    grid-row-start: 2;
+    height: auto;
+    width: auto;
+    border: 5px solid black;
     background-color: rgba(138, 43, 226, 0.7);
-    border: solid 7px black;
-    height: 50%;
-    align-self: end;
-    text-align: center;
+
 }
 
+.instructions p {
+    color: silver;
+    font-family: arcade, monospace;
+    font-size: 5vw;
+    text-align: center;
+
+}
 
 .game-area {
     grid-column: 2;
-    grid-row: 3 / 5;
+    grid-row: 3 / 6;
     background-color: rgba(138, 43, 226, 0.7);
     border: solid 7px black;
-    height: 100%;
+    height: auto;
     width: 100%;
 
     /* Flexbox for the triggers */
@@ -70,6 +86,14 @@ body {
     justify-content: space-around;
     align-items: center;
 
+}
+
+.game-area button {
+    border: 5px solid black;
+    background-color: rgba(127, 255, 212);
+    width: 20%;
+    height: auto;
+    
 
 
 }
@@ -77,27 +101,26 @@ body {
 .trigger {
     margin: 0.5em; 
     border: solid 7px black;
-    width: 8rem;
-    height: 5em;
     flex-shrink: 3;
     background-color: rgba(127, 255, 212, 1);
     opacity: 1;
-    text-align: center;
     padding-top: 0.5em;
 
 }
 
 .trigger img {
-
     height: 4em;
-    
-    
-    
-    
+    width: 100%;
+    height: 100%;
+
 }
 
-
-.instructions {
-    grid-column: 2;
-    grid-row: 4 / 5;
+.footer {
+    grid-column: 1 / 4;
+    grid-row-start: 6;
+    background-color: rgba(138, 43, 226, 0.7);
+    border: solid 7px black;
+    height: 50%;
+    align-self: end;
+    text-align: center;
 }
