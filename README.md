@@ -16,3 +16,9 @@ Icons:
 
 free convert - conver wavs and png to icns
 https://www.freeconvert.com/
+
+
+Howler:
+
+Links and help
+https://www.delftstack.com/howto/javascript/play-audio-javascript/#:~:text=We%20can%20load%20an%20audio,play()%20function.&text=In%20the%20above%20code%2C%20we,and%20then%20simply%20play%20it.
