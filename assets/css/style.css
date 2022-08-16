@@ -83,7 +83,7 @@ body {
 
 /* Game Area */
 .game-area {
-    visibility: hidden; /* Hidden until game commences */
+    /* visibility: hidden; Hidden until game commences */
     grid-column: 2;
     grid-row: 2 / 5;
     background-color: rgba(138, 43, 226, 0.7);
@@ -130,7 +130,7 @@ body {
 
 /* Controls Area */
 .controls {
-    visibility: hidden; /* Hidden until game commences */
+    /* visibility: hidden; Hidden until game commences */
     grid-column: 2 / 3;
     grid-row-start: 5;
     height: auto;

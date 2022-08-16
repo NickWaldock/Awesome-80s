@@ -1,69 +1,54 @@
-// DOM Elements
-const bassDrum = document.getElementById('bass-drum');
-const snareDrum = document.getElementById('snare-drum');
-const hats = document.getElementById('hats');
-const crash = document.getElementById('crash');
-const tom1 = document.getElementById('tom1');
-const tom2 = document.getElementById('tom2');
+// Sounds 
+bassDrum = new Audio('./assets/audio/bass-drum.wav');
+snareDrum = new Audio('./assets/audio/snare-drum.wav');
+hats = new Audio('./assets/audio/hats.wav');
+crash = new Audio('./assets/audio/crash.wav');
+highTom = new Audio('./assets/audio/high-tom.wav');
+lowTom = new Audio('./assets/audio/low-tom.wav');
 
-
-// Sounds
-const bassDrumAudio = './assets/audio/bass-drum.wav';
-const snareDrumAudio = './assets/audio/snare-drum.wav';
-const hatsAudio = './assets/audio/hats.wav';
-const crashAudio = './assets/audio/crash.wav';
-const tom1Audio = './assets/audio/high-tom.wav';
-const tom2Audio = './assets/audio/low-tom.wav';
-const drumKit = {
-	'bassDrum': bassDrumAudio,
-	'snareDrum': snareDrumAudio,
-	'hats': hatsAudio,
-	'crash': crashAudio,
-	'high-tom': tom1Audio,
-	'low-tom': tom2Audio,
-};
+// DOM Elements - Icon Triggers
+const bassDrumTrigger = document.getElementById('bass-drum');
+const snareDrumTrigger = document.getElementById('snare-drum');
+const hatsTrigger = document.getElementById('hats');
+const crashTrigger = document.getElementById('crash');
+const highTomTrigger = document.getElementById('tom1');
+const lowTomTrigger = document.getElementById('tom2');
 
 // Event Listeners
-const eventListenerInit = () => {
-  bassDrum.addEventListener('click', logsound);
+bassDrumTrigger.addEventListener('click', playBassDrum);
+snareDrumTrigger.addEventListener('click', playSnareDrum); 
+hatsTrigger.addEventListener('click', playHats);
+crashTrigger.addEventListener('click', playCrash); 
+highTomTrigger.addEventListener('click', playHighTom);
+lowTomTrigger.addEventListener('click', playLowTom);
 
+// Trigger Functions
+/** Play the bass drum sample */
+function playBassDrum(){	
+	bassDrum.play();
 }
 
+/** Play the snare drum sample */
+function playSnareDrum(){	
+	snareDrum.play();
+}
 
-// Create Audio Library
-// var drumKit = {
-//     bassDrumAudio: new Howl({
-//         src: ['/assets/audio/bass-drum.wav']
-//     }),
+/** Play the hats sample */
+function playHats(){	
+	hats.play();
+}
 
-//     snareDrumAudio: new Howl({
-//         src: ['/assets/audio/snare-drum.wav']
-//     }),
+/** Play the crash sample */
+function playCrash(){	
+	crash.play();
+}
 
-//     hatsAudio: new Howl({
-//         src: ['/assets/audio/hats.wav']
-//     }),
+/** Play the high tom sample */
+function playHighTom(){	
+	highTom.play();
+}
 
-//     crashAudio: new Howl({
-//         src: ['/assets/audio/crash.wav']
-//     }),
-
-//     tom1Audio: new Howl({
-//         src: ['/assets/audio/high-tom.wav']
-//     }),
-
-//     tom2Audio: new Howl({
-//         src: ['/assets/audio/low-tom.wav']
-//     }),
-// };
-
-
-// bassDrum.addEventListener('click', function(){
-//     bassDrumAudio.play();
-// } );
-    
-
-
-
-
-
+/** Play the low drum sample */
+function playLowTom(){	
+	lowTom.play();
+}
