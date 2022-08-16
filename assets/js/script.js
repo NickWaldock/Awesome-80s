@@ -1,10 +1,10 @@
 // Sounds 
-bassDrum = new Audio('./assets/audio/bass-drum.wav');
-snareDrum = new Audio('./assets/audio/snare-drum.wav');
-hats = new Audio('./assets/audio/hats.wav');
-crash = new Audio('./assets/audio/crash.wav');
-highTom = new Audio('./assets/audio/high-tom.wav');
-lowTom = new Audio('./assets/audio/low-tom.wav');
+bassDrum = new Audio('./assets/audio/no-fx/bass-drum.wav', './assets/audio/no-fx/bass-drum.mp3');
+snareDrum = new Audio('./assets/audio/no-fx/snare-drum.wav', './assets/audio/no-fx/snare-drum.mp3');
+hats = new Audio('./assets/audio/no-fx/hats.wav', './assets/audio/no-fx/hats.mp3');
+crash = new Audio('./assets/audio/no-fx/crash.wav', './assets/audio/no-fx/crash.mp3');
+highTom = new Audio('./assets/audio/no-fx/high-tom.wav', './assets/audio/no-fx/high-tom.mp3');
+lowTom = new Audio('./assets/audio/no-fx/low-tom.wav', './assets/audio/no-fx/low-tom.mp3');
 
 // DOM Elements - Icon Triggers
 const bassDrumTrigger = document.getElementById('bass-drum');
