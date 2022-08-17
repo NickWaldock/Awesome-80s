@@ -21,7 +21,8 @@ const highTomTrigger = document.getElementById('tom1');
 const lowTomTrigger = document.getElementById('tom2');
 
 // DOM Elements - Control Buttons
-let changeSoundsBtn = document.getElementById('change-sound-btn')
+let changeSoundsBtn = document.getElementById('change-sound-btn');
+let kitTextChange = document.getElementById('label');
 
 // Event Listeners
 bassDrumTrigger.addEventListener('click', playBassDrum);
@@ -31,7 +32,11 @@ crashTrigger.addEventListener('click', playCrash);
 highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
 
-// changeSoundsBtn.addEventListener('click', );
+if (changeSoundsBtn.checked = true) {
+	kitTextChange.innerHTML = "Kit 2";
+} else {
+	kitTextChange.innerHTML = "Kit 1";
+} // not working as intended
 
 
 // Trigger Functions
