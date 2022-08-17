@@ -109,8 +109,6 @@ body {
 
 }
 
-
-
 .trigger {
     margin: 0.5em; 
     border: solid 7px black;
@@ -146,17 +144,41 @@ body {
 
 }
 
-.controls button {
+.controls button, .sound-span {
+    width: 20%;
+    height: auto;
     color: rgba(138, 43, 226);
     font-family: 'arcade', monospace;
     font-size: 4vw;
     text-align: center;
-    height: auto;
     border: 5px solid black;
     border-radius: 10%;
     background-color: orange;
 
 }
+
+.sound-checkbox {
+    
+
+}
+
+
+.sound::after {
+
+
+}
+
+/* 
+.controls .sound::after {
+    text-shadow:
+    -1px -1px 0 #000,
+    1px 1px 0 silver,
+    0 0 10px orange,
+    0 0 21px orange,
+    0 0 42px orangered,
+    0 0 82px orangered,
+    0 0 92px orangered;
+} */
 
 
 /* Footer */
