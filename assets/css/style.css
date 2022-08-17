@@ -144,7 +144,7 @@ body {
 
 }
 
-.controls button, .sound-span {
+.controls button, .sound-label {
     width: 20%;
     height: auto;
     color: rgba(138, 43, 226);

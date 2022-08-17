@@ -1,6 +1,6 @@
 // Sounds 
 bassDrum1 = new Audio('./assets/audio/kit1/bass-drum1.wav', './assets/audio/kit1/bass-drum1.mp3');
-bassDrum2 = new Audio('.assets/audio/kit2/bass-drum2.wav', '.assets/audio/kit2/bass-drum2.mp3');
+bassDrum2 = new Audio('./assets/audio/kit2/bass-drum2.wav', './assets/audio/kit2/bass-drum2.mp3');
 snareDrum1 = new Audio('./assets/audio/kit1/snare-drum1.wav', './assets/audio/kit1/snare-drum1.mp3');
 snareDrum2 = new Audio('./assets/audio/kit2/snare-drum2.wav', './assets/audio/kit2/snare-drum2.mp3');
 hats1 = new Audio('./assets/audio/kit1/hats1.wav', './assets/audio/kit1/hats1.mp3');
@@ -21,9 +21,7 @@ const highTomTrigger = document.getElementById('tom1');
 const lowTomTrigger = document.getElementById('tom2');
 
 // DOM Elements - Control Buttons
-var fxBtn = document.getElementById('fx-btn');
-var changeSoundBtn = document.getElementById('change-sound-btn');
-
+let changeSoundsBtn = document.getElementById('change-sound-btn')
 
 // Event Listeners
 bassDrumTrigger.addEventListener('click', playBassDrum);
@@ -33,13 +31,14 @@ crashTrigger.addEventListener('click', playCrash);
 highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
 
-changeSoundBtn.addEventListener('click',  )
+// changeSoundsBtn.addEventListener('click', );
+
 
 // Trigger Functions
 /** Play the bass drum samples */
 
 function playBassDrum(){	
-	if (changeSoundBtn === false) {
+	if (changeSoundsBtn.checked === false) {
 		bassDrum1.play();
 	} else {
 		bassDrum2.play();
@@ -48,17 +47,16 @@ function playBassDrum(){
 
 /** Play the snare drum sample */
 function playSnareDrum(){	
-	if (changeSoundBtn === false) {
+	if (changeSoundsBtn.checked === false) {
 	snareDrum1.play();
 } else {
 	snareDrum2.play();
 	}
 }
 
-
 /** Play the hats sample */
 function playHats(){	
-	if (changeSoundsBtn === false) {
+	if (changeSoundsBtn.checked === false) {
 		hats1.play();
 	} else {
 		hats2.play();	
@@ -67,7 +65,7 @@ function playHats(){
 
 /** Play the crash sample */
 function playCrash(){	
-	if (changeSoundsBtn === false) {
+	if (changeSoundsBtn.checked === false) {
 		crash1.play();
 	} else {
 		crash2.play();
@@ -76,7 +74,7 @@ function playCrash(){
 
 /** Play the high tom sample */
 function playHighTom(){	
-	if (changeSoundBtn === false) {
+	if (changeSoundsBtn.checked === false) {
 		highTom1.play();
 	} else {
 		highTom2.play();
@@ -85,7 +83,7 @@ function playHighTom(){
 
 /** Play the low drum sample */
 function playLowTom(){	
-	if (changeSoundBtn === false) {
+	if (changeSoundsBtn.checked === false) {
 		lowTom1.play();
 	} else {
 		lowTom2.play();
