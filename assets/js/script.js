@@ -1,16 +1,16 @@
 // Sounds 
-bassDrum = new Audio('./assets/audio/no-fx/bass-drum.wav', './assets/audio/no-fx/bass-drum.mp3');
-
-snareDrum = new Audio('./assets/audio/no-fx/snare-drum.wav', './assets/audio/no-fx/snare-drum.mp3');
-
-hats = new Audio('./assets/audio/no-fx/hats.wav', './assets/audio/no-fx/hats.mp3');
-
-crash = new Audio('./assets/audio/no-fx/crash.wav', './assets/audio/no-fx/crash.mp3');
-
-highTom = new Audio('./assets/audio/no-fx/high-tom.wav', './assets/audio/no-fx/high-tom.mp3');
-
-lowTom = new Audio('./assets/audio/no-fx/low-tom.wav', './assets/audio/no-fx/low-tom.mp3');
-
+bassDrum1 = new Audio('./assets/audio/kit1/bass-drum1.wav', './assets/audio/kit1/bass-drum1.mp3');
+bassDrum2 = new Audio('.assets/audio/kit2/bass-drum2.wav', '.assets/audio/kit2/bass-drum2.mp3');
+snareDrum1 = new Audio('./assets/audio/kit1/snare-drum1.wav', './assets/audio/kit1/snare-drum1.mp3');
+snareDrum2 = new Audio('./assets/audio/kit2/snare-drum2.wav', './assets/audio/kit2/snare-drum2.mp3');
+hats1 = new Audio('./assets/audio/kit1/hats1.wav', './assets/audio/kit1/hats1.mp3');
+hats2 = new Audio('./assets/audio/kit2/hats2.wav', './assets/audio/kit2/hats2.mp3');
+crash1 = new Audio('./assets/audio/kit1/crash1.wav', './assets/audio/kit1/crash1.mp3');
+crash2 = new Audio('./assets/audio/kit2/crash2.wav', './assets/audio/kit2/crash2.mp3');
+highTom1 = new Audio('./assets/audio/kit1/high-tom1.wav', './assets/audio/kit1/high-tom1.mp3');
+highTom2 = new Audio('./assets/audio/kit2/high-tom2.wav', './assets/audio/kit2/high-tom2.mp3');
+lowTom1 = new Audio('./assets/audio/kit1/low-tom1.wav', './assets/audio/kit1/low-tom1.mp3');
+lowTom2 = new Audio('./assets/audio/kit2/low-tom2.wav', './assets/audio/kit2/low-tom2.mp3');
 
 // DOM Elements - Icon Triggers
 const bassDrumTrigger = document.getElementById('bass-drum');
@@ -40,7 +40,7 @@ changeSoundBtn.addEventListener('click',  )
 
 function playBassDrum(){	
 	if (changeSoundBtn === false) {
-		bassDrum.play();
+		bassDrum1.play();
 	} else {
 		bassDrum2.play();
 	}
@@ -49,7 +49,7 @@ function playBassDrum(){
 /** Play the snare drum sample */
 function playSnareDrum(){	
 	if (changeSoundBtn === false) {
-	snareDrum.play();
+	snareDrum1.play();
 } else {
 	snareDrum2.play();
 	}
@@ -59,7 +59,7 @@ function playSnareDrum(){
 /** Play the hats sample */
 function playHats(){	
 	if (changeSoundsBtn === false) {
-		hats.play();
+		hats1.play();
 	} else {
 		hats2.play();	
 	}
@@ -68,7 +68,7 @@ function playHats(){
 /** Play the crash sample */
 function playCrash(){	
 	if (changeSoundsBtn === false) {
-		crash.play();
+		crash1.play();
 	} else {
 		crash2.play();
 	}	
@@ -77,7 +77,7 @@ function playCrash(){
 /** Play the high tom sample */
 function playHighTom(){	
 	if (changeSoundBtn === false) {
-		highTom.play();
+		highTom1.play();
 	} else {
 		highTom2.play();
 	}
@@ -86,7 +86,7 @@ function playHighTom(){
 /** Play the low drum sample */
 function playLowTom(){	
 	if (changeSoundBtn === false) {
-		lowTom.play();
+		lowTom1.play();
 	} else {
 		lowTom2.play();
 	}
