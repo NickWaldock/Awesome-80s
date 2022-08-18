@@ -23,6 +23,7 @@ const lowTomTrigger = document.getElementById('tom2');
 // DOM Elements - Control Buttons
 let kitSelector = document.getElementById('kit-selector');
 let kitSelectorLabel = document.getElementById('kit-label');
+let playBtn = document.getElementById('play-btn');
 
 
 
@@ -35,11 +36,11 @@ highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
 
 kitSelector.addEventListener('change', (event) => {
-    if (event.currentTarget.checked) {
-		kitSelectorLabel.innerText = "Kit 2";
-    } else {
-		kitSelectorLabel.innerText = "Kit 1";
-    }
+	if (event.currentTarget.checked) {
+	kitSelectorLabel.innerText = "Kit 2";
+	} else {
+	kitSelectorLabel.innerText = "Kit 1";
+	}
 });
 
 
@@ -90,7 +91,7 @@ function playHighTom(){
 	}
 }
 
-/** Play the low drum sample */
+/** Play the low tom drum sample */
 function playLowTom(){	
 	if (kitSelector.checked === false) {
 		lowTom1.play();
@@ -98,3 +99,18 @@ function playLowTom(){
 		lowTom2.play();
 	}
 }
+
+
+// User Choice Array
+
+let layer1 = ['playBassDrum', 'playSnareDrum', 'playHats', 'playCrash','','playHighTom', 'playLowTom'];
+playBtn.addEventListener('click', layer1.play());
+
+let layer2 = new Array(7);
+let layer3 = new Array(7);
+let layer4 = new Array(7);
+
+
+
+// userchoice > addEventListener for click > add selection to array > if array = 7length > alert
+

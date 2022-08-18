@@ -81,9 +81,49 @@ body {
 
 }
 
+.landing-background {
+    display: none;
+    grid-column: 2;
+    grid-row: 2 / 5;
+    background-color: rgba(138, 43, 226, 0.7);
+    border: solid 7px black;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    
+}
+
+
+.instructions {
+    list-style-type: none;
+    font-family: 'arcade', monospace;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    text-align: center;
+
+}
+
+.instructions li {
+    padding: 0.7rem;
+}
+
+.start-btn {
+    width: 20%;
+    height: auto;
+    color: rgba(138, 43, 226);
+    font-family: 'arcade', monospace;
+    font-size: 4vw;
+    text-align: center;
+    border: 5px solid black;
+    border-radius: 10%;
+    background-color: orange;
+    
+
+}
+
 /* Game Area */
 .game-area {
-    /* visibility: hidden; Hidden until game commences */
+    /* visibility: hidden;  */
     grid-column: 2;
     grid-row: 2 / 5;
     background-color: rgba(138, 43, 226, 0.7);
@@ -109,6 +149,8 @@ body {
 
 }
 
+
+
 .trigger {
     margin: 0.5em; 
     border: solid 7px black;
@@ -128,7 +170,7 @@ body {
 
 /* Controls Area */
 .controls {
-    /* visibility: hidden; Hidden until game commences */
+    /* visibility: hidden; */
     grid-column: 2 / 3;
     grid-row-start: 5;
     height: auto;
@@ -141,8 +183,8 @@ body {
     justify-content: space-around;
     align-items: center;
     
-
 }
+
 
 .controls button, .kit-label {
     width: 20%;
@@ -156,6 +198,13 @@ body {
     background-color: orange;
 
 }
+
+.kit-checkbox {
+    display: none;
+
+}
+
+
 
 /* 
 .controls .sound::after {

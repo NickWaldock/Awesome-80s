@@ -15,47 +15,61 @@
         <h1>The Awesome 80s</h1>
         <h3>Drum Machine!</h3>
     </div>
+    <div class="landing-background">
+        <div>
+            <ul class="instructions">
+                <li>Welcome to the Awesome 80s Drum Machine!</li>
+                <li>Click <em>START</em> to begin</li>
+                <li>Click the drum pads to make sounds</li>
+                <li>Kit 1 button to change sounds</li>
+                <li>Program your layer (4 max)</li>
+                <li>Press Play to hear your jam!</li>
+            </ul>
+        </div>
+        <button class="start-btn">
+            Lets
+            <br> 
+            Go!
+        </button>
 
+    </div>
+    <!-- The Game Area (Hidden until Start) -->
     <div class="game-area">
         <button class="trigger" id="bass-drum">
             <img src="/assets/images/bass.png" alt="Bass drum">
         </button>
-
         <button class="trigger" id="snare-drum">
             <img src="/assets/images/snare.png" alt="Snare drum">
         </button>
-
         <button class="trigger" id="hats">
             <img src="/assets/images/hats.png" alt="Hi-hat cymbals">
-        </button>
-        
+        </button>    
         <button class="trigger" id="crash">
             <img src="/assets/images/crash.png" alt="Crash cymbal">
         </button>
-
         <button class="trigger" id="tom1">
             <img src="/assets/images/tom.png" alt="High tom drum">
         </button>
-
         <button class="trigger" id="rest">
             <img src="/assets/images/rest.png" alt="High tom drum">
         </button>
-
         <button class="trigger" id="tom2">
             <img src="/assets/images/tom.png" alt="Low tom drum">
         </button>
     </div>
 
+<!-- The Control Area (Hidden until start) -->
     <div class="controls">
         <button>Layer</button>
         <label id="kit-label" class="kit-label" for="kit-selector">
             Kit 1
         </label>
         <input type="checkbox" id="kit-selector" class="kit-checkbox">
-        <button>Play!</button>
+        <button id="play-btn">Play!</button>
         <button>Volume</button>
     </div>
 
+<!-- Footer -->
     <div class="footer">
         <footer > 
             Copyright NJW Music 2022
@@ -65,9 +79,8 @@
     </div>
     
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js" 
-integrity="sha512-L6Z/YtIPQ7eU3BProP34WGU5yIRk7tNHk7vaC2dB1Vy1atz6wl9mCkTPPZ2Rn1qPr+vY2mZ9odZLdGYuaBk7dQ==" 
-crossorigin="anonymous"></script>
+
+<!-- Scripts -->
 <script src="/assets/js/script.js"></script>
 </body>
 </html>
