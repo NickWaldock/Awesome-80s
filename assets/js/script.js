@@ -21,8 +21,10 @@ const highTomTrigger = document.getElementById('tom1');
 const lowTomTrigger = document.getElementById('tom2');
 
 // DOM Elements - Control Buttons
-let changeSoundsBtn = document.getElementById('change-sound-btn');
-let kitTextChange = document.getElementById('label');
+let kitSelector = document.getElementById('kit-selector');
+let kitSelectorLabel = document.getElementById('kit-label');
+
+
 
 // Event Listeners
 bassDrumTrigger.addEventListener('click', playBassDrum);
@@ -32,18 +34,20 @@ crashTrigger.addEventListener('click', playCrash);
 highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
 
-if (changeSoundsBtn.checked = true) {
-	kitTextChange.innerHTML = "Kit 2";
-} else {
-	kitTextChange.innerHTML = "Kit 1";
-} // not working as intended
+kitSelector.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+		kitSelectorLabel.innerText = "Kit 2";
+    } else {
+		kitSelectorLabel.innerText = "Kit 1";
+    }
+});
 
 
 // Trigger Functions
 /** Play the bass drum samples */
 
 function playBassDrum(){	
-	if (changeSoundsBtn.checked === false) {
+	if (kitSelector.checked === false) {
 		bassDrum1.play();
 	} else {
 		bassDrum2.play();
@@ -52,7 +56,7 @@ function playBassDrum(){
 
 /** Play the snare drum sample */
 function playSnareDrum(){	
-	if (changeSoundsBtn.checked === false) {
+	if (kitSelector.checked === false) {
 	snareDrum1.play();
 } else {
 	snareDrum2.play();
@@ -61,7 +65,7 @@ function playSnareDrum(){
 
 /** Play the hats sample */
 function playHats(){	
-	if (changeSoundsBtn.checked === false) {
+	if (kitSelector.checked === false) {
 		hats1.play();
 	} else {
 		hats2.play();	
@@ -70,7 +74,7 @@ function playHats(){
 
 /** Play the crash sample */
 function playCrash(){	
-	if (changeSoundsBtn.checked === false) {
+	if (kitSelector.checked === false) {
 		crash1.play();
 	} else {
 		crash2.play();
@@ -79,7 +83,7 @@ function playCrash(){
 
 /** Play the high tom sample */
 function playHighTom(){	
-	if (changeSoundsBtn.checked === false) {
+	if (kitSelector.checked === false) {
 		highTom1.play();
 	} else {
 		highTom2.play();
@@ -88,7 +92,7 @@ function playHighTom(){
 
 /** Play the low drum sample */
 function playLowTom(){	
-	if (changeSoundsBtn.checked === false) {
+	if (kitSelector.checked === false) {
 		lowTom1.play();
 	} else {
 		lowTom2.play();
