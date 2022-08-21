@@ -164,6 +164,7 @@ body {
     background-color: rgba(127, 255, 212, 1);
     opacity: 1;
     padding-top: 0.5em;
+    transition: all 1s;
 
 }
 
@@ -172,6 +173,12 @@ body {
     width: 100%;
     height: 100%;
 
+}
+
+.playing {
+    transform: scale(1.2);
+    border: solid 7px black;
+    box-shadow: 0 0 10px black;
 }
 
 
@@ -206,12 +213,17 @@ body {
     margin: auto;    
 }
 
+.sound-square:after {
+    background-color: orange;
+}
+
 .layer-indicator {
     
     font-family: 'arcade', monospace;
-    height: 80%;
+    height: auto;
     width: 80%;
     text-align: center;
+    font-size: 80%;
     background-color: orange;
     color: rgba(138, 43, 226);
     border: 3px solid black;

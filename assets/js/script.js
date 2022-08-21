@@ -27,7 +27,6 @@ let kitSelector = document.getElementById('kit-selector');
 let kitSelectorLabel = document.getElementById('kit-label');
 let kitSelected = '1';
 
-
 // Event Listeners
 bassDrumTrigger.addEventListener('click', playBassDrum);
 snareDrumTrigger.addEventListener('click', playSnareDrum);
@@ -104,6 +103,7 @@ function playLowTom() {
 }
 
 
+
 // User Choice Array
 
 let layer1 = [];
@@ -126,6 +126,7 @@ function playLayer1() {
 		}, 1000);
 	}
 }
+
 
 
 
