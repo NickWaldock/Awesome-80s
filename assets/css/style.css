@@ -41,7 +41,7 @@ body {
 .grid {
     display: grid;
     grid-template-columns: 10% auto 10%;
-    grid-template-rows: repeat(6, auto);
+    grid-template-rows: repeat(8, auto);
     row-gap: 1em;
     height: 100vh;
 
@@ -80,6 +80,12 @@ body {
     animation-fill-mode: forwards;
 
 }
+
+
+
+
+
+/* Landing Area */
 
 .landing-background {
     display: none;
@@ -168,11 +174,56 @@ body {
 
 }
 
+
+
+/* Layer Area */
+
+.layer-area {
+
+    grid-column: 2;
+    grid-row: 5;
+    column-gap: 4px;
+    height: auto;
+    width: auto;
+    border: 5px solid black;
+    background-color: rgba(138, 43, 226, 0.7);
+    align-items: center;
+
+    /* Grid for squares */
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 1fr 1fr;
+    row-gap: 4px;
+    
+}
+
+.sound-squares {
+
+    height: 4vh;
+    width: 4vw;
+    background-color: rgba(138, 43, 226);
+    border: 4px solid black;
+    margin: auto;    
+}
+
+.layer-indicator {
+    
+    font-family: 'arcade', monospace;
+    height: 80%;
+    width: 80%;
+    text-align: center;
+    background-color: orange;
+    color: rgba(138, 43, 226);
+    border: 3px solid black;
+    margin: auto;
+
+}
+
 /* Controls Area */
 .controls {
     /* visibility: hidden; */
     grid-column: 2 / 3;
-    grid-row-start: 5;
+    grid-row-start: 6;
     height: auto;
     width: auto;
     border: 5px solid black;
@@ -184,7 +235,6 @@ body {
     align-items: center;
     
 }
-
 
 .controls button, .kit-label {
     width: 20%;
@@ -205,24 +255,10 @@ body {
 }
 
 
-
-/* 
-.controls .sound::after {
-    text-shadow:
-    -1px -1px 0 #000,
-    1px 1px 0 silver,
-    0 0 10px orange,
-    0 0 21px orange,
-    0 0 42px orangered,
-    0 0 82px orangered,
-    0 0 92px orangered;
-} */
-
-
 /* Footer */
 .footer {
     grid-column: 1 / 4;
-    grid-row-start: 6;
+    grid-row-start: 8;
     background-color: rgba(138, 43, 226, 0.7);
     border: solid 7px black;
     height: 50%;
