@@ -51,8 +51,10 @@ kitSelector.addEventListener('change', (event) => {
 
 function playBassDrum() {
 	if (kitSelector.checked === false) {
+		sounds.bassDrum1.currentTime = 0;
 		sounds.bassDrum1.play();
 	} else {
+		sounds.bassDrum2.currentTime = 0;
 		sounds.bassDrum2.play();
 	}
 }
@@ -60,8 +62,10 @@ function playBassDrum() {
 /** Play the snare drum sample */
 function playSnareDrum() {
 	if (kitSelector.checked === false) {
+		sounds.snareDrum1.currentTime = 0;
 		sounds.snareDrum1.play();
 	} else {
+		sounds.snareDrum2.currentTime = 0;
 		snareDrum2.play();
 	}
 }
@@ -69,8 +73,10 @@ function playSnareDrum() {
 /** Play the hats sample */
 function playHats() {
 	if (kitSelector.checked === false) {
+		sounds.hats1.currentTime = 0;
 		sounds.hats1.play();
 	} else {
+		sounds.hats2.currentTime = 0;
 		sounds.hats2.play();
 	}
 }
@@ -78,8 +84,10 @@ function playHats() {
 /** Play the crash sample */
 function playCrash() {
 	if (kitSelector.checked === false) {
+		sounds.crash1.currentTime = 0;
 		sounds.crash1.play();
 	} else {
+		sounds.crash2.currentTime = 0;
 		sounds.crash2.play();
 	}
 }
@@ -87,8 +95,10 @@ function playCrash() {
 /** Play the high tom sample */
 function playHighTom() {
 	if (kitSelector.checked === false) {
+		sounds.highTom1.currentTime = 0;
 		sounds.highTom1.play();
 	} else {
+		sounds.highTom2.currentTime = 0;
 		sounds.highTom2.play();
 	}
 }
@@ -96,8 +106,10 @@ function playHighTom() {
 /** Play the low tom drum sample */
 function playLowTom() {
 	if (kitSelector.checked === false) {
+		sounds.lowTom1.currentTime = 0;
 		sounds.lowTom1.play();
 	} else {
+		sounds.lowTom2.currentTime = 0;
 		sounds.lowTom2.play();
 	}
 }
