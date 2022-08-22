@@ -22,12 +22,14 @@ const crashTrigger = document.getElementById('crash');
 const highTomTrigger = document.getElementById('highTom');
 const lowTomTrigger = document.getElementById('lowTom');
 
+
 // DOM Elements - Control Buttons
 let kitSelector = document.getElementById('kit-selector');
 let kitSelectorLabel = document.getElementById('kit-label');
 let kitSelected = '1';
 
-// Event Listeners
+
+// Event Listeners - for sounds
 bassDrumTrigger.addEventListener('click', playBassDrum);
 snareDrumTrigger.addEventListener('click', playSnareDrum);
 hatsTrigger.addEventListener('click', playHats);
@@ -35,6 +37,24 @@ crashTrigger.addEventListener('click', playCrash);
 highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
 
+
+
+// Animation
+const triggers = Array.from(document.getElementsByClassName('trigger'));
+triggers.forEach(trigger => trigger.addEventListener('click', (event) => {
+	event.target.classList.add('playing');
+	triggers.forEach(removeClass);
+}));
+
+// Remove Animation - must loop over all in the array
+function removeClass(event) {	
+	if (triggers.classList == '.playing');
+	this.classList.remove('playing');
+	}
+
+
+
+// Kit (sounds) selector
 kitSelector.addEventListener('change', (event) => {
 	if (event.currentTarget.checked) {
 		kitSelectorLabel.innerText = "Kit 2";
@@ -53,6 +73,7 @@ function playBassDrum() {
 	if (kitSelector.checked === false) {
 		sounds.bassDrum1.currentTime = 0;
 		sounds.bassDrum1.play();
+
 	} else {
 		sounds.bassDrum2.currentTime = 0;
 		sounds.bassDrum2.play();
