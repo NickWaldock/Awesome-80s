@@ -11,7 +11,9 @@ const sounds = {
 	highTom1: new Audio('./assets/audio/kit1/high-tom1.wav', './assets/audio/kit1/high-tom1.mp3'),
 	highTom2: new Audio('./assets/audio/kit2/high-tom2.wav', './assets/audio/kit2/high-tom2.mp3'),
 	lowTom1: new Audio('./assets/audio/kit1/low-tom1.wav', './assets/audio/kit1/low-tom1.mp3'),
-	lowTom2: new Audio('./assets/audio/kit2/low-tom2.wav', './assets/audio/kit2/low-tom2.mp3')
+	lowTom2: new Audio('./assets/audio/kit2/low-tom2.wav', './assets/audio/kit2/low-tom2.mp3'),
+	rest: new Audio('./assets/audio/kit1/rest.wav', './assets/audio/kit1/rest.mp3'),
+	rest2: new Audio('./assets/audio/kit2/rest.wav', './assets/audio/kit2/rest.mp3'),
 }
 
 // DOM Elements - Icon Triggers
@@ -21,6 +23,9 @@ const hatsTrigger = document.getElementById('hats');
 const crashTrigger = document.getElementById('crash');
 const highTomTrigger = document.getElementById('highTom');
 const lowTomTrigger = document.getElementById('lowTom');
+const restTrigger = document.getElementById('rest');
+
+
 
 
 // DOM Elements - Control Buttons
@@ -36,21 +41,32 @@ hatsTrigger.addEventListener('click', playHats);
 crashTrigger.addEventListener('click', playCrash);
 highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
+restTrigger.addEventListener('click', playRest);
 
 
 
-// Animation
-const triggers = Array.from(document.getElementsByClassName('trigger'));
-triggers.forEach(trigger => trigger.addEventListener('click', (event) => {
-	event.target.classList.add('playing');
-	triggers.forEach(removeClass);
-}));
+// // Animation
+// const trigger = Array.from(document.getElementsByClassName('trigger'));
+// trigger.forEach(trigger => trigger.addEventListener('click', (event) => {
+// 	event.target.classList.add('playing');
+// 	removeTransition(trigger);
+// }));
 
-// Remove Animation - must loop over all in the array
-function removeClass(event) {	
-	if (triggers.classList == '.playing');
-	this.classList.remove('playing');
-	}
+// // Remove Animation 
+
+// function removeTransition(e){
+// 	if (e.propertyName !== 'transform');
+// 	this.classList.remove('playing');
+
+// }
+
+// const triggers = document.querySelectorAll('.trigger');
+// triggers.forEach(trigger => trigger.addEventListener('transitionend', removeTransition));
+
+
+
+
+
 
 
 
@@ -135,6 +151,16 @@ function playLowTom() {
 	}
 }
 
+/** Play the rest sample */
+function playRest() {
+	if (kitSelector.checked === false) {
+		sounds.rest.currentTime = 0;
+		sounds.rest.play();
+	} else {
+		sounds.rest2.currentTime = 0;
+		sounds.rest2.play();
+	}
+}
 
 
 // User Choice Array
@@ -163,9 +189,5 @@ function playLayer1() {
 
 
 
-// Event Listener
-playBtn.addEventListener('click', playLayer1, imWorking)
-
-function imWorking() {
-	console.log('Im working!');
-}
+// Event Listener for play button
+playBtn.addEventListener('click', playLayer1);
