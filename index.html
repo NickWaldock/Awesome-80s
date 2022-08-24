@@ -15,26 +15,27 @@
         <h1>The Awesome 80s</h1>
         <h3>Drum Machine!</h3>
     </div>
-    <div class="landing-background">
+    <div id="landing-background">
         <div>
             <ul class="instructions">
                 <li>Welcome to the Awesome 80s Drum Machine!</li>
-                <li>Click <em>START</em> to begin</li>
+                <li>Click <em>Lets Go!</em> to begin</li>
                 <li>Click the drum pads to make sounds</li>
                 <li>Kit 1 button to change sounds</li>
-                <li>Program your layer (4 max)</li>
-                <li>Press Play to hear your jam!</li>
+                <li>Program your layer (8 max)</li>
+                <li>Click Play to hear your jam!</li>
+                <li>CLick Stop to stop!</li>
             </ul>
         </div>
-        <button class="start-btn">
+        <button id="start-btn">
             Lets
             <br> 
             Go!
         </button>
-
     </div>
+
     <!-- The Game Area (Hidden until Start) -->
-    <div class="game-area">
+    <div id="game-area" class="hidden">
         <button class="trigger" id="bassDrum">
             <img src="/assets/images/bass.png" alt="Bass drum">
         </button>
@@ -58,70 +59,69 @@
         </button>
     </div>
 
-    <div class="layer-area">
+    <div id="layer-area" class="hidden">
         <span class="layer-indicator">Layer<br> 1</span>
         <span class="sound-squares">
-
+            1
         </span>
         <span class="sound-squares">
-
+            2
         </span>
         <span class="sound-squares">
-
+            3
         </span>
         <span class="sound-squares">
-
+            4
         </span>
         <span class="sound-squares">
-
+            5
         </span>
         <span class="sound-squares">
-
+            6
         </span>
         <span class="sound-squares">
-
+            7
         </span>
         <span class="sound-squares">
-
+            8
         </span>
-
-
 
         <span class="layer-indicator">Layer<br> 2</span>
-        <span class="sound-squares">
-
+        <span class="sound-squares" >
+            1
         </span>
         <span class="sound-squares">
-
+            2
         </span>
         <span class="sound-squares">
-
+            3
         </span>
         <span class="sound-squares">
-
+            4
         </span>
         <span class="sound-squares">
-
+            5
         </span>
         <span class="sound-squares">
-
+            6
         </span>
         <span class="sound-squares">
-
+            7
         </span>
         <span class="sound-squares">
-
+            8
         </span>
     </div>
 
-<!-- The Control Area (Hidden until start) -->
-    <div class="controls">
+<!-- The Control Area (Hidden Until Start) -->
+    <div id="controls" class="hidden">
         <button id="layer-btn">Layer</button>
         <label id="kit-label" class="kit-label" for="kit-selector">
             Kit 1
         </label>
         <input type="checkbox" id="kit-selector" class="kit-checkbox">
         <button id="play-btn">Play!</button>
+        <button id="stop-btn">Stop</button>
     </div>
 
 <!-- Footer -->

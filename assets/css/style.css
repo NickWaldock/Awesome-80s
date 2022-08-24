@@ -73,7 +73,6 @@ body {
     0 0 82px orangered,
     0 0 92px orangered;
     
-
     /* Zoom Effect */
     animation-name: title-zoom;
     animation-duration: 5s;
@@ -83,19 +82,32 @@ body {
 
 
 
-
-
 /* Landing Area */
-
-.landing-background {
-    display: none;
+#landing-background {
+    
     grid-column: 2;
     grid-row: 2 / 5;
     background-color: rgba(138, 43, 226, 0.7);
     border: solid 7px black;
     height: auto;
     width: 100%;
-    text-align: center;
+    text-align: center;    
+    animation: scaleIn 2s linear 0s 1 normal forwards;
+
+
+}
+@keyframes scaleIn {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.hidden {
+    display: none !important;
     
 }
 
@@ -113,7 +125,7 @@ body {
     padding: 0.7rem;
 }
 
-.start-btn {
+#start-btn {
     width: 20%;
     height: auto;
     color: rgba(138, 43, 226);
@@ -128,8 +140,8 @@ body {
 }
 
 /* Game Area */
-.game-area {
-    /* visibility: hidden;  */
+#game-area {
+
     grid-column: 2;
     grid-row: 2 / 5;
     background-color: rgba(138, 43, 226, 0.7);
@@ -146,7 +158,7 @@ body {
 
 }
 
-.game-area button {
+#game-area button {
     border: 5px solid black;
     border-radius: 10%;
     background-color: rgba(127, 255, 212);
@@ -154,8 +166,6 @@ body {
     height: auto;
 
 }
-
-
 
 .trigger {
     margin: 0.5em; 
@@ -178,15 +188,14 @@ body {
 .trigger:active {
     transform: scale(1.1);
     border: solid 7px orange;
-    box-shadow: 0 0 10px orange;
+    box-shadow: 0 0 30px orange;
 }
 
 
 
 /* Layer Area */
-
-.layer-area {
-
+#layer-area {
+    
     grid-column: 2;
     grid-row: 5;
     column-gap: 4px;
@@ -232,8 +241,8 @@ body {
 }
 
 /* Controls Area */
-.controls {
-    /* visibility: hidden; */
+#controls {
+    
     grid-column: 2 / 3;
     grid-row-start: 6;
     height: auto;
@@ -248,7 +257,7 @@ body {
     
 }
 
-.controls button, .kit-label {
+#controls button, .kit-label {
     width: 20%;
     height: auto;
     color: rgba(138, 43, 226);

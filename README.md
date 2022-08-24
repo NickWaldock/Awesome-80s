@@ -25,3 +25,6 @@ https://www.delftstack.com/howto/javascript/play-audio-javascript/#:~:text=We%20
 
 toggle slider
 https://www.w3schools.com/howto/howto_css_switch.asp
+
+animations 
+https://webcode.tools/generators/css/keyframe-animation

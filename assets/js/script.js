@@ -1,3 +1,20 @@
+// 
+const startBtn = document.getElementById('start-btn');
+const gameArea = document.getElementById('game-area');
+const layerArea = document.getElementById('layer-area');
+const controlsArea = document.getElementById('controls');
+startBtn.addEventListener('click', letsGo);
+
+function letsGo(){
+	const startBackground = document.getElementById('landing-background');
+	if (!startBackground.classList.contains('display')) {
+		startBackground.classList.add('hidden');
+		gameArea.classList.remove('hidden');
+		layerArea.classList.remove('hidden');
+		controlsArea.classList.remove('hidden');
+	}};
+
+
 // Sounds 
 const sounds = {
 	bassDrum1: new Audio('./assets/audio/kit1/bass-drum1.wav', './assets/audio/kit1/bass-drum1.mp3'),
@@ -26,12 +43,13 @@ const lowTomTrigger = document.getElementById('lowTom');
 const restTrigger = document.getElementById('rest');
 
 
-
-
 // DOM Elements - Control Buttons
 let kitSelector = document.getElementById('kit-selector');
 let kitSelectorLabel = document.getElementById('kit-label');
 let kitSelected = '1';
+
+// DOM Elements - Sound Squares
+const soundSquares = document.getElementsByClassName('sound-squares');
 
 
 // Event Listeners - for sounds
@@ -42,32 +60,6 @@ crashTrigger.addEventListener('click', playCrash);
 highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
 restTrigger.addEventListener('click', playRest);
-
-
-
-// // Animation
-// const trigger = Array.from(document.getElementsByClassName('trigger'));
-// trigger.forEach(trigger => trigger.addEventListener('click', (event) => {
-// 	event.target.classList.add('playing');
-// 	removeTransition(trigger);
-// }));
-
-// // Remove Animation 
-
-// function removeTransition(e){
-// 	if (e.propertyName !== 'transform');
-// 	this.classList.remove('playing');
-
-// }
-
-// const triggers = document.querySelectorAll('.trigger');
-// triggers.forEach(trigger => trigger.addEventListener('transitionend', removeTransition));
-
-
-
-
-
-
 
 
 // Kit (sounds) selector
@@ -167,6 +159,10 @@ function playRest() {
 
 let layer1 = [];
 
+if (layer1.length === 8) {
+	
+}
+
 const playBtn = document.getElementById('play-btn');
 const buttons = document.querySelectorAll('.trigger');
 
@@ -174,6 +170,7 @@ const buttons = document.querySelectorAll('.trigger');
 // User chooses sounds, pushed into array
 buttons.forEach(button => button.addEventListener('click', event => {
 	layer1.push(event.currentTarget.id + kitSelected);
+	
 	console.log(layer1);
 }))
 
@@ -185,8 +182,6 @@ function playLayer1() {
 		}, 1000);
 	}
 }
-
-
 
 
 // Event Listener for play button
