@@ -53,33 +53,38 @@ highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
 restTrigger.addEventListener('click', playRest);
 
-
 // User Choice Array
 let layer1 = [];
 let layer2 = [];
+const soundSquares = document.getElementsByClassName('sound-squares');
 
+	// Instruction to Create Layer Array
 buttons.forEach(button => button.addEventListener('click', event => {
 	layer1.push(event.currentTarget.id + kitSelected);
 	console.log(layer1);
 }))
 
-// DOM Elements - Array Indicators
-const soundSquares = document.getElementsByClassName('sound-squares');
-
-
 let interval;
 
-// Function to play sound layer
+/** Function to play sound layer 1 */
 function playLayer1() {
 	for (let sound of layer1) {
 		interval = setInterval(() => {
 			sounds[sound].play();
 		}, 1000);
-		console.log('Playing!');
+		console.log('Playing Layer 1!');
+	}
+}
+/** Function to play sound layer 2 */
+function playLayer2() {
+	for (let sound of layer2) {
+		interval = setInterval(() => {
+			sounds[sound].play();
+		}, 1000);
+		console.log('Playing Layer 2!');
 	}
 }
 
-// Controls
 function stopAudio(){
 	clearInterval(interval);
 	console.log('Stopped!');
@@ -110,18 +115,15 @@ kitSelector.addEventListener('change', (event) => {
 	}
 });
 
-// Reset Function
-
+/** Reset The Layers */
 function resetLayers(){
 	layer1 = [];
 	layer2 = [];
 	console.log('Reset!');
 }
 
-
 // Trigger Functions
 /** Play the bass drum samples */
-
 function playBassDrum() {
 	if (kitSelector.checked === false) {
 		sounds.bassDrum1.currentTime = 0;
