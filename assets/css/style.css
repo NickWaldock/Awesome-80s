@@ -115,6 +115,7 @@ body {
 .instructions {
     list-style-type: none;
     font-family: 'arcade', monospace;
+    word-spacing: 10px;
     letter-spacing: 2px;
     font-size: 2rem;
     text-align: center;
@@ -123,6 +124,12 @@ body {
 
 .instructions li {
     padding: 0.7rem;
+}
+
+.instructions-img {
+    height: 2rem;
+    width: auto;
+    transform: translateY(5px);
 }
 
 #start-btn {
@@ -245,7 +252,7 @@ body {
     
     grid-column: 2 / 3;
     grid-row-start: 6;
-    height: auto;
+    height: 100%;
     width: auto;
     border: 5px solid black;
     background-color: rgba(138, 43, 226, 0.7);
@@ -265,7 +272,6 @@ body {
     font-size: 4vw;
     text-align: center;
     border: 5px solid black;
-    border-radius: 10%;
     background-color: orange;
 
 }
