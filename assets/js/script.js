@@ -1,10 +1,11 @@
-// 
+// Initial & Core DOM Elements
 const startBtn = document.getElementById('start-btn');
 const gameArea = document.getElementById('game-area');
 const layerArea = document.getElementById('layer-area');
 const controlsArea = document.getElementById('controls');
 startBtn.addEventListener('click', letsGo);
 
+// Function for the 'Lets Go!' Button
 function letsGo(){
 	const startBackground = document.getElementById('landing-background');
 	if (!startBackground.classList.contains('display')) {
@@ -13,7 +14,6 @@ function letsGo(){
 		layerArea.classList.remove('hidden');
 		controlsArea.classList.remove('hidden');
 	}};
-
 
 // Sounds 
 const sounds = {
@@ -41,15 +41,7 @@ const crashTrigger = document.getElementById('crash');
 const highTomTrigger = document.getElementById('highTom');
 const lowTomTrigger = document.getElementById('lowTom');
 const restTrigger = document.getElementById('rest');
-
-
-// DOM Elements - Control Buttons
-let kitSelector = document.getElementById('kit-selector');
-let kitSelectorLabel = document.getElementById('kit-label');
-let kitSelected = '1';
-
-// DOM Elements - Sound Squares
-const soundSquares = document.getElementsByClassName('sound-squares');
+const buttons = document.querySelectorAll('.trigger');
 
 
 // Event Listeners - for sounds
@@ -62,6 +54,51 @@ lowTomTrigger.addEventListener('click', playLowTom);
 restTrigger.addEventListener('click', playRest);
 
 
+// User Choice Array
+let layer1 = [];
+let layer2 = [];
+
+buttons.forEach(button => button.addEventListener('click', event => {
+	layer1.push(event.currentTarget.id + kitSelected);
+	console.log(layer1);
+}))
+
+// DOM Elements - Array Indicators
+const soundSquares = document.getElementsByClassName('sound-squares');
+
+
+let interval;
+
+// Function to play sound layer
+function playLayer1() {
+	for (let sound of layer1) {
+		interval = setInterval(() => {
+			sounds[sound].play();
+		}, 1000);
+		console.log('Playing!');
+	}
+}
+
+// Controls
+function stopAudio(){
+	clearInterval(interval);
+	console.log('Stopped!');
+}
+
+// DOM Elements - Control Buttons
+let kitSelector = document.getElementById('kit-selector');
+let kitSelectorLabel = document.getElementById('kit-label');
+let kitSelected = '1';
+const resetBtn = document.getElementById('reset-btn');
+const playBtn = document.getElementById('play-btn');
+const stopBtn = document.getElementById('stop-btn');
+
+// Event Listeners
+playBtn.addEventListener('click', playLayer1);
+stopBtn.addEventListener('click', stopAudio);
+resetBtn.addEventListener('click', resetLayers);
+
+// Control Functions
 // Kit (sounds) selector
 kitSelector.addEventListener('change', (event) => {
 	if (event.currentTarget.checked) {
@@ -72,6 +109,14 @@ kitSelector.addEventListener('change', (event) => {
 		kitSelected = '1';
 	}
 });
+
+// Reset Function
+
+function resetLayers(){
+	layer1 = [];
+	layer2 = [];
+	console.log('Reset!');
+}
 
 
 // Trigger Functions
@@ -95,7 +140,7 @@ function playSnareDrum() {
 		sounds.snareDrum1.play();
 	} else {
 		sounds.snareDrum2.currentTime = 0;
-		snareDrum2.play();
+		sounds.snareDrum2.play();
 	}
 }
 
@@ -153,36 +198,3 @@ function playRest() {
 		sounds.rest2.play();
 	}
 }
-
-
-// User Choice Array
-
-let layer1 = [];
-
-if (layer1.length === 8) {
-	
-}
-
-const playBtn = document.getElementById('play-btn');
-const buttons = document.querySelectorAll('.trigger');
-
-
-// User chooses sounds, pushed into array
-buttons.forEach(button => button.addEventListener('click', event => {
-	layer1.push(event.currentTarget.id + kitSelected);
-	
-	console.log(layer1);
-}))
-
-// Function to play sound layer
-function playLayer1() {
-	for (let sound of layer1) {
-		setInterval(() => {
-			sounds[sound].play();
-		}, 1000);
-	}
-}
-
-
-// Event Listener for play button
-playBtn.addEventListener('click', playLayer1);
