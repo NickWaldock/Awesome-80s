@@ -54,26 +54,35 @@ lowTomTrigger.addEventListener('click', playLowTom);
 restTrigger.addEventListener('click', playRest);
 
 // User Choice Array
+let layer1PlayIndex = 0;
+let layer2PlayIndex = 0;
+let layer1PlayTimeout ;
+let layer2PlayTimeout; 
 let layer1 = [];
 let layer2 = [];
 const soundSquares = document.getElementsByClassName('sound-squares');
 
-	// Instruction to Create Layer Array
+// Instruction to Create Layer Array
 buttons.forEach(button => button.addEventListener('click', event => {
 	layer1.push(event.currentTarget.id + kitSelected);
 	console.log(layer1);
-}))
-
-let interval;
+}));
 
 /** Function to play sound layer 1 */
-function playLayer1() {
-	for (let sound of layer1) {
-		interval = setInterval(() => {
-			sounds[sound].play();
-		}, 1000);
-		console.log('Playing Layer 1!');
+function playLayer1() { 
+	console.log(layer1);
+	console.log(layer1PlayIndex);
+	if (layer1PlayIndex >= layer1.length) { 
+		// Exit the layer
+		return;
 	}
+
+	setTimeout(function() {
+		let sound = layer1[layer1PlayIndex];
+		sounds[sound].play();
+		layer1PlayIndex++;
+		playLayer1();
+	}, 1000);
 }
 /** Function to play sound layer 2 */
 function playLayer2() {
