@@ -17,21 +17,21 @@ function letsGo(){
 
 // Sounds 
 const sounds = {
-	bassDrum1: new Audio('./assets/audio/kit1/bass-drum1.wav', './assets/audio/kit1/bass-drum1.mp3'),
-	bassDrum2: new Audio('./assets/audio/kit2/bass-drum2.wav', './assets/audio/kit2/bass-drum2.mp3'),
-	snareDrum1: new Audio('./assets/audio/kit1/snare-drum1.wav', './assets/audio/kit1/snare-drum1.mp3'),
-	snareDrum2: new Audio('./assets/audio/kit2/snare-drum2.wav', './assets/audio/kit2/snare-drum2.mp3'),
-	hats1: new Audio('./assets/audio/kit1/hats1.wav', './assets/audio/kit1/hats1.mp3'),
-	hats2: new Audio('./assets/audio/kit2/hats2.wav', './assets/audio/kit2/hats2.mp3'),
-	crash1: new Audio('./assets/audio/kit1/crash1.wav', './assets/audio/kit1/crash1.mp3'),
-	crash2: new Audio('./assets/audio/kit2/crash2.wav', './assets/audio/kit2/crash2.mp3'),
-	highTom1: new Audio('./assets/audio/kit1/high-tom1.wav', './assets/audio/kit1/high-tom1.mp3'),
-	highTom2: new Audio('./assets/audio/kit2/high-tom2.wav', './assets/audio/kit2/high-tom2.mp3'),
-	lowTom1: new Audio('./assets/audio/kit1/low-tom1.wav', './assets/audio/kit1/low-tom1.mp3'),
-	lowTom2: new Audio('./assets/audio/kit2/low-tom2.wav', './assets/audio/kit2/low-tom2.mp3'),
-	rest: new Audio('./assets/audio/kit1/rest.wav', './assets/audio/kit1/rest.mp3'),
-	rest2: new Audio('./assets/audio/kit2/rest.wav', './assets/audio/kit2/rest.mp3'),
-}
+	bassDrum1: new Audio('assets/audio/kit1/bass-drum1.wav', 'assets/audio/kit1/bass-drum1.mp3'),
+	bassDrum2: new Audio('assets/audio/kit2/bass-drum2.wav', 'assets/audio/kit2/bass-drum2.mp3'),
+	snareDrum1: new Audio('assets/audio/kit1/snare-drum1.wav', 'assets/audio/kit1/snare-drum1.mp3'),
+	snareDrum2: new Audio('assets/audio/kit2/snare-drum2.wav', 'assets/audio/kit2/snare-drum2.mp3'),
+	hats1: new Audio('assets/audio/kit1/hats1.wav', 'assets/audio/kit1/hats1.mp3'),
+	hats2: new Audio('assets/audio/kit2/hats2.wav', 'assets/audio/kit2/hats2.mp3'),
+	crash1: new Audio('assets/audio/kit1/crash1.wav', 'assets/audio/kit1/crash1.mp3'),
+	crash2: new Audio('assets/audio/kit2/crash2.wav', 'assets/audio/kit2/crash2.mp3'),
+	highTom1: new Audio('assets/audio/kit1/high-tom1.wav', 'assets/audio/kit1/high-tom1.mp3'),
+	highTom2: new Audio('assets/audio/kit2/high-tom2.wav', 'assets/audio/kit2/high-tom2.mp3'),
+	lowTom1: new Audio('assets/audio/kit1/low-tom1.wav', 'assets/audio/kit1/low-tom1.mp3'),
+	lowTom2: new Audio('assets/audio/kit2/low-tom2.wav', 'assets/audio/kit2/low-tom2.mp3'),
+	rest: new Audio('assets/audio/kit1/rest.wav', 'assets/audio/kit1/rest.mp3'),
+	rest2: new Audio('assets/audio/kit2/rest.wav', 'assets/audio/kit2/rest.mp3'),
+};
 
 // DOM Elements - Icon Triggers
 const bassDrumTrigger = document.getElementById('bassDrum');
@@ -82,22 +82,23 @@ function playLayer1() {
 		sounds[sound].play();
 		layer1PlayIndex++;
 		playLayer1();
-	}, 1000);
-}
-/** Function to play sound layer 2 */
-function playLayer2() {
-	for (let sound of layer2) {
-		interval = setInterval(() => {
-			sounds[sound].play();
-		}, 1000);
-		console.log('Playing Layer 2!');
-	}
+	}, 500);
 }
 
-function stopAudio(){
-	clearInterval(interval);
-	console.log('Stopped!');
-}
+/** Function to play sound layer 2 */
+// function playLayer2() {
+// 	for (let sound of layer2) {
+// 		interval = setInterval(() => {
+// 			sounds[sound].play();
+// 		}, 1000);
+// 		console.log('Playing Layer 2!');
+// 	}
+// }
+
+// function stopAudio(){
+// 	clearInterval(interval);
+// 	console.log('Stopped!');
+// }
 
 // DOM Elements - Control Buttons
 let kitSelector = document.getElementById('kit-selector');
@@ -109,7 +110,7 @@ const stopBtn = document.getElementById('stop-btn');
 
 // Event Listeners
 playBtn.addEventListener('click', playLayer1);
-stopBtn.addEventListener('click', stopAudio);
+// stopBtn.addEventListener('click', stopAudio);
 resetBtn.addEventListener('click', resetLayers);
 
 // Control Functions
@@ -128,6 +129,8 @@ kitSelector.addEventListener('change', (event) => {
 function resetLayers(){
 	layer1 = [];
 	layer2 = [];
+	layer1PlayIndex = 0;
+	layer2PlayIndex = 0;
 	console.log('Reset!');
 }
 
