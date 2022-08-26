@@ -43,7 +43,6 @@ const lowTomTrigger = document.getElementById('lowTom');
 const restTrigger = document.getElementById('rest');
 const buttons = document.querySelectorAll('.trigger');
 
-
 // Event Listeners - for sounds
 bassDrumTrigger.addEventListener('click', playBassDrum);
 snareDrumTrigger.addEventListener('click', playSnareDrum);
@@ -56,11 +55,10 @@ restTrigger.addEventListener('click', playRest);
 // User Choice Array
 let layer1PlayIndex = 0;
 let layer2PlayIndex = 0;
-let layer1PlayTimeout ;
+let layer1PlayTimeout;
 let layer2PlayTimeout; 
 let layer1 = [];
 let layer2 = [];
-const soundSquares = document.getElementsByClassName('sound-squares');
 
 // Instruction to Create Layer Array
 buttons.forEach(button => button.addEventListener('click', event => {
@@ -73,6 +71,7 @@ function playLayer1() {
 	console.log(layer1);
 	console.log(layer1PlayIndex);
 	if (layer1PlayIndex >= layer1.length) { 
+		console.log('layer1 index', layer1PlayIndex, 'length', layer1);
 		// Exit the layer
 		return;
 	}
@@ -82,8 +81,8 @@ function playLayer1() {
 		sounds[sound].play();
 		layer1PlayIndex++;
 		playLayer1();
-	}, 500);
-}
+	}, 400);
+};
 
 /** Function to play sound layer 2 */
 // function playLayer2() {
@@ -100,6 +99,28 @@ function playLayer1() {
 // 	console.log('Stopped!');
 // }
 
+// Layer Indicator Squares
+const soundSquares = document.getElementsByClassName('sound-squares');
+const Layer1Square1 = document.getElementById('1square1');
+const Layer1Square2 = document.getElementById('1square2');
+const Layer1Square3 = document.getElementById('1square3');
+const Layer1Square4 = document.getElementById('1square4');
+const Layer1Square5 = document.getElementById('1square5');
+const Layer1Square6 = document.getElementById('1square6');
+const Layer1Square7 = document.getElementById('1square7');
+const Layer1Square8 = document.getElementById('1square8');
+const Layer2Square1 = document.getElementById('2square1');
+const Layer2Square2 = document.getElementById('2square2');
+const Layer2Square3 = document.getElementById('2square3');
+const Layer2Square4 = document.getElementById('2square4');
+const Layer2Square5 = document.getElementById('2square5');
+const Layer2Square6 = document.getElementById('2square6');
+const Layer2Square7 = document.getElementById('2square7');
+const Layer2Square8 = document.getElementById('2square8');
+
+// To 'Light Up' Squares In-Line With Layer Array
+
+
 // DOM Elements - Control Buttons
 let kitSelector = document.getElementById('kit-selector');
 let kitSelectorLabel = document.getElementById('kit-label');
@@ -114,6 +135,7 @@ playBtn.addEventListener('click', playLayer1);
 resetBtn.addEventListener('click', resetLayers);
 
 // Control Functions
+
 // Kit (sounds) selector
 kitSelector.addEventListener('change', (event) => {
 	if (event.currentTarget.checked) {

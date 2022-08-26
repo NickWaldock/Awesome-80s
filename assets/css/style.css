@@ -17,7 +17,6 @@
 }
 
 /* Title Animation */
-
 @keyframes title-zoom {
     from{
         transform: scale(0.1)
@@ -80,11 +79,8 @@ body {
 
 }
 
-
-
 /* Landing Area */
 #landing-background {
-    
     grid-column: 2;
     grid-row: 2 / 5;
     background-color: rgba(138, 43, 226, 0.7);
@@ -94,8 +90,8 @@ body {
     text-align: center;    
     animation: scaleIn 2s linear 0s 1 normal forwards;
 
-
 }
+
 @keyframes scaleIn {
 	0% {
 		transform: scale(0);
@@ -111,7 +107,6 @@ body {
     
 }
 
-
 .instructions {
     list-style-type: none;
     font-family: 'arcade', monospace;
@@ -124,12 +119,14 @@ body {
 
 .instructions li {
     padding: 0.7rem;
+
 }
 
 .instructions-img {
     height: 2rem;
     width: auto;
     transform: translateY(5px);
+
 }
 
 #start-btn {
@@ -142,13 +139,11 @@ body {
     border: 5px solid black;
     border-radius: 10%;
     background-color: orange;
-    
 
 }
 
 /* Game Area */
 #game-area {
-
     grid-column: 2;
     grid-row: 2 / 5;
     background-color: rgba(138, 43, 226, 0.7);
@@ -196,13 +191,12 @@ body {
     transform: scale(1.1);
     border: solid 7px orange;
     box-shadow: 0 0 30px orange;
+    
 }
-
 
 
 /* Layer Area */
 #layer-area {
-    
     grid-column: 2;
     grid-row: 5;
     column-gap: 4px;
@@ -232,10 +226,10 @@ body {
 
 .sound-square:after {
     background-color: orange;
+    
 }
 
 .layer-indicator {
-    
     font-family: 'arcade', monospace;
     height: auto;
     width: 80%;
@@ -250,7 +244,6 @@ body {
 
 /* Controls Area */
 #controls {
-    
     grid-column: 2 / 3;
     grid-row-start: 6;
     height: 100%;
@@ -282,6 +275,14 @@ body {
 
 }
 
+#timeoutSelector {
+    width: 20%;
+    background-color: rgba(138, 43, 226, 0.7);
+    font-family: 'arcade', monospace;
+    transform: translateY(-8px);
+    
+}
+
 
 /* Footer */
 .footer {
@@ -293,4 +294,5 @@ body {
     align-self: end;
     text-align: center;
     font-family: 'arcade', monospace;
+
 }
