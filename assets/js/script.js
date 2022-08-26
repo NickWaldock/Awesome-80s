@@ -79,26 +79,38 @@ const layer2Square6 = document.getElementById('2square6');
 const layer2Square7 = document.getElementById('2square7');
 const layer2Square8 = document.getElementById('2square8');
 
-// To 'Light Up' Squares In-Line With Layer Array Length
+// To 'Light Up' Layer Squares In-Line With Layer Array Length
 function lightUp() {
 	if (layer1.length === 0){ // Do nothing 
 		} else if (layer1.length === 1){
-			layer1Square1.style.backgroundColor = 'orange';
+			layer1Square1.classList.add('orange');
 		} else if (layer1.length === 2){
-			layer1Square2.style.backgroundColor = 'orange';
+			layer1Square2.classList.add('orange');
 		} else if (layer1.length === 3){
-			layer1Square3.style.backgroundColor = 'orange';
+			layer1Square3.classList.add('orange');
 		} else if (layer1.length === 4){
-			layer1Square4.style.backgroundColor = 'orange';
+			layer1Square4.classList.add('orange');
 		} else if (layer1.length === 5){
-			layer1Square5.style.backgroundColor = 'orange';
+			layer1Square5.classList.add('orange');
 		} else if (layer1.length === 6){
-			layer1Square6.style.backgroundColor = 'orange';
+			layer1Square6.classList.add('orange');
 		} else if (layer1.length === 7){
-			layer1Square7.style.backgroundColor = 'orange';
+			layer1Square7.classList.add('orange');
 		} else if (layer1.length === 8){
-			layer1Square8.style.backgroundColor = 'orange';
-		}
+			layer1Square8.classList.add('orange');
+	}
+}
+
+/** Function to Reset Layer Squares */
+function resetColors(){
+	layer1Square1.classList.remove('orange');
+	layer1Square2.classList.remove('orange');
+	layer1Square3.classList.remove('orange');
+	layer1Square4.classList.remove('orange');
+	layer1Square5.classList.remove('orange');
+	layer1Square6.classList.remove('orange');
+	layer1Square7.classList.remove('orange');
+	layer1Square8.classList.remove('orange');
 }
 
 // Instruction to Create Layer Array
@@ -119,7 +131,6 @@ function playLayer1() {
 		// Exit the layer
 		return;
 	}
-
 	setTimeout(function() {
 		let sound = layer1[layer1PlayIndex];
 		sounds[sound].play();
@@ -133,7 +144,6 @@ function playLayer1() {
 // 	clearInterval(interval);
 // 	console.log('Stopped!');
 // }
-
 
 
 // DOM Elements - Control Buttons
@@ -150,7 +160,6 @@ playBtn.addEventListener('click', playLayer1);
 resetBtn.addEventListener('click', resetLayers);
 
 // Control Functions
-
 // Kit (sounds) selector
 kitSelector.addEventListener('change', (event) => {
 	if (event.currentTarget.checked) {
@@ -168,6 +177,7 @@ function resetLayers(){
 	layer2 = [];
 	layer1PlayIndex = 0;
 	layer2PlayIndex = 0;
+	resetColors();
 	console.log('Reset!');
 }
 

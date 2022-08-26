@@ -240,6 +240,10 @@ body {
 
 }
 
+.orange {
+    background-color: orange !important;
+}
+
 /* Controls Area */
 #controls {
     grid-column: 2 / 3;
