@@ -5,7 +5,7 @@ const layerArea = document.getElementById('layer-area');
 const controlsArea = document.getElementById('controls');
 startBtn.addEventListener('click', letsGo);
 
-// Function for the 'Lets Go!' Button
+/** Function for the 'Lets Go!' Button */ 
 function letsGo(){
 	const startBackground = document.getElementById('landing-background');
 	if (!startBackground.classList.contains('display')) {
@@ -79,17 +79,32 @@ const layer2Square6 = document.getElementById('2square6');
 const layer2Square7 = document.getElementById('2square7');
 const layer2Square8 = document.getElementById('2square8');
 
-// To 'Light Up' Squares In-Line With Layer Array
-if (layer1.length === 0){ // Do nothing 
-	} else if (layer1.length === 1){
-		layer1Square1.style.backgroundColor('orange');
-	} else if (layer1.length === 2){
-		layer1Square2.style.backgroundColor('orange');
-};
+// To 'Light Up' Squares In-Line With Layer Array Length
+function lightUp() {
+	if (layer1.length === 0){ // Do nothing 
+		} else if (layer1.length === 1){
+			layer1Square1.style.backgroundColor = 'orange';
+		} else if (layer1.length === 2){
+			layer1Square2.style.backgroundColor = 'orange';
+		} else if (layer1.length === 3){
+			layer1Square3.style.backgroundColor = 'orange';
+		} else if (layer1.length === 4){
+			layer1Square4.style.backgroundColor = 'orange';
+		} else if (layer1.length === 5){
+			layer1Square5.style.backgroundColor = 'orange';
+		} else if (layer1.length === 6){
+			layer1Square6.style.backgroundColor = 'orange';
+		} else if (layer1.length === 7){
+			layer1Square7.style.backgroundColor = 'orange';
+		} else if (layer1.length === 8){
+			layer1Square8.style.backgroundColor = 'orange';
+		}
+}
 
 // Instruction to Create Layer Array
 buttons.forEach(button => button.addEventListener('click', event => {
 	layer1.push(event.currentTarget.id + kitSelected);
+	lightUp();
 	console.log(layer1);
 	console.log('Layer 1 Length', layer1.length);
 	}
