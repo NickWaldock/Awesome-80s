@@ -55,18 +55,47 @@ restTrigger.addEventListener('click', playRest);
 // User Choice Array
 let layer1PlayIndex = 0;
 let layer2PlayIndex = 0;
-let layer1PlayTimeout;
-let layer2PlayTimeout; 
+let layer1PlayTimeout = 300;
+let layer2PlayTimeout = 300; 
 let layer1 = [];
 let layer2 = [];
+
+// Layer Indicator Squares
+const soundSquares = document.getElementsByClassName('sound-squares');
+const layer1Square1 = document.getElementById('1square1');
+const layer1Square2 = document.getElementById('1square2');
+const layer1Square3 = document.getElementById('1square3');
+const layer1Square4 = document.getElementById('1square4');
+const layer1Square5 = document.getElementById('1square5');
+const layer1Square6 = document.getElementById('1square6');
+const layer1Square7 = document.getElementById('1square7');
+const layer1Square8 = document.getElementById('1square8');
+const layer2Square1 = document.getElementById('2square1');
+const layer2Square2 = document.getElementById('2square2');
+const layer2Square3 = document.getElementById('2square3');
+const layer2Square4 = document.getElementById('2square4');
+const layer2Square5 = document.getElementById('2square5');
+const layer2Square6 = document.getElementById('2square6');
+const layer2Square7 = document.getElementById('2square7');
+const layer2Square8 = document.getElementById('2square8');
+
+// To 'Light Up' Squares In-Line With Layer Array
+if (layer1.length === 0){ // Do nothing 
+	} else if (layer1.length === 1){
+		layer1Square1.style.backgroundColor('orange');
+	} else if (layer1.length === 2){
+		layer1Square2.style.backgroundColor('orange');
+};
 
 // Instruction to Create Layer Array
 buttons.forEach(button => button.addEventListener('click', event => {
 	layer1.push(event.currentTarget.id + kitSelected);
 	console.log(layer1);
-}));
+	console.log('Layer 1 Length', layer1.length);
+	}
+));
 
-/** Function to play sound layer 1 */
+/** Function to Play Sound Layer 1 */
 function playLayer1() { 
 	console.log(layer1);
 	console.log(layer1PlayIndex);
@@ -84,41 +113,12 @@ function playLayer1() {
 	}, 400);
 };
 
-/** Function to play sound layer 2 */
-// function playLayer2() {
-// 	for (let sound of layer2) {
-// 		interval = setInterval(() => {
-// 			sounds[sound].play();
-// 		}, 1000);
-// 		console.log('Playing Layer 2!');
-// 	}
-// }
 
 // function stopAudio(){
 // 	clearInterval(interval);
 // 	console.log('Stopped!');
 // }
 
-// Layer Indicator Squares
-const soundSquares = document.getElementsByClassName('sound-squares');
-const Layer1Square1 = document.getElementById('1square1');
-const Layer1Square2 = document.getElementById('1square2');
-const Layer1Square3 = document.getElementById('1square3');
-const Layer1Square4 = document.getElementById('1square4');
-const Layer1Square5 = document.getElementById('1square5');
-const Layer1Square6 = document.getElementById('1square6');
-const Layer1Square7 = document.getElementById('1square7');
-const Layer1Square8 = document.getElementById('1square8');
-const Layer2Square1 = document.getElementById('2square1');
-const Layer2Square2 = document.getElementById('2square2');
-const Layer2Square3 = document.getElementById('2square3');
-const Layer2Square4 = document.getElementById('2square4');
-const Layer2Square5 = document.getElementById('2square5');
-const Layer2Square6 = document.getElementById('2square6');
-const Layer2Square7 = document.getElementById('2square7');
-const Layer2Square8 = document.getElementById('2square8');
-
-// To 'Light Up' Squares In-Line With Layer Array
 
 
 // DOM Elements - Control Buttons
