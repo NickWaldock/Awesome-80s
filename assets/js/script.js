@@ -53,14 +53,6 @@ highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
 restTrigger.addEventListener('click', playRest);
 
-// User Choice Array
-let layer1PlayIndex = 0;
-let layer2PlayIndex = 0;
-let layer1PlayTimeout = 300;
-let layer2PlayTimeout = 300;
-let layer1 = [];
-let layer2 = [];
-
 // Layer Indicator Squares
 const soundSquares = document.getElementsByClassName('sound-squares');
 const layer1Square1 = document.getElementById('1square1');
@@ -144,21 +136,32 @@ function resetColors() {
 	layer2Square8.classList.remove('orange');
 }
 
+// User Choice Array
+let layer1PlayIndex = 0;
+let layer2PlayIndex = 0;
+let layer1PlayTimeout = 300;
+let layer2PlayTimeout = 300;
+let layer1 = [];
+let layer2 = [];
+
 // Instruction to Create Layer Array
 buttons.forEach(button => button.addEventListener('click', event => {
-	{
+	if (layer1.length < 8) {
 		layer1.push(event.currentTarget.id + kitSelected);
 		lightUpLayer1();
 		console.log(layer1, 'Layer 1 Length:', layer1.length);
 		if (layer1.length === 8) {
 			console.log('Layer 1 is Full!');
 			addSoundLayer2();
+			event.stopPropagation(event);
 		}
 	}
 }));
 
+/** Function to Add Sounds To Layer 2 Array */
 function addSoundLayer2() {
 	buttons.forEach(button => button.addEventListener('click', event => {
+		console.log('Adding to Layer 2...');
 		if (layer2.length < 8) {
 			layer2.push(event.currentTarget.id + kitSelected);
 			lightUpLayer2();
@@ -169,8 +172,6 @@ function addSoundLayer2() {
 		}
 	}))
 };
-
-
 
 /** Function to Playback Layers */
 function playLayers() {
