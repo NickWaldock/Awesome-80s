@@ -150,18 +150,21 @@ buttons.forEach(button => button.addEventListener('click', event => {
 		layer1.push(event.currentTarget.id + kitSelected);
 		lightUpLayer1();
 		console.log(layer1, 'Layer 1 Length:', layer1.length);
+		if (layer1.length === 8){
+			console.log('Layer 1 is Full!');
+		}
 		}
 	}) 
 );
 
-// buttons.forEach(button => button.addEventListener('click', event => {
-// 	if (layer1.length > 8) {
-// 		layer2.push(event.currentTarget.id + kitSelected);
-// 		lightUpLayer2();
-// 		console.log(layer2, 'Layer 2 Length:', layer2.length);
-// 		}
-// 	}) 
-// );
+buttons.forEach(button => button.addEventListener('click', event => {
+	if (layer1.length > 8) {
+		layer2.push(event.currentTarget.id + kitSelected);
+		lightUpLayer2();
+		console.log(layer2, 'Layer 2 Length:', layer2.length);
+		}
+	}) 
+);
 
 
 
