@@ -5,15 +5,16 @@ const layerArea = document.getElementById('layer-area');
 const controlsArea = document.getElementById('controls');
 startBtn.addEventListener('click', letsGo);
 
-/** Function for the 'Lets Go!' Button */ 
-function letsGo(){
+/** Function for the 'Lets Go!' Button */
+function letsGo() {
 	const startBackground = document.getElementById('landing-background');
 	if (!startBackground.classList.contains('display')) {
 		startBackground.classList.add('hidden');
 		gameArea.classList.remove('hidden');
 		layerArea.classList.remove('hidden');
 		controlsArea.classList.remove('hidden');
-	}};
+	}
+};
 
 // Sounds 
 const sounds = {
@@ -56,7 +57,7 @@ restTrigger.addEventListener('click', playRest);
 let layer1PlayIndex = 0;
 let layer2PlayIndex = 0;
 let layer1PlayTimeout = 300;
-let layer2PlayTimeout = 300; 
+let layer2PlayTimeout = 300;
 let layer1 = [];
 let layer2 = [];
 
@@ -79,30 +80,52 @@ const layer2Square6 = document.getElementById('2square6');
 const layer2Square7 = document.getElementById('2square7');
 const layer2Square8 = document.getElementById('2square8');
 
-// To 'Light Up' Layer Squares In-Line With Layer Array Length
-function lightUp() {
-	if (layer1.length === 0){ // Do nothing 
-		} else if (layer1.length === 1){
-			layer1Square1.classList.add('orange');
-		} else if (layer1.length === 2){
-			layer1Square2.classList.add('orange');
-		} else if (layer1.length === 3){
-			layer1Square3.classList.add('orange');
-		} else if (layer1.length === 4){
-			layer1Square4.classList.add('orange');
-		} else if (layer1.length === 5){
-			layer1Square5.classList.add('orange');
-		} else if (layer1.length === 6){
-			layer1Square6.classList.add('orange');
-		} else if (layer1.length === 7){
-			layer1Square7.classList.add('orange');
-		} else if (layer1.length === 8){
-			layer1Square8.classList.add('orange');
+/** Function to 'Light Up' Layer 1 Squares In-Line With Layer 1 Array Length */
+function lightUpLayer1() {
+	if (layer1.length === 0) { // Do nothing 
+	} else if (layer1.length === 1) {
+		layer1Square1.classList.add('orange');
+	} else if (layer1.length === 2) {
+		layer1Square2.classList.add('orange');
+	} else if (layer1.length === 3) {
+		layer1Square3.classList.add('orange');
+	} else if (layer1.length === 4) {
+		layer1Square4.classList.add('orange');
+	} else if (layer1.length === 5) {
+		layer1Square5.classList.add('orange');
+	} else if (layer1.length === 6) {
+		layer1Square6.classList.add('orange');
+	} else if (layer1.length === 7) {
+		layer1Square7.classList.add('orange');
+	} else if (layer1.length === 8) {
+		layer1Square8.classList.add('orange');
 	}
-}
+};
+
+/** Function to 'Light Up' Layer 2 Squares In-Line With Layer 2 Array Length */
+function lightUpLayer2() {
+	if (layer2.length === 0) { // Do nothing 
+	} else if (layer2.length === 1) {
+		layer2Square1.classList.add('orange');
+	} else if (layer2.length === 2) {
+		layer2Square2.classList.add('orange');
+	} else if (layer2.length === 3) {
+		layer2Square3.classList.add('orange');
+	} else if (layer2.length === 4) {
+		layer2Square4.classList.add('orange');
+	} else if (layer2.length === 5) {
+		layer2Square5.classList.add('orange');
+	} else if (layer2.length === 6) {
+		layer2Square6.classList.add('orange');
+	} else if (layer2.length === 7) {
+		layer2Square7.classList.add('orange');
+	} else if (layer2.length === 8) {
+		layer2Square8.classList.add('orange');
+	}
+};
 
 /** Function to Reset Layer Squares */
-function resetColors(){
+function resetColors() {
 	layer1Square1.classList.remove('orange');
 	layer1Square2.classList.remove('orange');
 	layer1Square3.classList.remove('orange');
@@ -111,34 +134,57 @@ function resetColors(){
 	layer1Square6.classList.remove('orange');
 	layer1Square7.classList.remove('orange');
 	layer1Square8.classList.remove('orange');
+	layer2Square1.classList.remove('orange');
+	layer2Square2.classList.remove('orange');
+	layer2Square3.classList.remove('orange');
+	layer2Square4.classList.remove('orange');
+	layer2Square5.classList.remove('orange');
+	layer2Square6.classList.remove('orange');
+	layer2Square7.classList.remove('orange');
+	layer2Square8.classList.remove('orange');
 }
 
 // Instruction to Create Layer Array
 buttons.forEach(button => button.addEventListener('click', event => {
-	layer1.push(event.currentTarget.id + kitSelected);
-	lightUp();
-	console.log(layer1);
-	console.log('Layer 1 Length', layer1.length);
-	}
-));
+	if (layer1.length < 8) {
+		layer1.push(event.currentTarget.id + kitSelected);
+		lightUpLayer1();
+		console.log(layer1, 'Layer 1 Length:', layer1.length);
+		}
+	}) 
+);
 
-/** Function to Play Sound Layer 1 */
-function playLayer1() { 
+// buttons.forEach(button => button.addEventListener('click', event => {
+// 	if (layer1.length > 8) {
+// 		layer2.push(event.currentTarget.id + kitSelected);
+// 		lightUpLayer2();
+// 		console.log(layer2, 'Layer 2 Length:', layer2.length);
+// 		}
+// 	}) 
+// );
+
+
+
+/** Function to Playback Layers */
+function playLayers() {
 	console.log(layer1);
 	console.log(layer1PlayIndex);
-	if (layer1PlayIndex >= layer1.length) { 
+	if (layer1PlayIndex >= layer1.length) {
 		console.log('layer1 index', layer1PlayIndex, 'length', layer1);
 		// Exit the layer
 		return;
 	}
-	setTimeout(function() {
+	setTimeout(function () {
 		let sound = layer1[layer1PlayIndex];
 		sounds[sound].play();
 		layer1PlayIndex++;
-		playLayer1();
+		playLayers();
 	}, 400);
 };
+/** Function to Switch Layers When Layer 1 Array = 8 */
+function switchLayer() {
 
+}
 
 // function stopAudio(){
 // 	clearInterval(interval);
@@ -155,7 +201,7 @@ const playBtn = document.getElementById('play-btn');
 const stopBtn = document.getElementById('stop-btn');
 
 // Event Listeners
-playBtn.addEventListener('click', playLayer1);
+playBtn.addEventListener('click', playLayers);
 // stopBtn.addEventListener('click', stopAudio);
 resetBtn.addEventListener('click', resetLayers);
 
@@ -172,7 +218,7 @@ kitSelector.addEventListener('change', (event) => {
 });
 
 /** Reset The Layers */
-function resetLayers(){
+function resetLayers() {
 	layer1 = [];
 	layer2 = [];
 	layer1PlayIndex = 0;
