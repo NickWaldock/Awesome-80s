@@ -174,7 +174,7 @@ function addSoundLayer2() {
 };
 
 /** Function to Playback Layers */
-function playLayers() {
+function playLayer1() {
 	console.log(layer1);
 	console.log(layer1PlayIndex);
 	if (layer1PlayIndex >= layer1.length) {
@@ -186,13 +186,26 @@ function playLayers() {
 		let sound = layer1[layer1PlayIndex];
 		sounds[sound].play();
 		layer1PlayIndex++;
-		playLayers();
+		playLayer1();
 	}, 400);
 };
-/** Function to Switch Layers When Layer 1 Array = 8 */
-function switchLayer() {
 
-}
+function playLayer2() {
+	console.log(layer1);
+	console.log(layer1PlayIndex);
+	if (layer1PlayIndex >= layer1.length) {
+		console.log('layer1 index', layer1PlayIndex, 'length', layer1);
+		// Exit the layer
+		return;
+	}
+	setTimeout(function () {
+		let sound = layer2[layer2PlayIndex];
+		sounds[sound].play();
+		layer2PlayIndex++;
+		playLayer2();
+	}, 400);
+};
+
 
 // function stopAudio(){
 // 	clearInterval(interval);
@@ -209,7 +222,8 @@ const playBtn = document.getElementById('play-btn');
 const stopBtn = document.getElementById('stop-btn');
 
 // Event Listeners
-playBtn.addEventListener('click', playLayers);
+playBtn.addEventListener('click', playLayer1);
+playBtn.addEventListener('click', playLayer2);
 // stopBtn.addEventListener('click', stopAudio);
 resetBtn.addEventListener('click', resetLayers);
 
