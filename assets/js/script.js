@@ -146,25 +146,29 @@ function resetColors() {
 
 // Instruction to Create Layer Array
 buttons.forEach(button => button.addEventListener('click', event => {
-	if (layer1.length < 8) {
+	{
 		layer1.push(event.currentTarget.id + kitSelected);
 		lightUpLayer1();
 		console.log(layer1, 'Layer 1 Length:', layer1.length);
-		if (layer1.length === 8){
+		if (layer1.length === 8) {
 			console.log('Layer 1 is Full!');
+			addSoundLayer2();
 		}
-		}
-	}) 
-);
+	}
+}));
 
-buttons.forEach(button => button.addEventListener('click', event => {
-	if (layer1.length > 8) {
-		layer2.push(event.currentTarget.id + kitSelected);
-		lightUpLayer2();
-		console.log(layer2, 'Layer 2 Length:', layer2.length);
+function addSoundLayer2() {
+	buttons.forEach(button => button.addEventListener('click', event => {
+		if (layer2.length < 8) {
+			layer2.push(event.currentTarget.id + kitSelected);
+			lightUpLayer2();
+			console.log(layer2, 'Layer 2 Length:', layer2.length);
 		}
-	}) 
-);
+		if (layer2.length === 8) {
+			console.log('Layer 2 is Full!');
+		}
+	}))
+};
 
 
 
