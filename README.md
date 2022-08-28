@@ -60,7 +60,7 @@ For entertainment purposes only.
 
 # Technologies
 
-# Testing
+
 Languages used in this site are HTML 5, CSS3 and JavaScript.
 
 Additional technologies include: 
@@ -81,8 +81,11 @@ Additional technologies include:
   - Online IDE for all coding work and site file management, terminal was used to add, commit, and push to Github
   <br />
 
+# Testing
 ### Troubleshooting 
 issue where rest throws error of 'Uncaught type error, undefined reading 'play''
+issue where both layers are filled after reset
+issue where play button wont play a second time
 
 ### Development issues
 getting layer 1 to a fixed length and moving user choice to layer 2

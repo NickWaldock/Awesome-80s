@@ -223,9 +223,9 @@ body {
     background-color: rgba(138, 43, 226);
     border: 4px solid black;
     margin: auto;
-    font-family: 'arcade', monospace;
 
 }
+
 
 .layer-indicator {
     font-family: 'arcade', monospace;

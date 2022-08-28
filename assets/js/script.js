@@ -247,6 +247,8 @@ function resetLayers() {
 	layer2PlayIndex = 0;
 	resetColors();
 	console.log('Reset!');
+	console.log('Layer 1 length:', layer1.length);
+	console.log('Layer 2 length:', layer2.length);
 }
 
 // Trigger Functions
