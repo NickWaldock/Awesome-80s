@@ -191,18 +191,14 @@ function playLayers() {
 // User Select Timeout Interval
 const bpmInput = document.getElementById('timeoutSelector');
 bpmInput.addEventListener('input', setBpm);
-
-var bpm = 0;
-var selectTimeout = bpm;
+var selectTimeout = 0;
 
 function setBpm(){
-	selectTimeout = bpmInput.value;
-	console.log(bpmInput.value);
+	var bpm = bpmInput.value;
+	selectTimeout = 60000 / bpm; 
+	console.log('Playback speed set to ' + selectTimeout + ' ms');
 };
 
-function checkBpm(){
-	
-};
 
 
 /** Function to Play Layer 1 and Set Timeout */

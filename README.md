@@ -59,8 +59,6 @@ For entertainment purposes only.
 
 
 # Technologies
-
-
 Languages used in this site are HTML 5, CSS3 and JavaScript.
 
 Additional technologies include: 
@@ -94,17 +92,6 @@ getting the play button to work multiple times
 # Deployment
 
 # References & Acknoledgements
-The following sites were used for syntax checking, problem solving, and general referencing:
-[Borislav Hadzhiev](https://bobbyhadz.com/)
-[MDN] (https://developer.mozilla.org/en-US/)
-[Speaking JavaScript](http://speakingjs.com/es5/index.html#toc_ch11)
-[Stack Overflow](https://stackoverflow.com/)
-[Grepper](https://www.codegrepper.com/)
-[Green Roots Blog](https://blog.greenroots.info/)
-[The Web Dev](https://thewebdev.info/)
-[Ceos3c](https://www.ceos3c.com/)
-
-My thanks and gratitude go to my project mentor Marcel for encouraging me to go beyond my capabilities and providing me with thought-provoking ideas; to the tutors at Code Institute for their assistance with my stumbling blocks
 
 ## Icons
 <div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/smashingstocks" title="smashingstocks">smashingstocks</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
@@ -120,6 +107,11 @@ https://www.dafont.com/hauser.font
 
 ### Arcade Font
 https://www.dafont.com/arcade-classic-2.font
+<br>
+<br>
+
+## Audio
+All audio samples are royalty-free and from the [Samples From Mars by Splice](https://splice.com/sounds/samples-from-mars?utm_source=google&utm_medium=cpc&utm_campaign=row-en_multi_gs_ua_sounds_20211109_nonbrand-dsa_trials&utm_content=sounds&utm_term=&campaignid=15225194396&adgroupid=134877411492&adid=560294584521&gclid=CjwKCAjw6raYBhB7EiwABge5KgkUHyR75PIaEIDbgGdvhrvmnvO7wxKi_vaG05wHlBbLCLtzfrv6URoCUKQQAvD_BwE)
 <br>
 <br>
 
@@ -140,10 +132,19 @@ https://www.freeconvert.com/
 Links and help
 https://www.delftstack.com/howto/javascript/play-audio-javascript/#:~:text=We%20can%20load%20an%20audio,play()%20function.&text=In%20the%20above%20code%2C%20we,and%20then%20simply%20play%20it.
 
-### Animations 
-[Webcode](https://webcode.tools/generators/css/keyframe-animation)
 
+The following sites were used for syntax checking, problem solving, and general referencing:
+[Borislav Hadzhiev](https://bobbyhadz.com/)
+[MDN] (https://developer.mozilla.org/en-US/)
+[Speaking JavaScript](http://speakingjs.com/es5/index.html#toc_ch11)
+[Stack Overflow](https://stackoverflow.com/)
+[Grepper](https://www.codegrepper.com/)
+[Green Roots Blog](https://blog.greenroots.info/)
+[The Web Dev](https://thewebdev.info/)
+[Ceos3c](https://www.ceos3c.com/)
+[Studio Slave](https://studioslave.com/tempo-bpm-to-millisecond-ms-conversion-calculator-studio-slave-tools/) For ms to BPM conversions
+[Webcode](https://webcode.tools/generators/css/keyframe-animation) For css animations
 
+### Acknoledgements
+My thanks and gratitude go to my project mentor Marcel for encouraging me to go beyond my capabilities and providing me with thought-provoking ideas; to the tutors at Code Institute for their assistance with my stumbling blocks
 
-
-all audio samples are royalty-free

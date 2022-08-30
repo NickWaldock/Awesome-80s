@@ -91,7 +91,8 @@ body {
     animation: scaleIn 2s linear 0s 1 normal forwards;
 
 }
-
+/* Ref Code: 
+https://webcode.tools/generators/css/keyframe-animation*/
 @keyframes scaleIn {
 	0% {
 		transform: scale(0);
@@ -108,19 +109,24 @@ body {
 }
 
 .instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
     list-style-type: none;
     font-family: 'arcade', monospace;
     word-spacing: 10px;
     letter-spacing: 2px;
-    font-size: 3vh;
-    text-align: center;
+    font-size: 25px;
     margin: 0;
     padding: 10px;
 
 }
 
 .instructions li {
-    padding: 0.7rem;
+    padding: 0.5rem;
+    
 
 }
 
@@ -128,15 +134,28 @@ body {
     height: 2rem;
     width: auto;
     transform: translateY(5px);
+    padding: 10px;
 
 }
 
+#drum-pads-img {
+    height: 100px;
+    width: auto;
+
+}
+
+.layer-img {
+
+    height: 50px;
+    width: auto;
+}
+
 #start-btn {
-    width: 20%;
-    height: auto;
+    width: 100px;
+    height: 70px;
     color: rgba(138, 43, 226);
     font-family: 'arcade', monospace;
-    font-size: 4vw;
+    font-size: 25px;
     text-align: center;
     border: 5px solid black;
     border-radius: 10%;
@@ -144,6 +163,7 @@ body {
     margin-bottom: 10px;
 
 }
+
 
 /* Game Area */
 #game-area {
@@ -291,9 +311,34 @@ body {
     grid-row-start: 8;
     background-color: rgba(138, 43, 226, 0.7);
     border: solid 7px black;
-    height: 50%;
+    height: 100%;
     align-self: end;
     text-align: center;
     font-family: 'arcade', monospace;
+    font-size: 30px;
+}
+
+.footer-text {
+    font-family: 'arcade', monospace;
+    font-size: 30px;
+    color: orange;
+    word-spacing: 1rem;
+    
+}
+
+.footer-text a {
+    text-decoration: none;
+    
+}
+
+.footer-text a:visited {
+    color: orange;
+    text-decoration: none;
+
+}
+
+.footer-text a:hover {
+    color: red;
+    text-decoration: none;
 
 }
