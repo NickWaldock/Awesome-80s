@@ -176,7 +176,8 @@ function addSoundLayer2() {
 /** Function to Playback Layers */
 function playLayers() {
 	if (layer1.length && layer2.length < 8){
-		alert('Choose more groovy sounds!')
+		console.log('Layers are not full!')
+		alert('Choose more groovy sounds!') // Playback only to initiate when both layers are full
 	} else {
 		console.log('Playing!')
 		playLayer1();
