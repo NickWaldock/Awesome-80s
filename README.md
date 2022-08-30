@@ -19,7 +19,7 @@
 <br />
 
 # Introduction
-The 'Awesome 80s Drum Machine!' is an 80s inspired interactive music making platorm. This site is a fun and engaging throwback to the sounds of the 80s and the sounds that defined a generation of music. 
+The 'Awesome 80s Drum Machine!' is an 80s inspired interactive music making platorm. This site is a fun and engaging throwback to the sounds of the 80s and the sounds that defined a generation of music. This project represents 
 <br>
 <br>
 For entertainment purposes only.
@@ -94,7 +94,17 @@ getting the play button to work multiple times
 # Deployment
 
 # References & Acknoledgements
+The following sites were used for syntax checking, problem solving, and general referencing:
+[Borislav Hadzhiev](https://bobbyhadz.com/)
+[MDN] (https://developer.mozilla.org/en-US/)
+[Speaking JavaScript](http://speakingjs.com/es5/index.html#toc_ch11)
+[Stack Overflow](https://stackoverflow.com/)
+[Grepper](https://www.codegrepper.com/)
+[Green Roots Blog](https://blog.greenroots.info/)
+[The Web Dev](https://thewebdev.info/)
+[Ceos3c](https://www.ceos3c.com/)
 
+My thanks and gratitude go to my project mentor Marcel for encouraging me to go beyond my capabilities and providing me with thought-provoking ideas; to the tutors at Code Institute for their assistance with my stumbling blocks
 
 ## Icons
 <div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/smashingstocks" title="smashingstocks">smashingstocks</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

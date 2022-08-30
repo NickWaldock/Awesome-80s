@@ -139,8 +139,6 @@ function resetColors() {
 // User Choice Array
 let layer1PlayIndex = 0;
 let layer2PlayIndex = 0;
-let layer1PlayTimeout = 300;
-let layer2PlayTimeout = 300;
 let layer1 = [];
 let layer2 = [];
 
@@ -175,13 +173,34 @@ function addSoundLayer2() {
 
 /** Function to Playback Layers */
 function playLayers() {
-	if (layer1.length && layer2.length < 8){
+	if (layer1.length && layer2.length < 8){ // Playback only to initiate when both layers are full
 		console.log('Layers are not full!')
-		alert('Choose more groovy sounds!') // Playback only to initiate when both layers are full
+		alert('Choose more groovy sounds!') 
 	} else {
+		checkBpm(); // To check if the user has inputted a value
 		console.log('Playing!')
-		playLayer1();
-		playLayer2();
+		playLayer1(); // Playback
+		playLayer2(); // Playback
+	}
+};
+
+
+// User Select Timeout Interval
+const bpmInput = document.getElementById('timeoutSelector');
+bpmInput.addEventListener('input', setBpm);
+
+var bpm = 0;
+var selectTimeout = bpm;
+
+function setBpm(){
+	selectTimeout = bpmInput.value;
+	console.log(bpmInput.value);
+};
+
+function checkBpm(){
+	if (bpmInput.input === 0){
+		alert('Please input a speed to play groovy sounds!')
+		console.log('BPM required')
 	}
 };
 
@@ -199,8 +218,9 @@ function playLayer1() {
 		sounds[sound].play();
 		layer1PlayIndex++;
 		playLayer1();
-	}, 400);
-}
+	}, selectTimeout);
+};
+
 /** Function to Play Layer 2 and Set Timeout */
 function playLayer2() {
 	console.log(layer1);
@@ -215,8 +235,8 @@ function playLayer2() {
 		sounds[sound].play();
 		layer2PlayIndex++;
 		playLayer2();
-	}, 400);
-}
+	}, selectTimeout);
+};
 
 
 // DOM Elements - Control Buttons
@@ -227,9 +247,11 @@ const resetBtn = document.getElementById('reset-btn');
 const playBtn = document.getElementById('play-btn');
 const stopBtn = document.getElementById('stop-btn');
 
+
 // Event Listeners
 playBtn.addEventListener('click', playLayers);
 resetBtn.addEventListener('click', resetLayers);
+
 
 // Control Functions
 // Kit (sounds) selector
