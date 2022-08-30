@@ -177,12 +177,15 @@ function playLayers() {
 		console.log('Layers are not full!')
 		alert('Choose more groovy sounds!') 
 	} else {
-		checkBpm(); // To check if the user has inputted a value
-		console.log('Playing!')
-		playLayer1(); // Playback
-		playLayer2(); // Playback
-	}
-};
+		if (bpmInput.value.length == 0){
+			alert('Please input a speed to play groovy sounds!')
+			console.log('BPM required')
+		} else {
+			console.log('Playing!')
+			playLayer1(); // Playback
+			playLayer2(); // Playback
+		}
+	}};
 
 
 // User Select Timeout Interval
@@ -198,11 +201,9 @@ function setBpm(){
 };
 
 function checkBpm(){
-	if (bpmInput.input === 0){
-		alert('Please input a speed to play groovy sounds!')
-		console.log('BPM required')
-	}
+	
 };
+
 
 /** Function to Play Layer 1 and Set Timeout */
 function playLayer1() {
