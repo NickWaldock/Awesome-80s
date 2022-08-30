@@ -30,7 +30,7 @@ const sounds = {
 	highTom2: new Audio('assets/audio/kit2/high-tom2.wav', 'assets/audio/kit2/high-tom2.mp3'),
 	lowTom1: new Audio('assets/audio/kit1/low-tom1.wav', 'assets/audio/kit1/low-tom1.mp3'),
 	lowTom2: new Audio('assets/audio/kit2/low-tom2.wav', 'assets/audio/kit2/low-tom2.mp3'),
-	rest: new Audio('assets/audio/kit1/rest.wav', 'assets/audio/kit1/rest.mp3'),
+	rest1: new Audio('assets/audio/kit1/rest.wav', 'assets/audio/kit1/rest.mp3'),
 	rest2: new Audio('assets/audio/kit2/rest.wav', 'assets/audio/kit2/rest.mp3'),
 };
 
@@ -44,7 +44,7 @@ const lowTomTrigger = document.getElementById('lowTom');
 const restTrigger = document.getElementById('rest');
 const buttons = document.querySelectorAll('.trigger');
 
-// Event Listeners - for sounds
+// Event Listeners - For Sounds
 bassDrumTrigger.addEventListener('click', playBassDrum);
 snareDrumTrigger.addEventListener('click', playSnareDrum);
 hatsTrigger.addEventListener('click', playHats);
@@ -174,6 +174,17 @@ function addSoundLayer2() {
 };
 
 /** Function to Playback Layers */
+function playLayers() {
+	if (layer1.length && layer2.length < 8){
+		alert('Choose more groovy sounds!')
+	} else {
+		console.log('Playing!')
+		playLayer1();
+		playLayer2();
+	}
+};
+
+/** Function to Play Layer 1 and Set Timeout */
 function playLayer1() {
 	console.log(layer1);
 	console.log(layer1PlayIndex);
@@ -188,8 +199,8 @@ function playLayer1() {
 		layer1PlayIndex++;
 		playLayer1();
 	}, 400);
-};
-
+}
+/** Function to Play Layer 2 and Set Timeout */
 function playLayer2() {
 	console.log(layer1);
 	console.log(layer1PlayIndex);
@@ -204,13 +215,7 @@ function playLayer2() {
 		layer2PlayIndex++;
 		playLayer2();
 	}, 400);
-};
-
-
-// function stopAudio(){
-// 	clearInterval(interval);
-// 	console.log('Stopped!');
-// }
+}
 
 
 // DOM Elements - Control Buttons
@@ -222,9 +227,7 @@ const playBtn = document.getElementById('play-btn');
 const stopBtn = document.getElementById('stop-btn');
 
 // Event Listeners
-playBtn.addEventListener('click', playLayer1);
-playBtn.addEventListener('click', playLayer2);
-// stopBtn.addEventListener('click', stopAudio);
+playBtn.addEventListener('click', playLayers);
 resetBtn.addEventListener('click', resetLayers);
 
 // Control Functions
@@ -322,8 +325,8 @@ function playLowTom() {
 /** Play the rest sample */
 function playRest() {
 	if (kitSelector.checked === false) {
-		sounds.rest.currentTime = 0;
-		sounds.rest.play();
+		sounds.rest1.currentTime = 0;
+		sounds.rest1.play();
 	} else {
 		sounds.rest2.currentTime = 0;
 		sounds.rest2.play();
