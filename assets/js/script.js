@@ -17,22 +17,38 @@ function letsGo() {
 };
 
 // Sounds 
+const bassDrum1 = new Howl({src:['assets/audio/kit1/bass-drum1.wav', 'assets/audio/kit1/bass-drum1.mp3']});
+const bassDrum2 = new Howl({src:['assets/audio/kit2/bass-drum2.wav', 'assets/audio/kit2/bass-drum2.mp3']});
+const snareDrum1 = new Howl({src:['assets/audio/kit1/snare-drum1.wav', 'assets/audio/kit1/snare-drum1.mp3']});
+const snareDrum2 = new Howl({src:['assets/audio/kit2/snare-drum2.wav', 'assets/audio/kit2/snare-drum2.mp3']});
+const hats1 = new Howl({src:['assets/audio/kit1/hats1.wav', 'assets/audio/kit1/hats1.mp3']});
+const hats2 = new Howl({src:['assets/audio/kit2/hats2.wav', 'assets/audio/kit2/hats2.mp3']});
+const crash1 = new Howl({src:['assets/audio/kit1/crash1.wav', 'assets/audio/kit1/crash1.mp3']});
+const crash2 = new Howl({src:['assets/audio/kit2/crash2.wav', 'assets/audio/kit2/crash2.mp3']});
+const highTom1 = new Howl({src:['assets/audio/kit1/high-tom1.wav', 'assets/audio/kit1/high-tom1.mp3']});
+const highTom2 = new Howl({src:['assets/audio/kit2/high-tom2.wav', 'assets/audio/kit2/high-tom2.mp3']});
+const lowTom1 = new Howl({src:['assets/audio/kit1/low-tom1.wav', 'assets/audio/kit1/low-tom1.mp3']});
+const lowTom2 = new Howl({src:['assets/audio/kit2/low-tom2.wav', 'assets/audio/kit2/low-tom2.mp3']});
+const rest1 = new Howl({src:['assets/audio/kit1/rest.wav', 'assets/audio/kit1/rest.mp3']});
+const rest2 = new Howl({src:['assets/audio/kit2/rest.wav', 'assets/audio/kit2/rest.mp3']});
+
 const sounds = {
-	bassDrum1: new Audio('assets/audio/kit1/bass-drum1.wav', 'assets/audio/kit1/bass-drum1.mp3'),
-	bassDrum2: new Audio('assets/audio/kit2/bass-drum2.wav', 'assets/audio/kit2/bass-drum2.mp3'),
-	snareDrum1: new Audio('assets/audio/kit1/snare-drum1.wav', 'assets/audio/kit1/snare-drum1.mp3'),
-	snareDrum2: new Audio('assets/audio/kit2/snare-drum2.wav', 'assets/audio/kit2/snare-drum2.mp3'),
-	hats1: new Audio('assets/audio/kit1/hats1.wav', 'assets/audio/kit1/hats1.mp3'),
-	hats2: new Audio('assets/audio/kit2/hats2.wav', 'assets/audio/kit2/hats2.mp3'),
-	crash1: new Audio('assets/audio/kit1/crash1.wav', 'assets/audio/kit1/crash1.mp3'),
-	crash2: new Audio('assets/audio/kit2/crash2.wav', 'assets/audio/kit2/crash2.mp3'),
-	highTom1: new Audio('assets/audio/kit1/high-tom1.wav', 'assets/audio/kit1/high-tom1.mp3'),
-	highTom2: new Audio('assets/audio/kit2/high-tom2.wav', 'assets/audio/kit2/high-tom2.mp3'),
-	lowTom1: new Audio('assets/audio/kit1/low-tom1.wav', 'assets/audio/kit1/low-tom1.mp3'),
-	lowTom2: new Audio('assets/audio/kit2/low-tom2.wav', 'assets/audio/kit2/low-tom2.mp3'),
-	rest1: new Audio('assets/audio/kit1/rest.wav', 'assets/audio/kit1/rest.mp3'),
-	rest2: new Audio('assets/audio/kit2/rest.wav', 'assets/audio/kit2/rest.mp3'),
-};
+	bassDrum1,
+	bassDrum2,
+	snareDrum1,
+	snareDrum2,
+	hats1,
+	hats2,
+	crash1,
+	crash2,
+	highTom1,
+	highTom2,
+	lowTom1,
+	lowTom2,
+	rest1,
+	rest1
+
+}
 
 // DOM Elements - Icon Triggers
 const bassDrumTrigger = document.getElementById('bassDrum');
@@ -142,35 +158,6 @@ let layer2PlayIndex = 0;
 let layer1 = [];
 let layer2 = [];
 
-// // Instruction to Create Layer Array
-// buttons.forEach(button => button.addEventListener('click', event => {
-// 	if (layer1.length < 8) {
-// 		layer1.push(event.currentTarget.id + kitSelected);
-// 		lightUpLayer1();
-// 		console.log(layer1, 'Layer 1 Length:', layer1.length);
-// 		if (layer1.length === 8) {
-// 			console.log('Layer 1 is Full!');
-// 			addSoundLayer2();
-// 			event.stopPropagation(event);
-// 		}
-// 	}
-// }));
-
-// /** Function to Add Sounds To Layer 2 Array */
-// function addSoundLayer2() {
-// 	buttons.forEach(button => button.addEventListener('click', event => {
-// 		console.log('Adding to Layer 2...');
-// 		if (layer2.length < 8) {
-// 			layer2.push(event.currentTarget.id + kitSelected);
-// 			lightUpLayer2();
-// 			console.log(layer2, 'Layer 2 Length:', layer2.length);
-// 		}
-// 		if (layer2.length === 8) {
-// 			console.log('Layer 2 is Full!');
-// 		}
-// 	}))
-// };
-
 function addSound(event){
 	if (layer1.length < 8) {
 		layer1.push(event.currentTarget.id + kitSelected);
@@ -188,10 +175,10 @@ function addSound(event){
 
 buttons.forEach(button => button.addEventListener('click', addSound))
 
-
-
 /** Function to Playback Layers */
 function playLayers() {
+	layer1PlayIndex = 0;
+	layer2PlayIndex = 0;
 	if (layer1.length && layer2.length < 8){ // Playback only to initiate when both layers are full
 		console.log('Layers are not full!')
 		alert('Choose more groovy sounds!') 
@@ -239,8 +226,6 @@ function playLayer1() {
 
 /** Function to Play Layer 2 and Set Timeout */
 function playLayer2() {
-	// console.log(layer2);
-	// console.log(layer2PlayIndex);
 	if (layer2PlayIndex >= layer2.length) {
 		console.log('layer2 index', layer2PlayIndex, 'length', layer2);
 		// Exit the layer
@@ -263,11 +248,9 @@ const resetBtn = document.getElementById('reset-btn');
 const playBtn = document.getElementById('play-btn');
 const stopBtn = document.getElementById('stop-btn');
 
-
 // Event Listeners
 playBtn.addEventListener('click', playLayers);
 resetBtn.addEventListener('click', resetLayers);
-
 
 // Control Functions
 // Kit (sounds) selector
@@ -294,7 +277,7 @@ function resetLayers() {
 	console.log(layer1PlayIndex);
 	console.log(layer2PlayIndex);
 	
-}
+};
 
 // Trigger Functions
 /** Play the bass drum samples */
@@ -374,3 +357,4 @@ function playRest() {
 		sounds.rest2.play();
 	}
 }
+
