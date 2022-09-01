@@ -1,4 +1,4 @@
-// Initial & Core DOM Elements
+// Initial DOM Elements
 const startBtn = document.getElementById('start-btn');
 const gameArea = document.getElementById('game-area');
 const layerArea = document.getElementById('layer-area');
@@ -7,7 +7,7 @@ const instructionsBtn = document.getElementById('instructions-rtn');
 const startBackground = document.getElementById('landing-background');
 startBtn.addEventListener('click', letsGo);
 
-/** Function for the 'Lets Go!' Button */
+/** 'Lets Go!' Button */
 function letsGo() {
 	if (!startBackground.classList.contains('display')) {
 		startBackground.classList.add('hidden');
@@ -62,7 +62,7 @@ const lowTomTrigger = document.getElementById('lowTom');
 const restTrigger = document.getElementById('rest');
 const buttons = document.querySelectorAll('.trigger');
 
-// Event Listeners - For Sounds
+// Event Listeners - Triggers & Sounds
 bassDrumTrigger.addEventListener('click', playBassDrum);
 snareDrumTrigger.addEventListener('click', playSnareDrum);
 hatsTrigger.addEventListener('click', playHats);
@@ -70,6 +70,81 @@ crashTrigger.addEventListener('click', playCrash);
 highTomTrigger.addEventListener('click', playHighTom);
 lowTomTrigger.addEventListener('click', playLowTom);
 restTrigger.addEventListener('click', playRest);
+
+// User Selection Array
+let layer1PlayIndex = 0;
+let layer2PlayIndex = 0;
+let layer1 = [];
+let layer2 = [];
+
+/** Add sounds to layers */
+function addSound(event){
+	if (layer1.length < 8) {
+		layer1.push(event.currentTarget.id + kitSelected);
+		lightUpLayer1();
+		console.log(layer1, 'Layer 1 Length:', layer1.length);
+	} else if (layer1.length === 8) {
+		console.log('Layer 1 is Full! Adding to Layer 2...');
+		layer2.push(event.currentTarget.id + kitSelected);
+		lightUpLayer2();
+		console.log(layer2, 'Layer 2 Length:', layer2.length);
+	} else if (layer2.length === 8) {
+		console.log('Layer 2 is Full!');
+		event.stopPropagation(event);
+	}};
+
+buttons.forEach(button => button.addEventListener('click', addSound));
+
+/** Playback layers */
+function playLayers() {
+	layer1PlayIndex = 0;
+	layer2PlayIndex = 0;
+	if (layer1.length && layer2.length < 8){ // Playback only to initiate when both layers are full
+		console.log('Layers are not full!')
+		alert('Choose more groovy sounds!') 
+	} else {
+		if (bpmInput.value.length == 0){
+			alert('Please input a speed to play groovy sounds!')
+			console.log('BPM required')
+		} else {
+			console.log('Playing!')
+			playLayer1(); // Playback
+			playLayer2(); // Playback
+		}
+	}};
+
+/** Play layer 1 and set timeout */
+function playLayer1() {
+	console.log(layer1);
+	console.log(layer1PlayIndex);
+	if (layer1PlayIndex >= layer1.length) {
+		console.log('layer1 index', layer1PlayIndex, 'length', layer1);
+		// Exit the layer
+		return;
+	}
+	setTimeout(function () {
+		let sound = layer1[layer1PlayIndex];
+		sounds[sound].play();
+		layer1PlayIndex++;
+		playLayer1();
+	}, selectTimeout);
+};
+
+/** Play layer 2 and set timeout */
+function playLayer2() {
+	if (layer2PlayIndex >= layer2.length) {
+		console.log('layer2 index', layer2PlayIndex, 'length', layer2);
+		// Exit the layer
+		return;
+	}
+	setTimeout(function () {
+		let sound = layer2[layer2PlayIndex];
+		sounds[sound].play();
+		layer2PlayIndex++;
+		playLayer2();
+	}, selectTimeout);
+};
+
 
 // Layer Indicator Squares
 const soundSquares = document.getElementsByClassName('sound-squares');
@@ -90,7 +165,7 @@ const layer2Square6 = document.getElementById('2square6');
 const layer2Square7 = document.getElementById('2square7');
 const layer2Square8 = document.getElementById('2square8');
 
-/** Function to 'Light Up' Layer 1 Squares In-Line With Layer 1 Array Length */
+/** 'Light Up' layer 1 squares in-line with layer 1 array aength */
 function lightUpLayer1() {
 	if (layer1.length === 0) { // Do nothing 
 	} else if (layer1.length === 1) {
@@ -112,7 +187,7 @@ function lightUpLayer1() {
 	}
 };
 
-/** Function to 'Light Up' Layer 2 Squares In-Line With Layer 2 Array Length */
+/** 'Light Up' layer 2 squares in-line with layer 2 array length */
 function lightUpLayer2() {
 	if (layer2.length === 0) { // Do nothing 
 	} else if (layer2.length === 1) {
@@ -134,7 +209,7 @@ function lightUpLayer2() {
 	}
 };
 
-/** Function to Reset Layer Squares */
+/** Reset layer squares */
 function resetColors() {
 	layer1Square1.classList.remove('orange');
 	layer1Square2.classList.remove('orange');
@@ -153,82 +228,6 @@ function resetColors() {
 	layer2Square7.classList.remove('orange');
 	layer2Square8.classList.remove('orange');
 }
-
-// User Choice Array
-let layer1PlayIndex = 0;
-let layer2PlayIndex = 0;
-let layer1 = [];
-let layer2 = [];
-
-function addSound(event){
-	if (layer1.length < 8) {
-		layer1.push(event.currentTarget.id + kitSelected);
-		lightUpLayer1();
-		console.log(layer1, 'Layer 1 Length:', layer1.length);
-	} else if (layer1.length === 8) {
-		console.log('Layer 1 is Full! Adding to Layer 2...');
-		layer2.push(event.currentTarget.id + kitSelected);
-		lightUpLayer2();
-		console.log(layer2, 'Layer 2 Length:', layer2.length);
-	} else if (layer2.length === 8) {
-		console.log('Layer 2 is Full!');
-		event.stopPropagation(event);
-	}};
-
-buttons.forEach(button => button.addEventListener('click', addSound));
-
-/** Function to Playback Layers */
-function playLayers() {
-	layer1PlayIndex = 0;
-	layer2PlayIndex = 0;
-	if (layer1.length && layer2.length < 8){ // Playback only to initiate when both layers are full
-		console.log('Layers are not full!')
-		alert('Choose more groovy sounds!') 
-	} else {
-		if (bpmInput.value.length == 0){
-			alert('Please input a speed to play groovy sounds!')
-			console.log('BPM required')
-		} else {
-			console.log('Playing!')
-			playLayer1(); // Playback
-			playLayer2(); // Playback
-		}
-	}};
-
-
-
-/** Function to Play Layer 1 and Set Timeout */
-function playLayer1() {
-	console.log(layer1);
-	console.log(layer1PlayIndex);
-	if (layer1PlayIndex >= layer1.length) {
-		console.log('layer1 index', layer1PlayIndex, 'length', layer1);
-		// Exit the layer
-		return;
-	}
-	setTimeout(function () {
-		let sound = layer1[layer1PlayIndex];
-		sounds[sound].play();
-		layer1PlayIndex++;
-		playLayer1();
-	}, selectTimeout);
-};
-
-/** Function to Play Layer 2 and Set Timeout */
-function playLayer2() {
-	if (layer2PlayIndex >= layer2.length) {
-		console.log('layer2 index', layer2PlayIndex, 'length', layer2);
-		// Exit the layer
-		return;
-	}
-	setTimeout(function () {
-		let sound = layer2[layer2PlayIndex];
-		sounds[sound].play();
-		layer2PlayIndex++;
-		playLayer2();
-	}, selectTimeout);
-};
-
 
 // DOM Elements - Control Buttons
 const resetBtn = document.getElementById('reset-btn');
@@ -259,14 +258,14 @@ const bpmInput = document.getElementById('timeoutSelector');
 bpmInput.addEventListener('input', setBpm);
 var selectTimeout = 0;
 
-/** Set Playback Speed and Convert BPM to MS */
+/** Set playback speed and convert BPM to MS */
 function setBpm(){
 	var bpm = bpmInput.value;
 	selectTimeout = 60000 / bpm; 
 	console.log('Playback speed set to ' + selectTimeout + ' ms');
 };
 
-/** Reset The Layers */
+/** Reset the layers */
 function resetLayers() {
 	layer1 = [];
 	layer2 = [];
@@ -292,8 +291,7 @@ function showInstructions(){
 	startBackground.classList.remove('hidden');
 }
 
-
-// Trigger Functions
+// Sound Trigger Functions
 /** Play the bass drum samples */
 function playBassDrum() {
 	if (kitSelector.checked === false) {

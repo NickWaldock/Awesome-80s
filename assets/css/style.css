@@ -130,7 +130,6 @@ https://webcode.tools/generators/css/keyframe-animation */
 
 .instructions li {
     padding: 0.5rem;
-    
 
 }
 
@@ -167,8 +166,7 @@ https://webcode.tools/generators/css/keyframe-animation */
 
 }
 
-
-/* Game Area */
+/* Game Area - Hidden Until Start */
 #game-area {
     grid-column: 2;
     grid-row: 2 / 5;
@@ -221,7 +219,7 @@ https://webcode.tools/generators/css/keyframe-animation */
 }
 
 
-/* Layer Area */
+/* Layer Area - Hidden Until Start */
 #layer-area {
     grid-column: 2;
     grid-row: 5;
@@ -249,7 +247,6 @@ https://webcode.tools/generators/css/keyframe-animation */
 
 }
 
-
 .layer-indicator {
     font-family: 'arcade', monospace;
     height: auto;
@@ -267,7 +264,7 @@ https://webcode.tools/generators/css/keyframe-animation */
     background-color: orange !important;
 }
 
-/* Controls Area */
+/* Controls Area - Hidden Until Start */
 #controls {
     grid-column: 2 / 3;
     grid-row-start: 6;
@@ -325,10 +322,7 @@ https://webcode.tools/generators/css/keyframe-animation */
     border: 5px solid black;
     background-color: rgba(138, 43, 226, 0.7);
     margin: 0;
-    /* display: flex;
-    align-items: center;
-    justify-content: space-evenly; */
-    
+
 }
 
 #instructions-rtn p {
