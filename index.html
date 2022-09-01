@@ -12,167 +12,167 @@
 </head>
 
 <body>
-    <div class="grid">
-        <div class="title">
-            <h1>The Awesome 80s</h1>
-            <h3>Drum Machine!</h3>
+<div class="grid">
+    <div class="title">
+        <h1>The Awesome 80s</h1>
+        <h3>Drum Machine!</h3>
+    </div>
+    <div id="landing-background">
+        <div>
+            <ul class="instructions">
+                <li>
+                    Welcome to the Awesome 80s Drum Machine!
+                </li>
+                <li>
+                    ............................
+                    <br>
+                    Instructions
+                    <br>
+                    ............................
+                </li>
+                <li>
+                    Choose your sounds!
+                    <br>
+                    <img class="instructions-img" id="drum-pads-img" src="assets/images/drum-pads.png" alt="Drum Icon">
+                </li>
+                <li>
+                    <img class="instructions-img" src="assets/images/Kit-btn-img.png" alt="Kit Button">
+                    <br>
+                    Change the sound set
+                </li>
+                <li>
+                    <img class="instructions-img layer-img" src="assets/images/layer-1.png" alt="Layer 1 Indicators">
+                    <br>
+                    Choose 8 sounds to complete the 1st layer
+                </li>
+                <li>
+                    <img class="instructions-img layer-img" src="assets/images/layer-2.png" alt="Layer 2 Indicators">
+                    <br>
+                    Choose another 8 sounds to complete the 2nd layer
+                </li>
+                <li>
+                    Input a beats per minute playback speed 
+                </li>
+                <li>
+                    <img class="instructions-img" src="assets/images/play-btn-img.png" alt="Play Button">
+                    <br>
+                    Play your JAM!
+                </li>
+                <li>
+                    <img class="instructions-img" src="assets/images/reset-btn-img.png" alt="Reset Button">
+                    <br>
+                    Reset the layers, create a new JAM!
+                </li>
+                <li>
+                    Ready.....?
+                </li>
+                <li>
+                    Click <em>Lets Go!</em> to begin
+                </li>
+            </ul>
         </div>
-        <div id="landing-background">
-            <div>
-                <ul class="instructions">
-                    <li>
-                        Welcome to the Awesome 80s Drum Machine!
-                    </li>
-                    <li>
-                        ............................
-                        <br>
-                        Instructions
-                        <br>
-                        ............................
-                    </li>
-                    <li>
-                        Choose your sounds!
-                        <br>
-                        <img class="instructions-img" id="drum-pads-img" src="assets/images/drum-pads.png" alt="Drum Icon">
-                    </li>
-                    <li>
-                        <img class="instructions-img" src="assets/images/Kit-btn-img.png" alt="Kit Button">
-                        <br>
-                        Change the sound set
-                    </li>
-                    <li>
-                        <img class="instructions-img layer-img" src="assets/images/layer-1.png" alt="Layer 1 Indicators">
-                        <br>
-                        Choose 8 sounds to complete the 1st layer
-                    </li>
-                    <li>
-                        <img class="instructions-img layer-img" src="assets/images/layer-2.png" alt="Layer 2 Indicators">
-                        <br>
-                        Choose another 8 sounds to complete the 2nd layer
-                    </li>
-                    <li>
-                        Input a beats per minute playback speed 
-                    </li>
-                    <li>
-                        <img class="instructions-img" src="assets/images/play-btn-img.png" alt="Play Button">
-                        <br>
-                        Play your JAM!
-                    </li>
-                    <li>
-                        <img class="instructions-img" src="assets/images/reset-btn-img.png" alt="Reset Button">
-                        <br>
-                        Reset the layers, create a new JAM!
-                    </li>
-                    <li>
-                        Ready.....?
-                    </li>
-                    <li>
-                        Click <em>Lets Go!</em> to begin
-                    </li>
-                </ul>
-            </div>
-            <button id="start-btn">
-                Lets
-                <br>
-                Go!
-            </button>
-        </div>
-
-        <!-- The Game Area (Hidden until Start) -->
-        <div id="game-area" class="hidden">
-            <button class="trigger" id="bassDrum">
-                <img src="assets/images/bass.png" alt="Bass drum">
-            </button>
-            <button class="trigger" id="snareDrum">
-                <img src="assets/images/snare.png" alt="Snare drum">
-            </button>
-            <button class="trigger" id="hats">
-                <img src="assets/images/hats.png" alt="Hi-hat cymbals">
-            </button>
-            <button class="trigger" id="crash">
-                <img src="assets/images/crash.png" alt="Crash cymbal">
-            </button>
-            <button class="trigger" id="highTom">
-                <img src="assets/images/tom.png" alt="High tom drum">
-            </button>
-            <button class="trigger" id="rest">
-                <img src="assets/images/rest.png" alt="High tom drum">
-            </button>
-            <button class="trigger" id="lowTom">
-                <img src="assets/images/tom.png" alt="Low tom drum">
-            </button>
-        </div>
-
-        <div id="layer-area" class="hidden">
-            <span class="layer-indicator">Layer<br> 1</span>
-            <span id="1square1" class="sound-squares">
-            </span>
-            <span id="1square2" class="sound-squares">
-            </span>
-            <span id="1square3" class="sound-squares">
-            </span>
-            <span id="1square4" class="sound-squares">
-            </span>
-            <span id="1square5" class="sound-squares">
-            </span>
-            <span id="1square6" class="sound-squares">
-            </span>
-            <span id="1square7" class="sound-squares">
-            </span>
-            <span id="1square8" class="sound-squares">
-            </span>
-            <span class="layer-indicator">Layer<br> 2</span>
-            <span id="2square1" class="sound-squares">
-            </span>
-            <span id="2square2" class="sound-squares">
-            </span>
-            <span id="2square3" class="sound-squares">
-            </span>
-            <span id="2square4" class="sound-squares">
-            </span>
-            <span id="2square5" class="sound-squares">
-            </span>
-            <span id="2square6" class="sound-squares">
-            </span>
-            <span id="2square7" class="sound-squares">
-            </span>
-            <span id="2square8" class="sound-squares">
-            </span>
-        </div>
-
-        <!-- The Control Area (Hidden Until Start) -->
-        <div id="controls" class="hidden">
-            <!-- <button id="layer-btn">Layer</button> -->
-            <label id="kit-label" class="kit-label" for="kit-selector">
-                Kit 1
-            </label>
-            <input type="checkbox" id="kit-selector" class="kit-checkbox">
-            <label for="timeoutSelector" class="kit-label">
-                BPM
-                <input type="number" id="timeoutSelector">
-            </label>
-            <button id="reset-btn">Reset</button>
-            <button id="play-btn">Play!</button>
-            <button id="stop-btn">Stop</button>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <footer class="footer-text">
-                Copyright NJW Music 2022
-                <br>
-                <a href="https://github.com/NickWaldock">
-                    Nicholas J Waldock
-                </a>
-            </footer>
-        </div>
+        <button id="start-btn">
+            Lets
+            <br>
+            Go!
+        </button>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" 
-    integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
-    <script src="assets/js/script.js"></script>
+    <!-- The Game Area (Hidden until Start) -->
+    <div id="game-area" class="hidden">
+        <button class="trigger" id="bassDrum">
+            <img src="assets/images/bass.png" alt="Bass drum">
+        </button>
+        <button class="trigger" id="snareDrum">
+            <img src="assets/images/snare.png" alt="Snare drum">
+        </button>
+        <button class="trigger" id="hats">
+            <img src="assets/images/hats.png" alt="Hi-hat cymbals">
+        </button>
+        <button class="trigger" id="crash">
+            <img src="assets/images/crash.png" alt="Crash cymbal">
+        </button>
+        <button class="trigger" id="highTom">
+            <img src="assets/images/tom.png" alt="High tom drum">
+        </button>
+        <button class="trigger" id="rest">
+            <img src="assets/images/rest.png" alt="High tom drum">
+        </button>
+        <button class="trigger" id="lowTom">
+            <img src="assets/images/tom.png" alt="Low tom drum">
+        </button>
+    </div>
+
+    <div id="layer-area" class="hidden">
+        <span class="layer-indicator">Layer<br> 1</span>
+        <span id="1square1" class="sound-squares">
+        </span>
+        <span id="1square2" class="sound-squares">
+        </span>
+        <span id="1square3" class="sound-squares">
+        </span>
+        <span id="1square4" class="sound-squares">
+        </span>
+        <span id="1square5" class="sound-squares">
+        </span>
+        <span id="1square6" class="sound-squares">
+        </span>
+        <span id="1square7" class="sound-squares">
+        </span>
+        <span id="1square8" class="sound-squares">
+        </span>
+        <span class="layer-indicator">Layer<br> 2</span>
+        <span id="2square1" class="sound-squares">
+        </span>
+        <span id="2square2" class="sound-squares">
+        </span>
+        <span id="2square3" class="sound-squares">
+        </span>
+        <span id="2square4" class="sound-squares">
+        </span>
+        <span id="2square5" class="sound-squares">
+        </span>
+        <span id="2square6" class="sound-squares">
+        </span>
+        <span id="2square7" class="sound-squares">
+        </span>
+        <span id="2square8" class="sound-squares">
+        </span>
+    </div>
+
+    <!-- The Control Area (Hidden Until Start) -->
+    <div id="controls" class="hidden">
+        <!-- <button id="layer-btn">Layer</button> -->
+        <label id="kit-label" class="kit-label" for="kit-selector">
+            Kit 1
+        </label>
+        <input type="checkbox" id="kit-selector" class="kit-checkbox">
+        <label for="timeoutSelector" class="bpm-label">
+            BPM
+            <input type="number" id="timeoutSelector">
+        </label>
+        <button id="reset-btn">Reset</button>
+        <button id="play-btn">Play!</button>
+        <button id="stop-btn">Stop</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <footer class="footer-text">
+            Copyright NJW Music 2022
+            <br>
+            <a href="https://github.com/NickWaldock">
+                Nicholas J Waldock
+            </a>
+        </footer>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" 
+integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -173,7 +173,7 @@ function addSound(event){
 		event.stopPropagation(event);
 	}};
 
-buttons.forEach(button => button.addEventListener('click', addSound))
+buttons.forEach(button => button.addEventListener('click', addSound));
 
 /** Function to Playback Layers */
 function playLayers() {
