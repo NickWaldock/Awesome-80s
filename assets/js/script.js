@@ -370,3 +370,4 @@ function playRest() {
 	}
 }
 
+// Instructions Animation

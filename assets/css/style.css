@@ -303,6 +303,13 @@ https://webcode.tools/generators/css/keyframe-animation */
 
 }
 
+.click-animation:active {
+transform: scale(1.1);
+border: solid 7px black;
+box-shadow: 0 0 30px orange;
+
+}
+
 /* BPM Input */
 #timeoutSelector {
     width: 30%;
