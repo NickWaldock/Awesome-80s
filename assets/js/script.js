@@ -171,6 +171,8 @@ function addSoundLayer2() {
 	}))
 };
 
+
+
 /** Function to Playback Layers */
 function playLayers() {
 	if (layer1.length && layer2.length < 8){ // Playback only to initiate when both layers are full
@@ -193,12 +195,12 @@ const bpmInput = document.getElementById('timeoutSelector');
 bpmInput.addEventListener('input', setBpm);
 var selectTimeout = 0;
 
+/** Function to Set Playback Speed and Convert BPM to MS */
 function setBpm(){
 	var bpm = bpmInput.value;
 	selectTimeout = 60000 / bpm; 
 	console.log('Playback speed set to ' + selectTimeout + ' ms');
 };
-
 
 
 /** Function to Play Layer 1 and Set Timeout */
@@ -220,10 +222,10 @@ function playLayer1() {
 
 /** Function to Play Layer 2 and Set Timeout */
 function playLayer2() {
-	console.log(layer1);
-	console.log(layer1PlayIndex);
-	if (layer1PlayIndex >= layer1.length) {
-		console.log('layer1 index', layer1PlayIndex, 'length', layer1);
+	// console.log(layer2);
+	// console.log(layer2PlayIndex);
+	if (layer2PlayIndex >= layer2.length) {
+		console.log('layer2 index', layer2PlayIndex, 'length', layer2);
 		// Exit the layer
 		return;
 	}
@@ -272,6 +274,8 @@ function resetLayers() {
 	console.log('Reset!');
 	console.log('Layer 1 length:', layer1.length);
 	console.log('Layer 2 length:', layer2.length);
+	console.log(layer1PlayIndex);
+	console.log(layer2PlayIndex);
 }
 
 // Trigger Functions

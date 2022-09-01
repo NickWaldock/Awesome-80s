@@ -144,6 +144,8 @@ The following sites were used for syntax checking, problem solving, and general 
 [Ceos3c](https://www.ceos3c.com/)
 [Studio Slave](https://studioslave.com/tempo-bpm-to-millisecond-ms-conversion-calculator-studio-slave-tools/) For ms to BPM conversions
 [Webcode](https://webcode.tools/generators/css/keyframe-animation) For css animations
+[Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/)
+[Flexbox](https://flexbox.malven.co/)
 
 ### Acknoledgements
 My thanks and gratitude go to my project mentor Marcel for encouraging me to go beyond my capabilities and providing me with thought-provoking ideas; to the tutors at Code Institute for their assistance with my stumbling blocks
