@@ -142,34 +142,51 @@ let layer2PlayIndex = 0;
 let layer1 = [];
 let layer2 = [];
 
-// Instruction to Create Layer Array
-buttons.forEach(button => button.addEventListener('click', event => {
+// // Instruction to Create Layer Array
+// buttons.forEach(button => button.addEventListener('click', event => {
+// 	if (layer1.length < 8) {
+// 		layer1.push(event.currentTarget.id + kitSelected);
+// 		lightUpLayer1();
+// 		console.log(layer1, 'Layer 1 Length:', layer1.length);
+// 		if (layer1.length === 8) {
+// 			console.log('Layer 1 is Full!');
+// 			addSoundLayer2();
+// 			event.stopPropagation(event);
+// 		}
+// 	}
+// }));
+
+// /** Function to Add Sounds To Layer 2 Array */
+// function addSoundLayer2() {
+// 	buttons.forEach(button => button.addEventListener('click', event => {
+// 		console.log('Adding to Layer 2...');
+// 		if (layer2.length < 8) {
+// 			layer2.push(event.currentTarget.id + kitSelected);
+// 			lightUpLayer2();
+// 			console.log(layer2, 'Layer 2 Length:', layer2.length);
+// 		}
+// 		if (layer2.length === 8) {
+// 			console.log('Layer 2 is Full!');
+// 		}
+// 	}))
+// };
+
+function addSound(event){
 	if (layer1.length < 8) {
 		layer1.push(event.currentTarget.id + kitSelected);
 		lightUpLayer1();
 		console.log(layer1, 'Layer 1 Length:', layer1.length);
-		if (layer1.length === 8) {
-			console.log('Layer 1 is Full!');
-			addSoundLayer2();
-			event.stopPropagation(event);
-		}
-	}
-}));
+	} else if (layer1.length === 8) {
+		console.log('Layer 1 is Full! Adding to Layer 2...');
+		layer2.push(event.currentTarget.id + kitSelected);
+		lightUpLayer2();
+		console.log(layer2, 'Layer 2 Length:', layer2.length);
+	} else if (layer2.length === 8) {
+		console.log('Layer 2 is Full!');
+		event.stopPropagation(event);
+	}};
 
-/** Function to Add Sounds To Layer 2 Array */
-function addSoundLayer2() {
-	buttons.forEach(button => button.addEventListener('click', event => {
-		console.log('Adding to Layer 2...');
-		if (layer2.length < 8) {
-			layer2.push(event.currentTarget.id + kitSelected);
-			lightUpLayer2();
-			console.log(layer2, 'Layer 2 Length:', layer2.length);
-		}
-		if (layer2.length === 8) {
-			console.log('Layer 2 is Full!');
-		}
-	}))
-};
+buttons.forEach(button => button.addEventListener('click', addSound))
 
 
 
@@ -276,6 +293,7 @@ function resetLayers() {
 	console.log('Layer 2 length:', layer2.length);
 	console.log(layer1PlayIndex);
 	console.log(layer2PlayIndex);
+	
 }
 
 // Trigger Functions
