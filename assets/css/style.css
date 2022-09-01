@@ -317,7 +317,7 @@ https://webcode.tools/generators/css/keyframe-animation */
 }
 
 /* Instructions Return Button - Hidden Until Start */
-.instructions-rtn {
+#instructions-rtn {
     grid-column: 2 / 3;
     grid-row-start: 7;
     height: 100%;
@@ -331,7 +331,8 @@ https://webcode.tools/generators/css/keyframe-animation */
     
 }
 
-.instructions-rtn p {
+#instructions-rtn p {
+    display: block;
     font-family: 'hauserbold', Arial, Helvetica, sans-serif;
     color: orange;
     font-size: 3vw;

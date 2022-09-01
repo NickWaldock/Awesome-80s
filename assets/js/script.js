@@ -3,16 +3,18 @@ const startBtn = document.getElementById('start-btn');
 const gameArea = document.getElementById('game-area');
 const layerArea = document.getElementById('layer-area');
 const controlsArea = document.getElementById('controls');
+const instructionsBtn = document.getElementById('instructions-rtn');
+const startBackground = document.getElementById('landing-background');
 startBtn.addEventListener('click', letsGo);
 
 /** Function for the 'Lets Go!' Button */
 function letsGo() {
-	const startBackground = document.getElementById('landing-background');
 	if (!startBackground.classList.contains('display')) {
 		startBackground.classList.add('hidden');
 		gameArea.classList.remove('hidden');
 		layerArea.classList.remove('hidden');
 		controlsArea.classList.remove('hidden');
+		instructionsBtn.classList.remove('hidden');
 	}
 };
 
@@ -194,18 +196,6 @@ function playLayers() {
 	}};
 
 
-// User Select Timeout Interval
-const bpmInput = document.getElementById('timeoutSelector');
-bpmInput.addEventListener('input', setBpm);
-var selectTimeout = 0;
-
-/** Function to Set Playback Speed and Convert BPM to MS */
-function setBpm(){
-	var bpm = bpmInput.value;
-	selectTimeout = 60000 / bpm; 
-	console.log('Playback speed set to ' + selectTimeout + ' ms');
-};
-
 
 /** Function to Play Layer 1 and Set Timeout */
 function playLayer1() {
@@ -241,9 +231,6 @@ function playLayer2() {
 
 
 // DOM Elements - Control Buttons
-let kitSelector = document.getElementById('kit-selector');
-let kitSelectorLabel = document.getElementById('kit-label');
-let kitSelected = '1';
 const resetBtn = document.getElementById('reset-btn');
 const playBtn = document.getElementById('play-btn');
 const stopBtn = document.getElementById('stop-btn');
@@ -252,8 +239,11 @@ const stopBtn = document.getElementById('stop-btn');
 playBtn.addEventListener('click', playLayers);
 resetBtn.addEventListener('click', resetLayers);
 
-// Control Functions
-// Kit (sounds) selector
+// Kit (Sounds) Selector
+let kitSelector = document.getElementById('kit-selector');
+let kitSelectorLabel = document.getElementById('kit-label');
+let kitSelected = '1';
+
 kitSelector.addEventListener('change', (event) => {
 	if (event.currentTarget.checked) {
 		kitSelectorLabel.innerText = "Kit 2";
@@ -263,6 +253,18 @@ kitSelector.addEventListener('change', (event) => {
 		kitSelected = '1';
 	}
 });
+
+// BPM (Timeout Interval)
+const bpmInput = document.getElementById('timeoutSelector');
+bpmInput.addEventListener('input', setBpm);
+var selectTimeout = 0;
+
+/** Set Playback Speed and Convert BPM to MS */
+function setBpm(){
+	var bpm = bpmInput.value;
+	selectTimeout = 60000 / bpm; 
+	console.log('Playback speed set to ' + selectTimeout + ' ms');
+};
 
 /** Reset The Layers */
 function resetLayers() {
@@ -278,6 +280,18 @@ function resetLayers() {
 	console.log(layer2PlayIndex);
 	
 };
+
+// View Instructions
+instructionsBtn.addEventListener('click', showInstructions);
+
+function showInstructions(){
+	gameArea.classList.add('hidden');
+	layerArea.classList.add('hidden');
+	controlsArea.classList.add('hidden');
+	instructionsBtn.classList.add('hidden');
+	startBackground.classList.remove('hidden');
+}
+
 
 // Trigger Functions
 /** Play the bass drum samples */
