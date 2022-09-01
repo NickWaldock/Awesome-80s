@@ -87,12 +87,16 @@ body {
     border: solid 7px black;
     height: auto;
     width: 100%;
-    text-align: center;    
+    text-align: center;   
+    
+    /* Ref Code: 
+    https://webcode.tools/generators/css */
     animation: scaleIn 2s linear 0s 1 normal forwards;
 
 }
+
 /* Ref Code: 
-https://webcode.tools/generators/css/keyframe-animation*/
+https://webcode.tools/generators/css/keyframe-animation */
 @keyframes scaleIn {
 	0% {
 		transform: scale(0);
@@ -118,7 +122,7 @@ https://webcode.tools/generators/css/keyframe-animation*/
     font-family: 'arcade', monospace;
     word-spacing: 10px;
     letter-spacing: 2px;
-    font-size: 25px;
+    font-size: 2em;
     margin: 0;
     padding: 10px;
 
@@ -307,11 +311,12 @@ https://webcode.tools/generators/css/keyframe-animation*/
 
 /* Footer */
 .footer {
-    grid-column: 1 / 4;
+    grid-column: 2 / 3;
     grid-row-start: 8;
     background-color: rgba(138, 43, 226, 0.7);
     border: solid 7px black;
     height: 100%;
+    width: 100%;
     align-self: end;
     text-align: center;
     font-family: 'arcade', monospace;
@@ -321,8 +326,9 @@ https://webcode.tools/generators/css/keyframe-animation*/
 .footer-text {
     font-family: 'arcade', monospace;
     font-size: 30px;
-    color: orange;
+    color: black;
     word-spacing: 1rem;
+    padding-top: 10px;
     
 }
 
@@ -332,13 +338,13 @@ https://webcode.tools/generators/css/keyframe-animation*/
 }
 
 .footer-text a:visited {
-    color: orange;
+    color: black;
     text-decoration: none;
 
 }
 
 .footer-text a:hover {
-    color: red;
+    color: orange;
     text-decoration: none;
 
 }
