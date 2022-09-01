@@ -308,18 +308,43 @@ https://webcode.tools/generators/css/keyframe-animation */
 
 /* BPM Input */
 #timeoutSelector {
-    width: 25%;
+    width: 30%;
     background-color: rgba(138, 43, 226, 0.7);
     font-family: 'arcade', monospace;
     line-height: 80%;
+    font-size: 2rem;
     
+}
+
+/* Instructions Return Button - Hidden Until Start */
+.instructions-rtn {
+    grid-column: 2 / 3;
+    grid-row-start: 7;
+    height: 100%;
+    width: 100%;
+    border: 5px solid black;
+    background-color: rgba(138, 43, 226, 0.7);
+    margin: 0;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-evenly; */
+    
+}
+
+.instructions-rtn p {
+    font-family: 'hauserbold', Arial, Helvetica, sans-serif;
+    color: orange;
+    font-size: 3vw;
+    text-align: center;
+    height: 100%;
+    margin: 0;
 }
 
 
 /* Footer */
 .footer {
     grid-column: 2 / 3;
-    grid-row-start: 8;
+    grid-row-start: 9;
     background-color: rgba(138, 43, 226, 0.7);
     border: solid 7px black;
     height: 100%;
