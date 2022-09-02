@@ -17,7 +17,7 @@
         <h1>The Awesome 80s</h1>
         <h3>Drum Machine!</h3>
     </div>
-    <div id="landing-background" class="animation-in">
+    <div id="landing-background" class="animation-in-top">
         <div>
             <ul class="instructions">
                 <li>
@@ -83,7 +83,7 @@
     </div>
 
     <!-- The Game Area (Hidden Until Start) -->
-    <div id="game-area" class="hidden">
+    <div id="game-area" class="hidden animation-in">
         <button class="trigger" id="bassDrum">
             <img src="assets/images/bass.png" alt="Bass drum">
         </button>
@@ -107,7 +107,7 @@
         </button>
     </div>
 
-    <div id="layer-area" class="hidden">
+    <div id="layer-area" class="hidden animation-in">
         <span class="layer-indicator">Layer<br> 1</span>
         <span id="1square1" class="sound-squares">
         </span>
@@ -145,7 +145,7 @@
     </div>
 
     <!-- The Control Area (Hidden Until Start) -->
-    <div id="controls" class="hidden">
+    <div id="controls" class="hidden animation-in">
         <label id="kit-label" class="kit-label click-animation" for="kit-selector">
             Kit 1
         </label>
@@ -156,27 +156,15 @@
         </label>
         <button id="reset-btn" class="click-animation">Reset</button>
         <button id="play-btn" class="click-animation">Play!</button>
-        <button id="stop-btn" class="click-animation">Stop</button>
+        <!-- <button id="stop-btn" class="click-animation">Stop</button> -->
     </div>
 
     <!-- Return To Instructions (Hidden Until Start) -->
-    <div id="instructions-rtn" class="hidden click-animation">
+    <div id="instructions-rtn" class="hidden click-animation animation-in">
         <p>
             View Instructions
         </p>
     </div>
-
-    <!-- Footer -->
-    <!-- <div class="footer">
-        <footer class="footer-text">
-            Copyright NJW Music 2022
-            <br>
-            <a href="https://github.com/NickWaldock">
-                Nicholas J Waldock
-            </a>
-        </footer>
-    </div>
-</div> -->
 
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" 
