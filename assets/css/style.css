@@ -27,6 +27,8 @@
 }
 
 /* General Format & Styling */
+
+
 body {
     background: url("/assets/images/background.webp");
     background-repeat: no-repeat;
@@ -34,15 +36,18 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-color: blueviolet;
-    
+    max-width: 100vw;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 10% auto 10%;
+    grid-template-columns: 10% 1fr 10%;
     grid-template-rows: repeat(8, auto);
     row-gap: 1em;
-    height: 100vh;
+    height: auto;
+    max-width: 100%;
+    width: auto;
+    
 
 }
 
@@ -79,15 +84,113 @@ body {
 
 }
 
-/* Landing Area */
-#landing-background {
+
+/* For Screen Sizes <700px  */
+@media screen and (max-width: 700px) {
+    html {
+        max-width: 100vw;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        max-width: 100vw;
+        width: 100%;
+        text-align: center;
+        
+}
+
+.grid li {
+    max-width: 100%;
+    
+}
+
+#drum-pads-img {
+    max-height:100%; 
+    max-width:100%
+}
+
+
+.layer-img {
+    
+    max-height:100%; 
+    max-width:100%
+}
+
+
+#game-area {
     grid-column: 2;
     grid-row: 2 / 5;
     background-color: rgba(138, 43, 226, 0.7);
     border: solid 7px black;
     height: auto;
     width: 100%;
-    text-align: center;   
+
+    /* Flexbox for the triggers */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#game-area button {
+    border: 5px solid black;
+    border-radius: 10%;
+    background-color: rgba(127, 255, 212);
+    width: 20%;
+    height: auto;
+
+}
+
+.trigger {
+    margin: 0.5em; 
+    border: solid 7px black;
+    background-color: rgba(127, 255, 212, 1);
+    opacity: 1;
+    padding-top: 0.5em;
+    transition: all 0.03s;
+    min-height: 50px;
+    min-width: 80px;
+
+    }
+
+    #controls > * {
+        min-width: 100px;
+        min-height: 20px;
+        margin: 5px;
+    }
+
+} 
+
+/* For Screen Sizes <400px  */
+@media screen and (max-width: 400px) {
+    #controls {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #controls > * {
+        min-width: 100px;
+        min-height: 10px;
+        margin: 5px;
+    }
+
+}
+
+/* Landing Area */
+#landing-background {
+    grid-column: 2 / 2;
+    grid-row: 2 / 5;
+    background-color: rgba(138, 43, 226, 0.7);
+    border: solid 7px black;
+    height: auto;
+    max-width: 100%;
+
+    text-align: center;
+    
     
 
 }
@@ -127,7 +230,6 @@ https://webcode.tools/generators/css/keyframe-animation */
     animation: scaleIn 2s linear 0s 1 normal forwards;
 }
 
-
 .hidden {
     display: none !important;
     
@@ -151,6 +253,7 @@ https://webcode.tools/generators/css/keyframe-animation */
 
 .instructions li {
     padding: 0.5rem;
+
 
 }
 
@@ -262,7 +365,7 @@ https://webcode.tools/generators/css/keyframe-animation */
     width: 4vw;
     background-color: rgba(138, 43, 226);
     border: 4px solid black;
-    margin: auto;
+    margin: 5px auto;
 
 }
 
@@ -348,15 +451,16 @@ box-shadow: 0 0 30px orange;
     background-color: rgba(138, 43, 226, 0.7);
     margin: 0;
     letter-spacing: 2px;
-
+    min-height: 3rem;
+    
 }
 
 #instructions-rtn p {
     display: block;
     font-family: 'hauserbold', Arial, Helvetica, sans-serif;
     color: orange;
-    font-size: 3vw;
+    font-size: 1.5rem;
     text-align: center;
     height: 100%;
-    margin: 0;
+    
 }
