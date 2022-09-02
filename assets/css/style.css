@@ -49,7 +49,7 @@ body {
 .title {
     font-family: 'hauserbold', Arial, Helvetica, sans-serif;
     color: orange;
-    font-size: 4vw;
+    font-size: 3vw;
     text-align: center;
     grid-column: 2;
     grid-row: 1 / 2;
@@ -74,7 +74,7 @@ body {
     
     /* Zoom Effect */
     animation-name: title-zoom;
-    animation-duration: 5s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
 
 }
@@ -89,9 +89,6 @@ body {
     width: 100%;
     text-align: center;   
     
-    /* Ref Code: 
-    https://webcode.tools/generators/css */
-    animation: scaleIn 2s linear 0s 1 normal forwards;
 
 }
 
@@ -107,6 +104,26 @@ https://webcode.tools/generators/css/keyframe-animation */
 	}
 }
 
+@keyframes scaleOut {
+	100% {
+		transform: scale(1);
+	}
+
+	0% {
+		transform: scale(0);
+	}
+}
+
+.animation-in{
+    animation: scaleIn 4s linear 0s 1 normal forwards;
+    
+}
+
+.animation-out{
+    animation: scaleOut 2s linear 0s 1 normal backwards;
+    
+}
+
 .hidden {
     display: none !important;
     
@@ -117,12 +134,12 @@ https://webcode.tools/generators/css/keyframe-animation */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    row-gap: 20px;
+    row-gap: 15px;
     list-style-type: none;
     font-family: 'arcade', monospace;
     word-spacing: 10px;
     letter-spacing: 2px;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0;
     padding: 10px;
 
@@ -205,9 +222,8 @@ https://webcode.tools/generators/css/keyframe-animation */
 }
 
 .trigger img {
-    height: 4em;
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
 
 }
 
@@ -273,6 +289,10 @@ https://webcode.tools/generators/css/keyframe-animation */
     border: 5px solid black;
     background-color: rgba(138, 43, 226, 0.7);
 
+    /* Ref Code: 
+    https://webcode.tools/generators/css */
+    animation: scaleIn 2s linear 0s 1 normal forwards;
+
     /* For Control Buttons */
     display: flex;
     justify-content: space-around;
@@ -315,8 +335,7 @@ box-shadow: 0 0 30px orange;
     width: 30%;
     background-color: rgba(138, 43, 226, 0.7);
     font-family: 'arcade', monospace;
-    line-height: 80%;
-    font-size: 2rem;
+    font-size: 50%;
     
 }
 
@@ -329,6 +348,11 @@ box-shadow: 0 0 30px orange;
     border: 5px solid black;
     background-color: rgba(138, 43, 226, 0.7);
     margin: 0;
+    letter-spacing: 2px;
+
+    /* Ref Code: 
+    https://webcode.tools/generators/css */
+    animation: scaleIn 2s linear 0s 1 normal forwards;
 
 }
 
@@ -342,8 +366,8 @@ box-shadow: 0 0 30px orange;
     margin: 0;
 }
 
-
-/* Footer */
+/* 
+Footer
 .footer {
     grid-column: 2 / 3;
     grid-row-start: 9;
@@ -381,4 +405,4 @@ box-shadow: 0 0 30px orange;
     color: orange;
     text-decoration: none;
 
-}
+} */

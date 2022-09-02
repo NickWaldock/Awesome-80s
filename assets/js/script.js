@@ -9,14 +9,17 @@ startBtn.addEventListener('click', letsGo);
 
 /** 'Lets Go!' Button */
 function letsGo() {
-	if (!startBackground.classList.contains('display')) {
 		startBackground.classList.add('hidden');
 		gameArea.classList.remove('hidden');
 		layerArea.classList.remove('hidden');
 		controlsArea.classList.remove('hidden');
 		instructionsBtn.classList.remove('hidden');
 	}
-};
+
+
+// Instructions Animation
+
+
 
 // Sounds 
 const bassDrum1 = new Howl({src:['assets/audio/kit1/bass-drum1.wav', 'assets/audio/kit1/bass-drum1.mp3']});
@@ -369,5 +372,3 @@ function playRest() {
 		sounds.rest2.play();
 	}
 }
-
-// Instructions Animation
