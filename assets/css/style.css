@@ -1,33 +1,4 @@
-/* Fonts */
-@font-face {
-    font-family: 'hauserbold';
-    src: url('fonts/hauser-webfontkit/hauser_bold-webfont.woff2') format('woff2'), 
-        url('fonts/hauser-webfontkit/hauser_bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'arcade';
-    src: url('fonts/ARCADECLASSIC.TTF') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-/* Title Animation */
-@keyframes title-zoom {
-    from{
-        transform: scale(0.1)
-    } to {
-        transform: scale(1);
-    }
-
-}
-
-/* General Format & Styling */
-
+/* ---------------------------------- General Format & Styling ------------------------------------- */
 body {
     background: url("../images/background.webp");
     background-repeat: no-repeat;
@@ -46,8 +17,6 @@ body {
     height: auto;
     max-width: 100%;
     width: auto;
-    
-
 }
 
 .title {
@@ -59,127 +28,103 @@ body {
     grid-row: 1 / 2;
     margin: 0;
     height: 100%;
-    
 }
 
-.title h1, h3  {
+.title h1,
+h3 {
     margin: 0;
     letter-spacing: 3px;
     /* Ref Code : https://stackoverflow.com/questions/4919076/outline-effect-to-text
         https://css-tricks.com/how-to-create-neon-text-with-css/ */
     text-shadow:
-    -1px -1px 0 #000,
-    1px 1px 0 silver,
-    0 0 10px orange,
-    0 0 21px orange,
-    0 0 42px orangered,
-    0 0 82px orangered,
-    0 0 92px orangered;
-    
+        -1px -1px 0 #000,
+        1px 1px 0 silver,
+        0 0 10px orange,
+        0 0 21px orange,
+        0 0 42px orangered,
+        0 0 82px orangered,
+        0 0 92px orangered;
+
     /* Zoom Effect */
     animation-name: title-zoom;
     animation-duration: 4s;
     animation-fill-mode: forwards;
-
 }
 
+/* ------------------------------------------- Fonts ----------------------------------------------- */
+@font-face {
+    font-family: 'hauserbold';
+    src: url('fonts/hauser-webfontkit/hauser_bold-webfont.woff2') format('woff2'),
+        url('fonts/hauser-webfontkit/hauser_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-/* For Screen Sizes <700px  */
-@media screen and (max-width: 700px) {
-    html {
-        max-width: 100vw;
+@font-face {
+    font-family: 'arcade';
+    src: url('fonts/ARCADECLASSIC.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ----------------------------------------- Animations --------------------------------------------- */
+/* Title zoom animation */
+@keyframes title-zoom {
+    from {
+        transform: scale(0.1)
     }
-
-    .grid {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        max-width: 100vw;
-        width: 100%;
-        text-align: center;
-        
+    to {
+        transform: scale(1);
+    }
 }
 
-.grid li {
-    max-width: 100%;
-    
+/* Divs to zoom in from zero and top of screen - For landing/instructions area */
+@keyframes scaleInTop {
+    0% {
+        transform: scale(0);
+        transform-origin: 50% 0%;
+    }
+    100% {
+        transform: scale(1);
+        transform-origin: 50% 0%;
+    }
 }
 
-#drum-pads-img {
-    max-height:100%; 
-    max-width:100%
+.animation-in-top {
+    animation: scaleInTop 2s linear 0s 1 normal forwards;
+}
+
+/* Zoom in from zero center screen - for main game, controls, layer areas, 
+and view instructions button */
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 
-.layer-img {
-    
-    max-height:100%; 
-    max-width:100%
+.animation-in {
+    animation: scaleIn 2s linear 0s 1 normal forwards;
 }
 
+/* Animation for drum icon click */
+.trigger:active {
+    transform: scale(1.1);
+    border: solid 7px orange;
+    box-shadow: 0 0 40px orange;
+}
 
-#game-area {
-    grid-column: 2;
-    grid-row: 2 / 5;
-    background-color: rgba(138, 43, 226, 0.7);
+/* Animations for control buttons */
+.click-animation:active {
+    transform: scale(1.1);
     border: solid 7px black;
-    height: auto;
-    width: 100%;
-
-    /* Flexbox for the triggers */
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
+    box-shadow: 0 0 30px orange;
 }
 
-#game-area button {
-    border: 5px solid black;
-    border-radius: 10%;
-    background-color: rgba(127, 255, 212);
-    width: 20%;
-    height: auto;
-
-}
-
-.trigger {
-    margin: 0.5em; 
-    border: solid 7px black;
-    background-color: rgba(127, 255, 212, 1);
-    opacity: 1;
-    padding-top: 0.5em;
-    transition: all 0.03s;
-    min-height: 50px;
-    min-width: 80px;
-
-    }
-
-    #controls > * {
-        min-width: 100px;
-        min-height: 20px;
-        margin: 5px;
-    }
-
-} 
-
-/* For Screen Sizes <400px  */
-@media screen and (max-width: 400px) {
-    #controls {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    #controls > * {
-        min-width: 100px;
-        min-height: 10px;
-        margin: 5px;
-    }
-
-}
-
-/* Landing Area */
+/* ------------------------------------ Main Landing Area ------------------------------------------- */
 #landing-background {
     grid-column: 2 / 2;
     grid-row: 2 / 5;
@@ -187,53 +132,15 @@ body {
     border: solid 7px black;
     height: auto;
     max-width: 100%;
-
     text-align: center;
-    
-    
-
 }
 
-/* Ref Code: 
-https://webcode.tools/generators/css/keyframe-animation */
-@keyframes scaleInTop {
-	0% {
-		transform: scale(0);
-        transform-origin: 50% 0%;
-	}
-
-	100% {
-		transform: scale(1);
-        transform-origin: 50% 0%;
-	}
-}
-
-.animation-in-top {
-    animation: scaleInTop 2s linear 0s 1 normal forwards;
-    
-}
-
-@keyframes scaleIn {
-	0% {
-		transform: scale(0);
-
-	}
-
-	100% {
-		transform: scale(1);
-
-	}
-}
-
-.animation-in {
-    animation: scaleIn 2s linear 0s 1 normal forwards;
-}
-
+/* Used with JS to switch between the game and instructions */
 .hidden {
     display: none !important;
-    
 }
 
+/* Main Instructions Div */
 .instructions {
     display: flex;
     flex-direction: column;
@@ -247,13 +154,10 @@ https://webcode.tools/generators/css/keyframe-animation */
     font-size: 1.5em;
     margin: 0;
     padding: 10px;
-
 }
 
 .instructions li {
     padding: 0.5rem;
-
-
 }
 
 .instructions-img {
@@ -261,13 +165,11 @@ https://webcode.tools/generators/css/keyframe-animation */
     width: auto;
     transform: translateY(5px);
     padding: 10px;
-
 }
 
 #drum-pads-img {
     height: 100px;
     width: auto;
-
 }
 
 .layer-img {
@@ -286,10 +188,10 @@ https://webcode.tools/generators/css/keyframe-animation */
     border-radius: 10%;
     background-color: orange;
     margin-bottom: 10px;
-
 }
 
-/* Game Area - Hidden Until Start */
+/* -------------------------------- Game Area - (Hidden Until Start) --------------------------------*/
+/* Area for the interactive icon triggers */
 #game-area {
     grid-column: 2;
     grid-row: 2 / 5;
@@ -298,49 +200,39 @@ https://webcode.tools/generators/css/keyframe-animation */
     height: auto;
     width: 100%;
 
-    /* Flexbox for the triggers */
+    /* Flexbox for the individual triggers */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
 }
 
+/* Background for the icon triggers */
 #game-area button {
     border: 5px solid black;
     border-radius: 10%;
     background-color: rgba(127, 255, 212);
     width: 20%;
     height: auto;
-
 }
 
 .trigger {
-    margin: 0.5em; 
+    margin: 0.5em;
     border: solid 7px black;
     flex-shrink: 3;
     background-color: rgba(127, 255, 212, 1);
     opacity: 1;
     padding-top: 0.5em;
     transition: all 0.03s;
-
 }
 
 .trigger img {
     width: 60%;
     height: 60%;
-
 }
 
-.trigger:active {
-    transform: scale(1.1);
-    border: solid 7px orange;
-    box-shadow: 0 0 30px orange;
-    
-}
-
-/* Layer Area - Hidden Until Start */
+/* ------------------------------ Layer Area - (Hidden Until Start) --------------------------------- */
 #layer-area {
     grid-column: 2;
     grid-row: 5;
@@ -356,36 +248,35 @@ https://webcode.tools/generators/css/keyframe-animation */
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 1fr 1fr;
     row-gap: 4px;
-    
 }
 
+/* The icons that 'light up' to show sounds have been added to arrays (layers) */
 .sound-squares {
     height: 4vh;
     width: 4vw;
     background-color: rgba(138, 43, 226);
     border: 4px solid black;
     margin: 5px auto;
-
 }
 
+/* The layer labels */
 .layer-indicator {
     font-family: 'arcade', monospace;
     height: auto;
-    width: 80%;
+    width: 100%;
     text-align: center;
     font-size: 80%;
     background-color: orange;
     color: rgba(138, 43, 226);
     border: 3px solid black;
-    margin: auto;
-
+    margin: 0 0 0 5px;
 }
 
 .orange {
     background-color: orange !important;
 }
 
-/* Controls Area - Hidden Until Start */
+/* ---------------------------- Controls Area - Hidden Until Start --------------------------------- */
 #controls {
     grid-column: 2 / 3;
     grid-row-start: 6;
@@ -394,14 +285,16 @@ https://webcode.tools/generators/css/keyframe-animation */
     border: 5px solid black;
     background-color: rgba(138, 43, 226, 0.7);
 
-    /* For Control Buttons */
+    /* Flex for arranging control buttons */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
 }
 
-#controls button, .kit-label, .bpm-label {
+/* Control Buttons */
+#controls button,
+.kit-label,
+.bpm-label {
     width: 20%;
     height: auto;
     color: rgba(138, 43, 226);
@@ -410,7 +303,6 @@ https://webcode.tools/generators/css/keyframe-animation */
     text-align: center;
     border: 5px solid black;
     background-color: orange;
-
 }
 
 .bpm-label {
@@ -419,17 +311,11 @@ https://webcode.tools/generators/css/keyframe-animation */
     justify-content: space-evenly;
 }
 
+/* Hide default checkbox for kit selector input */
 .kit-checkbox {
     display: none;
-
 }
 
-.click-animation:active {
-transform: scale(1.1);
-border: solid 7px black;
-box-shadow: 0 0 30px orange;
-
-}
 
 /* BPM Input */
 #timeoutSelector {
@@ -437,10 +323,9 @@ box-shadow: 0 0 30px orange;
     background-color: rgba(138, 43, 226, 0.7);
     font-family: 'arcade', monospace;
     font-size: 50%;
-    
 }
 
-/* Instructions Return Button - Hidden Until Start */
+/* ---------------------- Instructions Return Button - Hidden Until Start --------------------------- */
 #instructions-rtn {
     grid-column: 2 / 3;
     grid-row-start: 7;
@@ -451,7 +336,6 @@ box-shadow: 0 0 30px orange;
     margin: 0;
     letter-spacing: 2px;
     min-height: 3rem;
-    
 }
 
 #instructions-rtn p {
@@ -461,5 +345,90 @@ box-shadow: 0 0 30px orange;
     font-size: 1.5rem;
     text-align: center;
     height: 100%;
-    
+}
+
+/* ---------------------------------------- Media Queries ------------------------------------------ */
+/* For Screen Sizes <700px Width */
+@media screen and (max-width: 700px) {
+    html {
+        max-width: 100vw;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        max-width: 100vw;
+        width: 100%;
+        text-align: center;
+    }
+
+    .grid li {
+        max-width: 100%;
+    }
+
+    #drum-pads-img {
+        max-height: 100%;
+        max-width: 100%
+    }
+
+    .layer-img {
+        max-height: 100%;
+        max-width: 100%
+    }
+
+    /* Area for icon triggers */
+    #game-area {
+        grid-column: 2;
+        grid-row: 2 / 5;
+        background-color: rgba(138, 43, 226, 0.7);
+        border: solid 7px black;
+        height: auto;
+        width: 100%;
+
+        /* Flexbox for the individual triggers */
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #game-area button {
+        border: 5px solid black;
+        border-radius: 10%;
+        background-color: rgba(127, 255, 212);
+        width: 20%;
+        height: auto;
+    }
+
+    .trigger {
+        margin: 0.5em;
+        border: solid 7px black;
+        background-color: rgba(127, 255, 212, 1);
+        opacity: 1;
+        padding-top: 0.5em;
+        transition: all 0.03s;
+        min-height: 50px;
+        min-width: 80px;
+    }
+
+    #controls>* {
+        min-height: 20px;
+        margin: 5px;
+    }
+}
+
+/* For Screen Sizes <470px Width */
+@media screen and (max-width: 470px) {
+    #controls {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #controls>* {
+        min-width: 100px;
+        min-height: 10px;
+        margin: 5px;
+    }
 }
