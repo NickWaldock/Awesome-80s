@@ -28,9 +28,8 @@
 
 /* General Format & Styling */
 
-
 body {
-    background: url("assets/images/background.webp");
+    background: url("../images/background.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
