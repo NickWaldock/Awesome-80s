@@ -105,7 +105,6 @@ and view instructions button */
     }
 }
 
-
 .animation-in {
     animation: scaleIn 2s linear 0s 1 normal forwards;
 }
@@ -315,7 +314,6 @@ and view instructions button */
 .kit-checkbox {
     display: none;
 }
-
 
 /* BPM Input */
 #timeoutSelector {

@@ -51,9 +51,9 @@ const sounds = {
 	lowTom1,
 	lowTom2,
 	rest1,
-	rest1
+	rest2
 
-}
+};
 
 // DOM Elements - Icon Triggers
 const bassDrumTrigger = document.getElementById('bassDrum');
@@ -94,7 +94,7 @@ function addSound(event){
 	} else if (layer2.length === 8) {
 		console.log('Layer 2 is Full!');
 		event.stopPropagation(event);
-	}};
+	}}
 
 buttons.forEach(button => button.addEventListener('click', addSound));
 
@@ -103,18 +103,18 @@ function playLayers() {
 	layer1PlayIndex = 0;
 	layer2PlayIndex = 0;
 	if (layer1.length && layer2.length < 8){ // Playback only to initiate when both layers are full
-		console.log('Layers are not full!')
-		alert('Choose more groovy sounds!') 
+		console.log('Layers are not full!');
+		alert('Choose more groovy sounds!');
 	} else {
 		if (bpmInput.value.length == 0){
-			alert('Please input a speed to play groovy sounds!')
-			console.log('BPM required')
+			alert('Please input a speed to play groovy sounds!');
+			console.log('BPM required');
 		} else {
-			console.log('Playing!')
+			console.log('Playing!');
 			playLayer1(); // Playback
 			playLayer2(); // Playback
 		}
-	}};
+	}}
 
 /** Play layer 1 and set timeout */
 function playLayer1() {
@@ -131,7 +131,7 @@ function playLayer1() {
 		layer1PlayIndex++;
 		playLayer1();
 	}, selectTimeout);
-};
+}
 
 /** Play layer 2 and set timeout */
 function playLayer2() {
@@ -146,11 +146,10 @@ function playLayer2() {
 		layer2PlayIndex++;
 		playLayer2();
 	}, selectTimeout);
-};
+}
 
 
 // Layer Indicator Squares
-const soundSquares = document.getElementsByClassName('sound-squares');
 const layer1Square1 = document.getElementById('1square1');
 const layer1Square2 = document.getElementById('1square2');
 const layer1Square3 = document.getElementById('1square3');
@@ -188,7 +187,7 @@ function lightUpLayer1() {
 	} else if (layer1.length === 8) {
 		layer1Square8.classList.add('orange');
 	}
-};
+}
 
 /** 'Light Up' layer 2 squares in-line with layer 2 array length */
 function lightUpLayer2() {
@@ -210,7 +209,7 @@ function lightUpLayer2() {
 	} else if (layer2.length === 8) {
 		layer2Square8.classList.add('orange');
 	}
-};
+}
 
 /** Reset layer squares */
 function resetColors() {
@@ -235,7 +234,7 @@ function resetColors() {
 // DOM Elements - Control Buttons
 const resetBtn = document.getElementById('reset-btn');
 const playBtn = document.getElementById('play-btn');
-const stopBtn = document.getElementById('stop-btn');
+
 
 // Event Listeners
 playBtn.addEventListener('click', playLayers);
@@ -266,7 +265,7 @@ function setBpm(){
 	var bpm = bpmInput.value;
 	selectTimeout = 60000 / bpm; 
 	console.log('Playback speed set to ' + selectTimeout + ' ms');
-};
+}
 
 /** Reset the layers */
 function resetLayers() {
@@ -281,7 +280,7 @@ function resetLayers() {
 	console.log(layer1PlayIndex);
 	console.log(layer2PlayIndex);
 	
-};
+}
 
 // View Instructions
 instructionsBtn.addEventListener('click', showInstructions);
