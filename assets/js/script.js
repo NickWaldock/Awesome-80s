@@ -16,12 +16,7 @@ function letsGo() {
 		instructionsBtn.classList.remove('hidden');
 	}
 
-
-// Instructions Animation
-
-
-
-// Sounds 
+// Sounds - (https://github.com/goldfire/howler.js#documentation)
 const bassDrum1 = new Howl({src:['assets/audio/kit1/bass-drum1.wav', 'assets/audio/kit1/bass-drum1.mp3']});
 const bassDrum2 = new Howl({src:['assets/audio/kit2/bass-drum2.wav', 'assets/audio/kit2/bass-drum2.mp3']});
 const snareDrum1 = new Howl({src:['assets/audio/kit1/snare-drum1.wav', 'assets/audio/kit1/snare-drum1.mp3']});
@@ -147,7 +142,6 @@ function playLayer2() {
 		playLayer2();
 	}, selectTimeout);
 }
-
 
 // Layer Indicator Squares
 const layer1Square1 = document.getElementById('1square1');

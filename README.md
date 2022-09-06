@@ -273,10 +273,14 @@ This site has been passed successfully through the following code validation sit
 ## Browser Compatibility
 Device | Outcome | Pass/Fail
 --- | --- | ---
-[Google Chrome](https://www.google.com/intl/en_uk/chrome/) | No appearance, responsiveness nor functionality issues. | Pass
+[Google Chrome](https://www.google.com/intl/en_uk/chrome/) | No appearance, responsiveness nor functionality issues.* | Pass
 [Firefox](https://www.mozilla.org/en-GB/firefox/)| No appearance, responsiveness nor functionality issues. | Pass
 [Safari](https://safari.en.softonic.com/mac)| No appearance, responsiveness nor functionality issues. | Pass
 [Edge](https://www.microsoft.com/en-us/edge)| No appearance, responsiveness nor functionality issues. | Pass
+
+* Bugs - The only issue for chrome is the audio library conflicting with [Google's Audio Auto Play Policy](https://developer.chrome.com/blog/autoplay/#webaudio), however the site has no audio that can potentially auto-play. This warning is due to the use of the [Howler](https://howlerjs.com/) audio library.
+<img src="readme-images/chrome.png" width="80%">
+
 
 </br>
 </br>
