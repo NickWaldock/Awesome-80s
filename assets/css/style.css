@@ -52,6 +52,7 @@ h3 {
 }
 
 /* ------------------------------------------- Fonts ----------------------------------------------- */
+/* https://www.pagecloud.com/blog/how-to-add-custom-fonts-to-any-website */
 @font-face {
     font-family: 'hauserbold';
     src: url('fonts/hauser-webfontkit/hauser_bold-webfont.woff2') format('woff2'),
@@ -67,8 +68,8 @@ h3 {
     font-style: normal;
 }
 
-/* ----------------------------------------- Animations --------------------------------------------- */
-/* Title zoom animation */
+/* ------------------------- Animations (https://webcode.tools/generators/css) --------------------- */
+/* Title zoom animation*/
 @keyframes title-zoom {
     from {
         transform: scale(0.1)

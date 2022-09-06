@@ -108,6 +108,7 @@ The font Arcade font was chosen as an 80s style text font typical of arcade game
 [Balsamiq](https://balsamiq.cloud/) has been used to develop wireframes to demonstrate the basic design of the site.
 <br />
 <br />
+
 <img src="readme-images/wireframes/phone.png" width="33%">
 <img src="readme-images/wireframes/laptop1.png" width="33%">
 <img src="readme-images/wireframes/laptop2.png" width="33%">
@@ -115,8 +116,21 @@ The font Arcade font was chosen as an 80s style text font typical of arcade game
 <br />
 
 ## Features
+<img src="readme-images/screenshots/instructions1.jpg" width="40%">
+<img src="readme-images/screenshots/instructions2.jpg" width="40%">
+
+<br />
+
 - An introductory screen with consise and easy to follow instructions on how the game works
 - A 'Let's Go!' button to transition to the game area
+
+<br />
+
+<img src="readme-images/screenshots/game-area.jpg" width="40%">
+
+<br />
+<br />
+
 - 3 distinct areas for the game elements: The clickable icons, the layer indicators, and the control buttons
 - Large icons as clickable elements that play the associated sounds on click
 -  Layer indicatiors that light up and visually show the number of choices made (to a max of 16) when a user input is chosen.
@@ -130,45 +144,72 @@ The font Arcade font was chosen as an 80s style text font typical of arcade game
 <br />
 
 ## User Interactivity
-<img src="readme-images/game-button-images/lets-go-btn.png" width="20%">
+<img src="readme-images/game-button-images/lets-go-btn.png" width="10%">
+<br />
 The "let's Go!" button is the first interactive element on the page and is available at the bottom of the instructions that show on page load. The intention is that the user will need to read the instructions to understand the basic mechanics of the site before beginning. CLicking this button transitions the user to the main game area.
 <br />
 <br />
 
 <img src="readme-images/game-button-images/drum-pads.png" width="20%">
+<br />
 The user then sees the above icons at the top of the page which represent the different sound 'tiggers'. Clicking one of these representational icons will play the audio sample attached to it once and add that sound to the machine's memory. Each icon contains a different drum kit sound: (from top left to right)Bass Drum, Snare Drum, Hi-Hats, Crash Cymbal, (botton left to right) Tom 1, Rest, and Tom 2. The rest symbol allows the user to program silence into their rhythm and is included to give the user a more musical experience.
 <br />
 <br />
 
 <img src="readme-images/game-button-images/layer-1.png" width="40%">
+<br />
+
+*Layer 1 Filled, Layer 2 Empty*
+<br />
+
+<img src="readme-images/game-button-images/layer-2.png" width="40%">
+<br />
+
+*Both Layers Full*
+<br />
+
 Below the drum trigger icons the user will see two rows of squares called "Layer 1" and "Layer 2". These represent the programmed sounds generated from the users input (from clicking the drum trigger icons). With each sound selection one square will change color to indicate it has been saved. Sounds are saved in the order they are clicked. Once the user has selected 8 sounds the second layer is automatically filled. Each layer has a maximum size of 8 sounds to correspond with the 4, 8 (16, 32, etc) division of beats usually found in popular music. Once both layers are filled with 8 sounds the user can still click to hear the sounds individually but they will not be saved.
 <br />
 <br />
 
-<img src="readme-images/game-button-images/Kit-btn-img.png" width="20%">
+<img src="readme-images/game-button-images/Kit-btn-img.png" width="10%">
+<br />
 The "Kit" button switches between one set of drum sounds to another contrasting set of drum sounds. By default the button states "Kit 1" indicating that the default sound set is loaded. On clicking of this button the value changes to "Kit 2" and indicated that the second sound set is loaded. When the user then chooses sounds from the drum icons they will hear the alternative sound set. These sounds can and will be loaded into the machine when clicked and can be mixed with the sounds from Kit 1 in the same sequence meaning the user has access to program 12 individual drumkit sounds (and a rest for silence) within 16 beats making for an exceptionally large number of combination possibilites. 
 <br />
 <br />
 
-<img src="readme-images/game-button-images/bpm-img.png" width="20%">
+<img src="readme-images/game-button-images/bpm-img.png" width="10%">
+<br />
+
 The "BPM" input box is available for the user to input a speed (Beats Per Minute) into the machine thereby choosing how fast the selected sounds will play back. The speed is inuptted as a BPM integer and converted to milliseconds in JavaScript for the computer to comprehend. 
-* note: if the user chooses a slow BPM speed (< 80bpm) the user will notice a small delay from clicking the "Play" button and the sound commencing, this is due to the speed interval between existing at the start of the loop before the sound is played. This is less noticable at faster speeds.
+- *note: if the user chooses a slow BPM speed (< 80bpm) the user will notice a small delay from clicking the "Play" button and the sound commencing, this is due to the speed interval between existing at the start of the loop before the sound is played. This is less noticable at faster speeds.*
 
 
 <br />
 <br />
 
-<img src="readme-images/game-button-images/reset-btn-img.png" width="20%">
-The "Reset" button allows the user to clear (delete) both layers of any previously programmed sound allowing them to generate a new pattern of sounds for playback. 
+<img src="readme-images/game-button-images/reset-btn-img.png" width="10%">
+<br />
+
+The "Reset" button allows the user to clear (delete) both layers of any previously programmed sound allowing space to generate a new pattern of sounds for playback. 
 
 <br />
 <br />
 
-<img src="readme-images/game-button-images/play-btn-img.png" width="20%">
+<img src="readme-images/game-button-images/play-btn-img.png" width="10%">
+<br />
 
+The "Play!" button commences playback of the pre-loaded sounds. Attempting to start playback without completing the 2 layers will result in an alert to the user to input more sounds. Additionall, if a BPM isn't inputted then an alert will also appear to remind the user to select a speed for playback.
 <br />
 <br />
 
+<img src="readme-images/game-button-images/instructions-btn.png" width="30%">
+<br />
+
+Finally, a "Show Instructions" button allows the user to switch back to the main instructions screen once again if they require refreshing of the controls and functions. Returning to the game area after this will maintain all of their previously chosen sounds and speeds (if any were chosen).
+
+<br />
+<br />
 
 ## Future Developments
 - Main Volume control - for the user to quickly and easily control output volume
@@ -179,15 +220,18 @@ The "Reset" button allows the user to clear (delete) both layers of any previous
 - Play-a-long feature - pre-loaded song audio (minus drums) to 'jam' along with
 - Keyboard input function
 - Have the loop commence from the first sound and not the inputted bpm interval for a smoother and more responsive experience
+- Additional design elements: Button animations and transitions between elements. 
 <br />
 <br />
 
 # Technologies
-Languages used in this site are HTML 5, CSS3 and JavaScript.
+Languages used in this site are [HTML5](https://en.wikipedia.org/wiki/HTML5), [CSS3](https://en.wikipedia.org/wiki/CSS#CSS_3) and [JavaScript](https://en.wikipedia.org/wiki/JavaScript).
 
 Additional technologies include: 
+- [Howler](https://howlerjs.com/) 
+    - for audio library manipulation
 - [EZ Gif](https://ezgif.com/) 
-   -for image file-type modification to webp
+   - for image file-type modification to webp
 - [TinyPNG](https://tinypng.com/) 
    - for image compression
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
@@ -306,8 +350,6 @@ All audio samples are royalty-free and from [Samples From Mars by Splice](https:
 
 ## References
 
-
-
 The following sites were used for syntax checking, problem solving, and general coding concept referencing:
 - [Borislav Hadzhiev](https://bobbyhadz.com/)
 - [MDN] (https://developer.mozilla.org/en-US/)
@@ -331,5 +373,5 @@ The following sites were used for syntax checking, problem solving, and general 
 <br />
 
 ## Acknoledgements
-My thanks and gratitude go to my project mentor Marcel for encouraging me to go beyond my capabilities and providing me with thought-provoking ideas; to the tutors at Code Institute for their assistance with my stumbling blocks
+My thanks and gratitude go to my project mentor Marcel for encouraging me to go beyond my capabilities, providing me with thought-provoking ideas to solve the problems faced by this project. Also, to the tutors at Code Institute for their patience and guidance in their assisting me with learning and developing my JavaScript skills.
 
