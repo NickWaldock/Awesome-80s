@@ -117,7 +117,7 @@ and view instructions button */
     box-shadow: 0 0 40px orange;
 }
 
-/* Animations for drum icons shake on click */
+/* Animations for drum icons - shake on click */
 .trigger-shake:active {
     animation: trigger-shake 0.2s ease 0s 1 normal forwards;
 }
@@ -168,6 +168,7 @@ and view instructions button */
 	}
 }
 
+/* Background change on hover (https://webcode.tools/generators/css/background-gradient) */
 .trigger:hover {
     background: radial-gradient( #7FFFD4 48%, #FFA500 93%) !important;
 }
@@ -196,6 +197,7 @@ and view instructions button */
 	}
 }
 
+/* General cursor change for all clickable elements */
 .cursor:hover {
     cursor: pointer;
 }
@@ -211,7 +213,7 @@ and view instructions button */
     text-align: center;
 }
 
-/* Used with JS to switch between the game and instructions */
+/* Used with JS to switch between the game and instructions divs */
 .hidden {
     display: none !important;
 }
@@ -253,6 +255,7 @@ and view instructions button */
     width: auto;
 }
 
+/* "Let's Go!" Button */
 #start-btn {
     width: 100px;
     height: 70px;
@@ -348,6 +351,7 @@ and view instructions button */
     margin: 0 0 0 5px;
 }
 
+/* The class added to layer squares in JS to indicate user input */
 .orange {
     background-color: orange !important;
 }
@@ -400,7 +404,6 @@ and view instructions button */
     font-size: 50%;
 }
 
-
 /* ---------------------- Instructions Return Button - (Hidden Until Start) ------------------------- */
 #instructions-rtn {
     grid-column: 2 / 3;
@@ -425,7 +428,6 @@ and view instructions button */
     width: 40%;
     height: 80%;
     min-height: 50%;
-
 }
 
 .instructions-btn p {
@@ -435,9 +437,7 @@ and view instructions button */
     text-align: center;
     max-height: 100%;
     margin: 0;
-    
 }
-
 
 /* ---------------------------------------- Media Queries ------------------------------------------ */
 /* For Screen Sizes <700px Width */
@@ -469,7 +469,7 @@ and view instructions button */
         max-width: 100%
     }
 
-    /* Area for icon triggers */
+    /* Area for drum icon triggers */
     #game-area {
         grid-column: 2;
         grid-row: 2 / 5;
