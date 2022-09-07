@@ -276,7 +276,7 @@ and view instructions button */
     background-color: orange !important;
 }
 
-/* ---------------------------- Controls Area - Hidden Until Start --------------------------------- */
+/* ---------------------------- Controls Area - (Hidden Until Start) --------------------------------- */
 #controls {
     grid-column: 2 / 3;
     grid-row-start: 6;
@@ -324,7 +324,7 @@ and view instructions button */
     font-size: 50%;
 }
 
-/* ---------------------- Instructions Return Button - Hidden Until Start --------------------------- */
+/* ---------------------- Instructions Return Button - (Hidden Until Start) ------------------------- */
 #instructions-rtn {
     grid-column: 2 / 3;
     grid-row-start: 7;

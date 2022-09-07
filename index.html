@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +8,16 @@
     <meta name="description" content="A 80s inspired online drum machine">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-
     <title>The Awesome 80s Drum Machine</title>
 </head>
-
 <body>
+    <!-- Main Title -->
     <div class="grid">
         <div class="title">
             <h1>The Awesome 80s</h1>
             <h3>Drum Machine!</h3>
         </div>
+        <!-- Instructions  -->
         <div id="landing-background" class="animation-in-top">
             <div>
                 <ul class="instructions">
@@ -80,6 +79,7 @@
                     </li>
                 </ul>
             </div>
+            <!-- Button to Hide Instructions and Show Hidden Areas -->
             <button id="start-btn">
                 Lets
                 <br>
@@ -87,8 +87,7 @@
             </button>
         </div>
     
-
-    <!-- The Game Area (Hidden Until Start) -->
+    <!-- The Game Area & Icon Triggers (Hidden Until Start) -->
     <div id="game-area" class="hidden animation-in">
         <button class="trigger" id="bassDrum">
             <img src="assets/images/bass.png" alt="Bass drum">
@@ -112,7 +111,7 @@
             <img src="assets/images/tom.png" alt="Low tom drum">
         </button>
     </div>
-
+    <!-- Layer 1 -->
     <div id="layer-area" class="hidden animation-in">
         <span class="layer-indicator" id="layer1label">Layer<br> 1</span>
         <span id="1square1" class="sound-squares layer1">
@@ -131,6 +130,8 @@
         </span>
         <span id="1square8" class="sound-squares layer1">
         </span>
+
+        <!-- Layer 2 -->
         <span class="layer-indicator" id="layer2label">Layer<br> 2</span>
         <span id="2square1" class="sound-squares layer2">
         </span>
@@ -150,7 +151,7 @@
         </span>
     </div>
 
-    <!-- The Control Area (Hidden Until Start) -->
+    <!-- The Controls Area (Hidden Until Start) -->
     <div id="controls" class="hidden animation-in">
         <label id="kit-label" class="kit-label click-animation" for="kit-selector">
             Kit 1
