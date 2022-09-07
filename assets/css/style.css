@@ -169,7 +169,7 @@ and view instructions button */
 }
 
 .trigger:hover {
-    background: radial-gradient( #FFA500 1%, #7FFFD4 100%) !important;
+    background: radial-gradient( #7FFFD4 48%, #FFA500 93%) !important;
 }
 
 /* Animations for control buttons */
