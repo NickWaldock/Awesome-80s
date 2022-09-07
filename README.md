@@ -273,6 +273,7 @@ The following is a feature by feature explanation of the manual testing procedur
 
 ### "Let's Go" Button
 **User and Design Expectation**
+- The button is clearly named for its purpose
 - This button is designed to hide the original instructions information and background and be replaced with the game area. 
 <br/>
 
@@ -280,36 +281,111 @@ The following is a feature by feature explanation of the manual testing procedur
  - The button acts as intended. On click the instructions dissapear and the game area zooms into view. 
  <br/>
 
-**Result** *Pass*
+**Result** *Pass - the user and design expecations are fulfilled*
+<br/>
 <br/>
 
 ### Drum Triggers
 **User and Design Expectation**
-- Each individual icon trigger plays an individual sound back to the user and inputs that choice into an array (layer).
-- It should be clear to the user which icon represents which type of drum sound through iconography and visuals.
+- Each individual icon trigger plays an individual sound back to the user and inputs that choice into an array (layer)
+- It should be clear to the user which icon represents which type of drum sound through iconography and visuals
 <br/>
 
 **Testing** 
-- On testing it was decided that visual elements would give visual feedback to the user that the icon has been clicked, hover and a 'glow' effect were added as well as making the icons the largest visual elements on the page.
-- Icons were carefully chosen and placed upon a contrasting backround to represent the various types of sounds of a typical drum kit and to represent silence for the 'Rest'.
-- On initial testing an issue became immediately apparent: When clicked, the sample would play but could only be triggered again when the sample had finished playing. The user can easily click faster than the time it takes for the sample to finish (around 1 second). Code was incorporated into the functions to reset the sound on each click: 'currentTime = 0'. This allows the user to play the sounds as quickly as they can click making for a better user experience.
+- On testing it was decided that visual elements would give visual feedback to the user that the icon has been clicked, hover and a 'glow' effect were added as well as making the icons the largest visual elements on the page
+- Icons were carefully chosen and placed upon a contrasting backround to represent the various types of sounds of a typical drum kit and to represent silence for the 'Rest'
+- On initial testing an issue became immediately apparent: When clicked, the sample would play but could only be triggered again when the sample had finished playing. The user can easily click faster than the time it takes for the sample to finish (around 1 second). Code was incorporated into the functions to reset the sound on each click: 'currentTime = 0'. This allows the user to play the sounds as quickly as they can click making for a better user experience
 - When the sounds are clicked they are automatically inputted into an array
-- The 'Rest' was originally an undefined object but testing showed that although the Rest was inputted into the arrays, during playback the it could not be heard to be creating space between sounds. This was solved by uploading and attaching a wav file of silence that is the same length as the regular samples.
-
+- The 'Rest' was originally an undefined object but testing showed that although the Rest was inputted into the arrays, during playback the it could not be heard to be creating space between sounds. This was solved by uploading and attaching a wav file of silence that is the same length as the regular samples
 <br/>
 
-**Result** *Pass*
+**Result** *Pass - the user and design expecations are fulfilled*
+<br/>
 <br/>
 
 ### Kit Selector
 **User and Design Expectation**
 - To indicate to the user which of the two drum kit sound sets is currently active
-- Be interactive on mouse hover to indicate a clickable element
-- B
+- Be interactive on mouse hover to indicate a clickable element and provide visual feedback that a click has occured
+- Have a visual indication that the button has been clicked
 
 **Testing**
+- The user clicks the button which activates the 'active' (a 'pop' effect) and 'hover' (a continuous fade in and out effect) CSS classes and the inner text changes and alternates from "Kit 1" to "Kit 2"
+- For the user to be able to switch sound sets during the layer programming a hidden check box was used to toggle between the sounds via JavaScript 'if' statements in the individual sound functions.
 
-**Result** *Pass*
+**Result** *Pass - the user and design expecations are fulfilled*
+<br/>
+<br/>
+
+### BPM Input
+**User and Design Expectation**
+- The button is clearly named for its purpose
+- To allow the user to input their choice of speed in beats per minute and for the computer to interpret the choice correctly during audio playback performance
+- For the input to be an integer only 
+<br/>
+
+**Testing**
+- The first solution theorised was to use radio buttons with a selection of pre-set tempos for the user to choose between, although possible this wouldn't allow the user as much freedom to manipulate the tempos to extremes or with nuance as an input integer input would.
+- The input was set to specifically accept integers and update a variable for the setTimeout function
+- In testing the user input would automatically be interpreted in milliseconds. Code was required to convert beats per minutes into milliseconds as the value is loaded into the variable
+<br/>
+
+**Result** *Pass - the user and design expecations are fulfilled*
+<br/>
+<br/>
+
+### Reset Button
+**User and Design Expectation**
+- The button is clearly named for its purpose
+- Be interactive on mouse hover to indicate a clickable element and provide visual feedback that a click has occured
+- The button resets the loaded sounds allowing the user to create sound patterns from scratch
+- Provide visual feedback to the user that the reset has been succesful
+<br/>
+
+**Testing**
+- The user clicks the button which activates the 'active' (a 'pop' effect) and 'hover' (a continuous fade in and out effect) CSS classes
+- The arrays generated in JavaScript will be emptyied and counters reset to '0' 
+- The layer indicator squares revert to their default state by removing the overiding 'orange' class
+<br/>
+
+**Result** *Pass - the user and design expecations are fulfilled*
+<br/>
+<br/>
+
+### Play Button
+**User and Design Expectation**
+<br/>
+
+**Testing**
+<br/>
+
+**Result** *Pass - the user and design expecations are fulfilled*
+<br/>
+<br/>
+
+
+### Layer Indicators
+**User and Design Expectation**
+<br/>
+
+**Testing**
+<br/>
+
+**Result** *Pass - the user and design expecations are fulfilled*
+<br/>
+<br/>
+
+### View Instructions
+**User and Design Expectation**
+<br/>
+
+**Testing**
+<br/>
+
+**Result** *Pass - the user and design expecations are fulfilled*
+<br/>
+
+
 
 
 ## Code Validation

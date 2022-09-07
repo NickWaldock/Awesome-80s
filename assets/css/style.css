@@ -175,7 +175,7 @@ and view instructions button */
 
 /* Animations for control buttons */
 .click-animation:active {
-    transform: scale(1.01);
+    transform: scale(1.1);
     border: solid 7px black;
     box-shadow: 0 0 30px #ffa500;
 }
