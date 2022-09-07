@@ -272,26 +272,44 @@ The following is a feature by feature explanation of the manual testing procedur
 <br />
 
 ### "Let's Go" Button
-**Expectation**
+**User and Design Expectation**
 - This button is designed to hide the original instructions information and background and be replaced with the game area. 
+<br/>
+
 **Testing** 
  - The button acts as intended. On click the instructions dissapear and the game area zooms into view. 
+ <br/>
+
 **Result** *Pass*
 <br/>
 
 ### Drum Triggers
-**Expectation**
+**User and Design Expectation**
 - Each individual icon trigger plays an individual sound back to the user and inputs that choice into an array (layer).
+- It should be clear to the user which icon represents which type of drum sound through iconography and visuals.
+<br/>
+
 **Testing** 
-- On testing it was decided that visual elements would give visual feedback to the user that the icon has been clicked, hover and a 'glow' effect were added. 
-- On initial testing an issue became immediately apparent. When clicked, the sample would play but could only be played again once the sample had finished playing. The user can easily click faster than the time it takes for the sample to finish. 'currentTime = 0' code was incorporated into the functions to reset the sound on each click. This allows the user to play the sounds as quickly as they can click.
-- Array
+- On testing it was decided that visual elements would give visual feedback to the user that the icon has been clicked, hover and a 'glow' effect were added as well as making the icons the largest visual elements on the page.
+- Icons were carefully chosen and placed upon a contrasting backround to represent the various types of sounds of a typical drum kit and to represent silence for the 'Rest'.
+- On initial testing an issue became immediately apparent: When clicked, the sample would play but could only be triggered again when the sample had finished playing. The user can easily click faster than the time it takes for the sample to finish (around 1 second). Code was incorporated into the functions to reset the sound on each click: 'currentTime = 0'. This allows the user to play the sounds as quickly as they can click making for a better user experience.
+- When the sounds are clicked they are automatically inputted into an array
+- The 'Rest' was originally an undefined object but testing showed that although the Rest was inputted into the arrays, during playback the it could not be heard to be creating space between sounds. This was solved by uploading and attaching a wav file of silence that is the same length as the regular samples.
+
+<br/>
 
 **Result** *Pass*
 <br/>
 
+### Kit Selector
+**User and Design Expectation**
+- To indicate to the user which of the two drum kit sound sets is currently active
+- Be interactive on mouse hover to indicate a clickable element
+- B
 
+**Testing**
 
+**Result** *Pass*
 
 
 ## Code Validation
