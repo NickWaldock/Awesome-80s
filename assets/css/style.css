@@ -107,7 +107,7 @@ and view instructions button */
 }
 
 .animation-in {
-    animation: scaleIn 2s linear 0s 1 normal forwards;
+    animation: scaleIn 1s linear 0s 1 normal forwards;
 }
 
 /* Animation for drum icon click */
@@ -117,11 +117,87 @@ and view instructions button */
     box-shadow: 0 0 40px orange;
 }
 
+/* Animations for drum icons shake on click */
+.trigger-shake:active {
+    animation: trigger-shake 0.2s ease 0s 1 normal forwards;
+}
+
+@keyframes trigger-shake {
+	0% {
+		transform: translate(0);
+	}
+
+	10% {
+		transform: translate(-3px, -3px);
+	}
+
+	20% {
+		transform: translate(3px, -3px);
+	}
+
+	30% {
+		transform: translate(-3px, 3px);
+	}
+
+	40% {
+		transform: translate(3px, 3px);
+	}
+
+	50% {
+		transform: translate(-3px, -3px);
+	}
+
+	60% {
+		transform: translate(3px, -3px);
+	}
+
+	70% {
+		transform: translate(-3px, 3px);
+	}
+
+	80% {
+		transform: translate(-3px, -3px);
+	}
+
+	90% {
+		transform: translate(3px, -3px);
+	}
+
+	100% {
+		transform: translate(0);
+	}
+}
+
+.trigger:hover {
+    background: radial-gradient( #FFA500 1%, #7FFFD4 100%) !important;
+}
+
 /* Animations for control buttons */
 .click-animation:active {
     transform: scale(1.1);
     border: solid 7px black;
-    box-shadow: 0 0 30px orange;
+    box-shadow: 0 0 30px #ffa500;
+}
+
+.hover-animation-btn:hover {
+    animation: fade 1.5s linear 0s infinite normal forwards;
+    
+}
+@keyframes fade {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0.3;
+	}
+}
+
+.cursor:hover {
+    cursor: pointer;
 }
 
 /* ------------------------------------ Main Landing Area ------------------------------------------- */
@@ -212,7 +288,7 @@ and view instructions button */
 #game-area button {
     border: 5px solid black;
     border-radius: 10%;
-    background-color: rgba(127, 255, 212);
+    background-color: rgb(127, 255, 212);
     width: 20%;
     height: auto;
 }
@@ -324,10 +400,11 @@ and view instructions button */
     font-size: 50%;
 }
 
+
 /* ---------------------- Instructions Return Button - (Hidden Until Start) ------------------------- */
 #instructions-rtn {
     grid-column: 2 / 3;
-    grid-row-start: 7;
+    grid-row: 7 / 8;
     height: 100%;
     width: 100%;
     border: 5px solid black;
@@ -335,16 +412,32 @@ and view instructions button */
     margin: 0;
     letter-spacing: 2px;
     min-height: 3rem;
+
+    /* To center the "View Instructions" div */
+    display: flex;
+    justify-content: center;
 }
 
-#instructions-rtn p {
-    display: block;
-    font-family: 'hauserbold', Arial, Helvetica, sans-serif;
-    color: orange;
-    font-size: 1.5rem;
-    text-align: center;
-    height: 100%;
+.instructions-btn {
+    align-self: center;
+    border: 5px solid black;
+    background-color: orange;
+    width: 40%;
+    height: 80%;
+    min-height: 50%;
+
 }
+
+.instructions-btn p {
+    font-family: 'arcade', monospace;
+    color: rgb(138, 43, 226);
+    font-size: 3vw;
+    text-align: center;
+    max-height: 100%;
+    margin: 0;
+    
+}
+
 
 /* ---------------------------------------- Media Queries ------------------------------------------ */
 /* For Screen Sizes <700px Width */

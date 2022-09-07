@@ -248,6 +248,14 @@ Additional technologies include:
 <br />
 
 # Testing
+
+## Manual Testing 
+feature by feature, expected outcome, pass or fail expectation
+
+positive testing
+negative testing
+audio double clicking
+
 ## Code Validation
 This site has been passed successfully through the following code validation sites with no errors or issues:
 - [W3C HTML Validator Results](https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-nickwaldock-awesome80s-mcpve3aeqz3.ws-eu63.gitpod.io%2F)

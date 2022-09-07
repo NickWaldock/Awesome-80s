@@ -80,7 +80,7 @@
                 </ul>
             </div>
             <!-- Button to Hide Instructions and Show Hidden Areas -->
-            <button id="start-btn">
+            <button id="start-btn" class="hover-animation-btn cursor">
                 Lets
                 <br>
                 Go!
@@ -89,25 +89,25 @@
     
     <!-- The Game Area & Icon Triggers (Hidden Until Start) -->
     <div id="game-area" class="hidden animation-in">
-        <button class="trigger" id="bassDrum">
+        <button class="trigger trigger-shake cursor" id="bassDrum">
             <img src="assets/images/bass.png" alt="Bass drum">
         </button>
-        <button class="trigger" id="snareDrum">
+        <button class="trigger trigger-shake cursor" id="snareDrum">
             <img src="assets/images/snare.png" alt="Snare drum">
         </button>
-        <button class="trigger" id="hats">
+        <button class="trigger trigger-shake cursor" id="hats">
             <img src="assets/images/hats.png" alt="Hi-hat cymbals">
         </button>
-        <button class="trigger" id="crash">
+        <button class="trigger trigger-shake cursor" id="crash">
             <img src="assets/images/crash.png" alt="Crash cymbal">
         </button>
-        <button class="trigger" id="highTom">
+        <button class="trigger trigger-shake cursor" id="highTom">
             <img src="assets/images/tom.png" alt="High tom drum">
         </button>
-        <button class="trigger" id="rest">
+        <button class="trigger trigger-shake cursor" id="rest">
             <img src="assets/images/rest.png" alt="High tom drum">
         </button>
-        <button class="trigger" id="lowTom">
+        <button class="trigger trigger-shake cursor" id="lowTom">
             <img src="assets/images/tom.png" alt="Low tom drum">
         </button>
     </div>
@@ -153,7 +153,7 @@
 
     <!-- The Controls Area (Hidden Until Start) -->
     <div id="controls" class="hidden animation-in">
-        <label id="kit-label" class="kit-label click-animation" for="kit-selector">
+        <label id="kit-label" class="kit-label click-animation hover-animation-btn cursor" for="kit-selector">
             Kit 1
         </label>
         <input type="checkbox" id="kit-selector" class="kit-checkbox">
@@ -161,15 +161,19 @@
             BPM
             <input type="number" id="timeoutSelector">
         </label>
-        <button id="reset-btn" class="click-animation">Reset</button>
-        <button id="play-btn" class="click-animation">Play!</button>
+        <button id="reset-btn" class="click-animation hover-animation-btn cursor">Reset</button>
+        <button id="play-btn" class="click-animation hover-animation-btn cursor">Play!</button>
     </div>
 
     <!-- Return To Instructions (Hidden Until Start) -->
-    <div id="instructions-rtn" class="hidden click-animation animation-in">
-        <p>
-            View Instructions
-        </p>
+    <div id="instructions-rtn" class="hidden click-animation animation-in cursor">
+        <div class="instructions-btn hover-animation-btn">
+            <p>
+            View
+            <br>
+            Instructions
+            </p>
+        </div>
     </div>
 </div>
     <!-- Scripts -->
