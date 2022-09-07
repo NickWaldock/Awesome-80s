@@ -47,245 +47,7 @@ const sounds = {
 	lowTom2,
 	rest1,
 	rest2
-
 };
-
-// DOM Elements - Icon Triggers
-const bassDrumTrigger = document.getElementById('bassDrum');
-const snareDrumTrigger = document.getElementById('snareDrum');
-const hatsTrigger = document.getElementById('hats');
-const crashTrigger = document.getElementById('crash');
-const highTomTrigger = document.getElementById('highTom');
-const lowTomTrigger = document.getElementById('lowTom');
-const restTrigger = document.getElementById('rest');
-const buttons = document.querySelectorAll('.trigger');
-
-// Event Listeners - Triggers & Sounds
-bassDrumTrigger.addEventListener('click', playBassDrum);
-snareDrumTrigger.addEventListener('click', playSnareDrum);
-hatsTrigger.addEventListener('click', playHats);
-crashTrigger.addEventListener('click', playCrash);
-highTomTrigger.addEventListener('click', playHighTom);
-lowTomTrigger.addEventListener('click', playLowTom);
-restTrigger.addEventListener('click', playRest);
-
-// User Selection Array
-let layer1PlayIndex = 0;
-let layer2PlayIndex = 0;
-let layer1 = [];
-let layer2 = [];
-
-/** Add sounds to layers */
-function addSound(event){
-	if (layer1.length < 8) {
-		layer1.push(event.currentTarget.id + kitSelected);
-		lightUpLayer1();
-		console.log(layer1, 'Layer 1 Length:', layer1.length);
-	} else if (layer1.length === 8) {
-		console.log('Layer 1 is Full! Adding to Layer 2...');
-		layer2.push(event.currentTarget.id + kitSelected);
-		lightUpLayer2();
-		console.log(layer2, 'Layer 2 Length:', layer2.length);
-	} else if (layer2.length === 8) {
-		console.log('Layer 2 is Full!');
-		event.stopPropagation(event);
-	}}
-
-buttons.forEach(button => button.addEventListener('click', addSound));
-
-/** Playback layers */
-function playLayers() {
-	layer1PlayIndex = 0;
-	layer2PlayIndex = 0;
-	if (layer1.length && layer2.length < 8){ // Playback only to initiate when both layers are full
-		console.log('Layers are not full!');
-		alert('Choose more groovy sounds!');
-	} else {
-		if (bpmInput.value.length == 0){
-			alert('Please input a speed to play groovy sounds!');
-			console.log('BPM required');
-		} else {
-			console.log('Playing!');
-			playLayer1(); // Playback
-			playLayer2(); // Playback
-		}
-	}}
-
-/** Play layer 1 and set timeout */
-function playLayer1() {
-	console.log(layer1);
-	console.log(layer1PlayIndex);
-	if (layer1PlayIndex >= layer1.length) {
-		console.log('layer1 index', layer1PlayIndex, 'length', layer1);
-		// Exit the layer
-		return;
-	}
-	setTimeout(function () {
-		let sound = layer1[layer1PlayIndex];
-		sounds[sound].play();
-		layer1PlayIndex++;
-		playLayer1();
-	}, selectTimeout);
-}
-
-/** Play layer 2 and set timeout */
-function playLayer2() {
-	if (layer2PlayIndex >= layer2.length) {
-		console.log('layer2 index', layer2PlayIndex, 'length', layer2);
-		// Exit the layer
-		return;
-	}
-	setTimeout(function () {
-		let sound = layer2[layer2PlayIndex];
-		sounds[sound].play();
-		layer2PlayIndex++;
-		playLayer2();
-	}, selectTimeout);
-}
-
-// Layer Indicator Squares
-const layer1Square1 = document.getElementById('1square1');
-const layer1Square2 = document.getElementById('1square2');
-const layer1Square3 = document.getElementById('1square3');
-const layer1Square4 = document.getElementById('1square4');
-const layer1Square5 = document.getElementById('1square5');
-const layer1Square6 = document.getElementById('1square6');
-const layer1Square7 = document.getElementById('1square7');
-const layer1Square8 = document.getElementById('1square8');
-const layer2Square1 = document.getElementById('2square1');
-const layer2Square2 = document.getElementById('2square2');
-const layer2Square3 = document.getElementById('2square3');
-const layer2Square4 = document.getElementById('2square4');
-const layer2Square5 = document.getElementById('2square5');
-const layer2Square6 = document.getElementById('2square6');
-const layer2Square7 = document.getElementById('2square7');
-const layer2Square8 = document.getElementById('2square8');
-
-/** 'Light Up' layer 1 squares in-line with layer 1 array aength */
-function lightUpLayer1() {
-	if (layer1.length === 0) { // Do nothing 
-	} else if (layer1.length === 1) {
-		layer1Square1.classList.add('orange');
-	} else if (layer1.length === 2) {
-		layer1Square2.classList.add('orange');
-	} else if (layer1.length === 3) {
-		layer1Square3.classList.add('orange');
-	} else if (layer1.length === 4) {
-		layer1Square4.classList.add('orange');
-	} else if (layer1.length === 5) {
-		layer1Square5.classList.add('orange');
-	} else if (layer1.length === 6) {
-		layer1Square6.classList.add('orange');
-	} else if (layer1.length === 7) {
-		layer1Square7.classList.add('orange');
-	} else if (layer1.length === 8) {
-		layer1Square8.classList.add('orange');
-	}
-}
-
-/** 'Light Up' layer 2 squares in-line with layer 2 array length */
-function lightUpLayer2() {
-	if (layer2.length === 0) { // Do nothing 
-	} else if (layer2.length === 1) {
-		layer2Square1.classList.add('orange');
-	} else if (layer2.length === 2) {
-		layer2Square2.classList.add('orange');
-	} else if (layer2.length === 3) {
-		layer2Square3.classList.add('orange');
-	} else if (layer2.length === 4) {
-		layer2Square4.classList.add('orange');
-	} else if (layer2.length === 5) {
-		layer2Square5.classList.add('orange');
-	} else if (layer2.length === 6) {
-		layer2Square6.classList.add('orange');
-	} else if (layer2.length === 7) {
-		layer2Square7.classList.add('orange');
-	} else if (layer2.length === 8) {
-		layer2Square8.classList.add('orange');
-	}
-}
-
-/** Reset layer squares */
-function resetColors() {
-	layer1Square1.classList.remove('orange');
-	layer1Square2.classList.remove('orange');
-	layer1Square3.classList.remove('orange');
-	layer1Square4.classList.remove('orange');
-	layer1Square5.classList.remove('orange');
-	layer1Square6.classList.remove('orange');
-	layer1Square7.classList.remove('orange');
-	layer1Square8.classList.remove('orange');
-	layer2Square1.classList.remove('orange');
-	layer2Square2.classList.remove('orange');
-	layer2Square3.classList.remove('orange');
-	layer2Square4.classList.remove('orange');
-	layer2Square5.classList.remove('orange');
-	layer2Square6.classList.remove('orange');
-	layer2Square7.classList.remove('orange');
-	layer2Square8.classList.remove('orange');
-}
-
-// DOM Elements - Control Buttons
-const resetBtn = document.getElementById('reset-btn');
-const playBtn = document.getElementById('play-btn');
-
-
-// Event Listeners
-playBtn.addEventListener('click', playLayers);
-resetBtn.addEventListener('click', resetLayers);
-
-// Kit (Sounds) Selector
-let kitSelector = document.getElementById('kit-selector');
-let kitSelectorLabel = document.getElementById('kit-label');
-let kitSelected = '1';
-
-kitSelector.addEventListener('change', (event) => {
-	if (event.currentTarget.checked) {
-		kitSelectorLabel.innerText = "Kit 2";
-		kitSelected = '2';
-	} else {
-		kitSelectorLabel.innerText = "Kit 1";
-		kitSelected = '1';
-	}
-});
-
-// BPM (Timeout Interval)
-const bpmInput = document.getElementById('timeoutSelector');
-bpmInput.addEventListener('input', setBpm);
-var selectTimeout = 0;
-
-/** Set playback speed and convert BPM to MS */
-function setBpm(){
-	var bpm = bpmInput.value;
-	selectTimeout = 60000 / bpm; 
-	console.log('Playback speed set to ' + selectTimeout + ' ms');
-}
-
-/** Reset the layers */
-function resetLayers() {
-	layer1 = [];
-	layer2 = [];
-	layer1PlayIndex = 0;
-	layer2PlayIndex = 0;
-	resetColors();
-	console.log('Reset!');
-	console.log('Layer 1 length:', layer1.length);
-	console.log('Layer 2 length:', layer2.length);
-	console.log(layer1PlayIndex);
-	console.log(layer2PlayIndex);
-	
-}
-
-// View Instructions
-instructionsBtn.addEventListener('click', showInstructions);
-
-function showInstructions(){
-	gameArea.classList.add('hidden');
-	layerArea.classList.add('hidden');
-	controlsArea.classList.add('hidden');
-	instructionsBtn.classList.add('hidden');
-	startBackground.classList.remove('hidden');
-}
 
 // Sound Trigger Functions
 /** Play the bass drum samples */
@@ -364,4 +126,219 @@ function playRest() {
 		sounds.rest2.currentTime = 0;
 		sounds.rest2.play();
 	}
+}
+
+// DOM Elements - Icon Triggers
+const bassDrumTrigger = document.getElementById('bassDrum');
+const snareDrumTrigger = document.getElementById('snareDrum');
+const hatsTrigger = document.getElementById('hats');
+const crashTrigger = document.getElementById('crash');
+const highTomTrigger = document.getElementById('highTom');
+const lowTomTrigger = document.getElementById('lowTom');
+const restTrigger = document.getElementById('rest');
+const buttons = document.querySelectorAll('.trigger');
+
+// Event Listeners - Triggers & Sounds
+bassDrumTrigger.addEventListener('click', playBassDrum);
+snareDrumTrigger.addEventListener('click', playSnareDrum);
+hatsTrigger.addEventListener('click', playHats);
+crashTrigger.addEventListener('click', playCrash);
+highTomTrigger.addEventListener('click', playHighTom);
+lowTomTrigger.addEventListener('click', playLowTom);
+restTrigger.addEventListener('click', playRest);
+
+// User Selection Array (Layers)
+let layer1PlayIndex = 0;
+let layer2PlayIndex = 0;
+let layer1 = [];
+let layer2 = [];
+
+/** Add sounds to layers */
+function addSound(event){
+	if (layer1.length < 8) {
+		layer1.push(event.currentTarget.id + kitSelected);
+		lightUpLayer1(); // Add user choices to layer 1, change color of indicator boxes
+	} else if (layer1.length === 8) {
+		layer2.push(event.currentTarget.id + kitSelected);
+		lightUpLayer2(); // Add user choices to layer 2, change color of indicator boxes
+	} else if (layer2.length === 8) { 
+		event.stopPropagation(event);// Stop adding sounds to layer 2
+	}}
+// Event listener for each sound trigger icon
+buttons.forEach(button => button.addEventListener('click', addSound));
+
+// Layer Indicator Squares
+const layer1Square1 = document.getElementById('1square1');
+const layer1Square2 = document.getElementById('1square2');
+const layer1Square3 = document.getElementById('1square3');
+const layer1Square4 = document.getElementById('1square4');
+const layer1Square5 = document.getElementById('1square5');
+const layer1Square6 = document.getElementById('1square6');
+const layer1Square7 = document.getElementById('1square7');
+const layer1Square8 = document.getElementById('1square8');
+const layer2Square1 = document.getElementById('2square1');
+const layer2Square2 = document.getElementById('2square2');
+const layer2Square3 = document.getElementById('2square3');
+const layer2Square4 = document.getElementById('2square4');
+const layer2Square5 = document.getElementById('2square5');
+const layer2Square6 = document.getElementById('2square6');
+const layer2Square7 = document.getElementById('2square7');
+const layer2Square8 = document.getElementById('2square8');
+
+/** 'Light Up' layer 1 squares in-line with layer 1 array aength */
+function lightUpLayer1() {
+	if (layer1.length === 0) { // Do nothing 
+	} else if (layer1.length === 1) {
+		layer1Square1.classList.add('orange');
+	} else if (layer1.length === 2) {
+		layer1Square2.classList.add('orange');
+	} else if (layer1.length === 3) {
+		layer1Square3.classList.add('orange');
+	} else if (layer1.length === 4) {
+		layer1Square4.classList.add('orange');
+	} else if (layer1.length === 5) {
+		layer1Square5.classList.add('orange');
+	} else if (layer1.length === 6) {
+		layer1Square6.classList.add('orange');
+	} else if (layer1.length === 7) {
+		layer1Square7.classList.add('orange');
+	} else if (layer1.length === 8) {
+		layer1Square8.classList.add('orange');
+	}
+}
+
+/** 'Light Up' layer 2 squares in-line with layer 2 array length */
+function lightUpLayer2() {
+	if (layer2.length === 0) { // Do nothing 
+	} else if (layer2.length === 1) {
+		layer2Square1.classList.add('orange');
+	} else if (layer2.length === 2) {
+		layer2Square2.classList.add('orange');
+	} else if (layer2.length === 3) {
+		layer2Square3.classList.add('orange');
+	} else if (layer2.length === 4) {
+		layer2Square4.classList.add('orange');
+	} else if (layer2.length === 5) {
+		layer2Square5.classList.add('orange');
+	} else if (layer2.length === 6) {
+		layer2Square6.classList.add('orange');
+	} else if (layer2.length === 7) {
+		layer2Square7.classList.add('orange');
+	} else if (layer2.length === 8) {
+		layer2Square8.classList.add('orange');
+	}
+}
+
+/** Playback layers */
+function playLayers() {
+	layer1PlayIndex = 0;
+	layer2PlayIndex = 0;
+	if (layer1.length && layer2.length < 8){ // Playback only to initiate when both layers are full
+		alert('Choose more groovy sounds!'); // Alert if layers are not full
+	} else {
+		if (bpmInput.value.length == 0){
+			alert('Please input a speed to play groovy sounds!'); // Alert bpm input required
+		} else {
+			playLayer1(); // Playback layer 1
+			playLayer2(); // Playback layer 2
+		}
+	}}
+
+/** Play layer 1 and set timeout */
+function playLayer1() {
+	if (layer1PlayIndex >= layer1.length) {
+		return; // Exit the layer
+	}
+	setTimeout(function () { // Include timeout interval in function
+		let sound = layer1[layer1PlayIndex];
+		sounds[sound].play();
+		layer1PlayIndex++;
+		playLayer1();
+	}, selectTimeout);
+}
+
+/** Play layer 2 and set timeout */
+function playLayer2() {
+	if (layer2PlayIndex >= layer2.length) {
+		return; // Exit the layer
+	}
+	setTimeout(function () { // Include timeout interval in function
+		let sound = layer2[layer2PlayIndex];
+		sounds[sound].play();
+		layer2PlayIndex++;
+		playLayer2();
+	}, selectTimeout);
+}
+
+// BPM (Timeout Interval)
+const bpmInput = document.getElementById('timeoutSelector');
+bpmInput.addEventListener('input', setBpm);
+var selectTimeout = 0;
+
+/** Set selectTimeout variable speed and convert Beats Per Minute (BPM) to Milliseconds */
+function setBpm(){
+	var bpm = bpmInput.value;
+	selectTimeout = 60000 / bpm; 
+}
+
+// DOM Elements & Event Listeners - Play and Reset Buttons
+const resetBtn = document.getElementById('reset-btn');
+const playBtn = document.getElementById('play-btn');
+playBtn.addEventListener('click', playLayers);
+resetBtn.addEventListener('click', resetLayers);
+
+// Kit (Sounds) Selector Button
+let kitSelector = document.getElementById('kit-selector');
+let kitSelectorLabel = document.getElementById('kit-label');
+let kitSelected = '1';
+
+// Code to change HTML text in the "Kit" button when clicked
+kitSelector.addEventListener('change', (event) => {
+	if (event.currentTarget.checked) {
+		kitSelectorLabel.innerText = "Kit 2";
+		kitSelected = '2';
+	} else {
+		kitSelectorLabel.innerText = "Kit 1";
+		kitSelected = '1';
+	}
+});
+
+/** Reset the layers (clear arrays), play index, and indicator squares */
+function resetLayers() {
+	layer1 = [];
+	layer2 = [];
+	layer1PlayIndex = 0;
+	layer2PlayIndex = 0;
+	resetColors();
+}
+
+/** Reset layer squares */
+function resetColors() {
+	layer1Square1.classList.remove('orange');
+	layer1Square2.classList.remove('orange');
+	layer1Square3.classList.remove('orange');
+	layer1Square4.classList.remove('orange');
+	layer1Square5.classList.remove('orange');
+	layer1Square6.classList.remove('orange');
+	layer1Square7.classList.remove('orange');
+	layer1Square8.classList.remove('orange');
+	layer2Square1.classList.remove('orange');
+	layer2Square2.classList.remove('orange');
+	layer2Square3.classList.remove('orange');
+	layer2Square4.classList.remove('orange');
+	layer2Square5.classList.remove('orange');
+	layer2Square6.classList.remove('orange');
+	layer2Square7.classList.remove('orange');
+	layer2Square8.classList.remove('orange');
+}
+
+// View Instructions and hide game areas 
+instructionsBtn.addEventListener('click', showInstructions);
+
+function showInstructions(){
+	gameArea.classList.add('hidden');
+	layerArea.classList.add('hidden');
+	controlsArea.classList.add('hidden');
+	instructionsBtn.classList.add('hidden');
+	startBackground.classList.remove('hidden');
 }
