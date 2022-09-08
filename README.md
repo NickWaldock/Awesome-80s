@@ -427,7 +427,8 @@ The following is a feature by feature explanation of the manual testing procedur
 **Testing**
 - Responsiveness was achieved primarialy through the use of grid to arrange the main parent elements and flexbox to arrange content within the grid. Chrome Dev Tools was the primary tool for testing responsiveness throughout development
 - CSS Media Queries were incorporated to adjust the grid and flex attributes for smaller screens where issues of text size or buttons became too small to be viewed easily. Minimum sizes for buttons and small margins to keep elements seperated were also utilised.
-- Responsiveness was additionally tested in Safari, Firefox, and Edge browers, and using [Am I Responsive](https://ui.dev/amiresponsive) and the [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+- Responsiveness was additionally tested in Safari, Firefox, and Edge browers, and using [Am I Responsive](https://ui.dev/amiresponsive) and the [Responsive Design Checker](https://www.responsivedesignchecker.com/)
+- The site design responsiveness is effective down to 320px view width
 <br/>
 
 **Result** *Pass - the user and design expecations are fulfilled - Although additional testing on non-apple devices would be prudent*
@@ -520,7 +521,7 @@ To clone thei repository procees with the following steps:
 2. Locate the [GitHub Respository](https://github.com/NickWaldock/Awesome-80s)
 3. On the repository page, find and click on the 'Code' menu in the mid-top right of the page
 4. Choose to either download or open in GitHub Desktop,
-  -or;
+  - or;
     5. Choose the HTTPS option and copy the URL to your clipboard
     6. - To clone the repository using HTTPS, under "HTTPS", copy the url
        - To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then copy the url
