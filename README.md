@@ -1,5 +1,5 @@
 # Welcome to the Awesome 80s Drum Machine!
-<img src="readme-images/am-i-responsive.png" width="100%">
+<img src="readme-images/screenshots/am-i-responsive.png" width="100%">
 <br/>
 
 [View the live site here](https://nickwaldock.github.io/Awesome-80s/)
@@ -8,7 +8,7 @@
 
 # Table of Contents
 1. [Introduction](#introduction)
-    1. [Aims](#aims)
+    i. [Aims](#aims)
 2. [User Experience](#user-experience-ux)
     1. [User Stories](#user-stories)
 3. [Main Features](#main-features)
@@ -18,14 +18,15 @@
     4. [Wireframes](#wireframes)
     5. [Features](#features)
     6. [User Interactivity](#user-interactivity)
-    6. [Future Developments](#future-developments)
+    7. [Future Developments](#future-developments)
 4. [Technologies](#technologies)
 5. [Testing](#testing)
-    1. [Code Validation](#code-validation)
-    2. [Lighthouse Score](#lighthouse-score)
-    3. [Tools](#tools)
-    4. [Browser Compatibility](#browser-compatibility)
-    5. [Device Compatibility](#device-compatibility)
+    1. [Manual Testing](#manual-testing)
+    2. [Code Validation](#code-validation)
+    3. [Lighthouse Score](#lighthouse-score)
+    4. [Tools](#tools)
+    5. [Browser Compatibility](#browser-compatibility)
+    6. [Device Compatibility](#device-compatibility)
 6. [Deployment](#deployment)
     1. [GitHub](#github)
     2. [Forking](#forking)
@@ -82,7 +83,7 @@ The site was inspired by the western pop culture of the 1980s and contains featu
 <br />
 
 ## Colours & Typography
-<img src="readme-images/color-palette.png" width="100%">
+<img src="readme-images/screenshots/color-palette.png" width="100%">
 <br />
 <br />
 
@@ -140,9 +141,10 @@ The font [Arcade](https://www.dafont.com/arcade-classic-2.font) font was chosen 
 <br />
 
 ## User Interactivity
-### Let's Go!
+### 'Let's Go!' Button
 <img src="readme-images/game-button-images/lets-go-btn.png" width="10%">
 <br />
+
 The "let's Go!" button is the first interactive element on the page and is available at the bottom of the instructions that show on page load. The intention is that the user will need to read the instructions to understand the basic mechanics of the site before beginning. CLicking this button transitions the user to the main game area.
 <br />
 <br />
@@ -152,6 +154,8 @@ The "let's Go!" button is the first interactive element on the page and is avail
 <br />
 
 The user then sees the above icons at the top of the page which represent the different sound 'tiggers'. Hovering the mouse over these icons will change the arrow pointer to a hand pointer and engage a hover background gradient effect.
+<br/>
+
 <img src="readme-images/game-button-images/trigger-hover.png" width="20%">
 <br />
 
@@ -162,7 +166,9 @@ Clicking one of these representational icons will play the audio sample attached
 ### Layer Indicators
 <img src="readme-images/screenshots/empty-layers.png" width="40%">
 <br />
-* Both Layers Empty *
+
+*Both Layers Empty*
+<br />
 
 Below the drum trigger icons the user will see two rows of squares called "Layer 1" and "Layer 2". These represent the programmed sounds generated from the users input (from clicking the drum trigger icons). With each sound selection one square will change color to indicate it has been saved. Sounds are saved in the order they are clicked. Once the user has selected 8 sounds the second layer is automatically filled. 
 
@@ -186,7 +192,7 @@ Each layer has a maximum size of 8 sounds to correspond with the 4, 8 (16, 32, e
 <img src="readme-images/game-button-images/Kit-btn-img.png" width="10%">
 <br />
 
-The "Kit" button switches between one set of drum sounds to another contrasting set of drum sounds. By default the button states "Kit 1" indicating that the default sound set is loaded. On clicking of this button the value changes to "Kit 2" and indicated that the second sound set is loaded. When the user then chooses sounds from the drum icons they will hear the alternative sound set. These sounds can and will be loaded into the machine when clicked and can be mixed with the sounds from Kit 1 in the same sequence meaning the user has access to program 12 individual drumkit sounds (and a rest for silence) within 16 beats can generate 30,421,755 possible permeutations *According to [Maths is Fun](https://www.mathsisfun.com/combinatorics/combinations-permutations-calculator.html).*
+The "Kit" button switches between one set of drum sounds to another contrasting set of drum sounds. By default the button states "Kit 1" indicating that the default sound set is loaded. On clicking of this button the value changes to "Kit 2" and indicated that the second sound set is loaded. When the user then chooses sounds from the drum icons they will hear the alternative sound set. These sounds can and will be loaded into the machine when clicked and can be mixed with the sounds from Kit 1 in the same sequence meaning the user has access to program 12 individual drumkit sounds (and a rest for silence) within 16 beats can generate 30,421,755 possible permeutations *according to [Maths is Fun](https://www.mathsisfun.com/combinatorics/combinations-permutations-calculator.html).*
 <br />
 <br />
 
@@ -204,7 +210,6 @@ The "BPM" input box is available for the user to input a speed (Beats Per Minute
 <br />
 
 The "Reset" button allows the user to clear (delete) both layers of any previously programmed sound allowing space to generate a new pattern of sounds for playback. 
-
 <br />
 <br />
 
@@ -247,18 +252,19 @@ Languages used in this site are [HTML5](https://en.wikipedia.org/wiki/HTML5), [C
 
 Additional technologies include: 
 - [Howler](https://howlerjs.com/) 
-    - for audio library manipulation
+    - Audio library manipulation
 - [EZ Gif](https://ezgif.com/) 
-   - for image file-type modification to webp
+   - Image file-type modification to webp
 - [TinyPNG](https://tinypng.com/) 
-   - for image compression
-- [Web Code Tools](https://webcode.tools/) - CSS animation and effects generator
+   - Image compression
+- [Web Code Tools](https://webcode.tools/) 
+    - CSS animation and effects generator
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-   - For debugging and testing responsiveness during development
+   - Debugging and testing responsiveness during development
 - [JSHint](https://jshint.com/)
-    - For code checking and debugging
+    - Code checking and debugging
 - [Logic Pro X](https://www.apple.com/uk/logic-pro/)
-    - For audio sample editing
+    - Audio sample editing
 - [GitHub](https://github.com/)
   - Site repository
 - [Gitpod](https://gitpod.io/)
@@ -268,20 +274,20 @@ Additional technologies include:
 
 # Testing
 ## Manual Testing 
-The following is a feature by feature explanation of the manual testing procedure detailing the expected design outcome, any bugs or code changes during development and whether the feature passes or fails the design expectation.
+The following is a feature by feature explanation of the manual testing procedure detailing the expected design outcome, any bugs or code changes during development and whether the feature passes or fails the design expectation
 <br />
 
 ### "Let's Go" Button
 **User and Design Expectation**
-- The button is clearly named for its purpose
-- This button is designed to hide the original instructions information and background and be replaced with the game area. 
+- The button is clearly named and designed for its purpose
+- This button is designed to hide the original instructions information and background and be replaced with the game area
 <br/>
 
 **Testing** 
- - The button acts as intended. On click the instructions dissapear and the game area zooms into view. 
+ - The button acts as intended. On click the instructions dissapear and the game area zooms into view. This is achieved by JavaScript adding and removing classes with using the 'display' property
  <br/>
 
-**Result** *Pass - the user and design expecations are fulfilled*
+**Result:** *Pass - the user and design expecations are fulfilled*
 <br/>
 <br/>
 
@@ -292,14 +298,15 @@ The following is a feature by feature explanation of the manual testing procedur
 <br/>
 
 **Testing** 
-- On testing it was decided that visual elements would give visual feedback to the user that the icon has been clicked, hover and a 'glow' effect were added as well as making the icons the largest visual elements on the page
+- On testing it was decided that visual elements would need to give visual feedback to the user that the icon has been clicked, hover and a 'glow' effect were added as well as making the icons the largest visual elements on the page
 - Icons were carefully chosen and placed upon a contrasting backround to represent the various types of sounds of a typical drum kit and to represent silence for the 'Rest'
 - On initial testing an issue became immediately apparent: When clicked, the sample would play but could only be triggered again when the sample had finished playing. The user can easily click faster than the time it takes for the sample to finish (around 1 second). Code was incorporated into the functions to reset the sound on each click: 'currentTime = 0'. This allows the user to play the sounds as quickly as they can click making for a better user experience
 - When the sounds are clicked they are automatically inputted into an array
 - The 'Rest' was originally an undefined object but testing showed that although the Rest was inputted into the arrays, during playback the it could not be heard to be creating space between sounds. This was solved by uploading and attaching a wav file of silence that is the same length as the regular samples
+- Vanilla HTML audio elements were originally used in the code. This functioned initially but became troublesome during development for the sounds to be played on top of each other, quickly, or in otherwise with more enthusiastic user input. Research led to finding the [Howler](https://howlerjs.com/) audio library as commonly used for such applications and was installed into this project allowing the audio to better act as intended
 <br/>
 
-**Result** *Pass - the user and design expecations are fulfilled*
+**Result:** *Pass - the user and design expecations are fulfilled*
 <br/>
 <br/>
 
@@ -313,30 +320,30 @@ The following is a feature by feature explanation of the manual testing procedur
 - The user clicks the button which activates the 'active' (a 'pop' effect) and 'hover' (a continuous fade in and out effect) CSS classes and the inner text changes and alternates from "Kit 1" to "Kit 2"
 - For the user to be able to switch sound sets during the layer programming a hidden check box was used to toggle between the sounds via JavaScript 'if' statements in the individual sound functions.
 
-**Result** *Pass - the user and design expecations are fulfilled*
+**Result:** *Pass - the user and design expecations are fulfilled*
 <br/>
 <br/>
 
 ### BPM Input
 **User and Design Expectation**
-- The button is clearly named for its purpose
+- The button is clearly named and designed for its purpose
 - To allow the user to input their choice of speed in beats per minute and for the computer to interpret the choice correctly during audio playback performance
 - For the input to be an integer only 
 <br/>
 
 **Testing**
-- The first solution theorised was to use radio buttons with a selection of pre-set tempos for the user to choose between, although possible this wouldn't allow the user as much freedom to manipulate the tempos to extremes or with nuance as an input integer input would.
+- The first solution theorised used radio buttons with a selection of pre-set tempos for the user to choose between, although possible this wouldn't allow the user as much freedom to manipulate the tempos to extremes or with nuance as an input integer input would.
 - The input was set to specifically accept integers and update a variable for the setTimeout function
 - In testing the user input would automatically be interpreted in milliseconds. Code was required to convert beats per minutes into milliseconds as the value is loaded into the variable
 <br/>
 
-**Result** *Pass - the user and design expecations are fulfilled*
+**Result:** *Pass - the user and design expecations are fulfilled*
 <br/>
 <br/>
 
 ### Reset Button
 **User and Design Expectation**
-- The button is clearly named for its purpose
+- The button is clearly named and designed for its purpose
 - Be interactive on mouse hover to indicate a clickable element and provide visual feedback that a click has occured
 - The button resets the loaded sounds allowing the user to create sound patterns from scratch
 - Provide visual feedback to the user that the reset has been succesful
@@ -348,27 +355,45 @@ The following is a feature by feature explanation of the manual testing procedur
 - The layer indicator squares revert to their default state by removing the overiding 'orange' class
 <br/>
 
-**Result** *Pass - the user and design expecations are fulfilled*
+**Result:** *Pass - the user and design expecations are fulfilled*
 <br/>
 <br/>
 
 ### Play Button
 **User and Design Expectation**
+- The button is clearly named and designed for its purpose
+- Executes the functions to begin playback of both pre-programmed layers simultaneously
+- Only executes if a BPM is inputted
+- Only executes if the both layers are fully programmed
+- Performs the programmed selection once and the specified speed and in the order programmed by the user
 <br/>
 
 **Testing**
-<br/>
+- The button is placed on the far right of the control panel to help distinguish that it is the last step in the chain of actions
+- On click an alert occurs when the "if" condition of 'BPM user input = false', alert prompts the user to input a number
+- On click an alert occurs when the "if" condition of 'layers 1 & 2 fully programmed = false', alert prompts the user to choose more sounds
+- On click the functions for playLayer1 and playLayer2 run simultaneously. These functions include the timeout variable and the conditional statements for execution
+- An issue occurs if the audio has played once if clicked a second or third time the function would not playback the audio. This bug was solved by setting these two playLayer1 and playLayer2 functions within a parent function called 'playLayers', which resets the array index number to zero on each click. This allows the function to begin playback of the audio from the start of the array each time the 'Play!' button is activated. For coding simplicity and logic, the conditional statements for BPM and full layers were moved inside this parent function as well
 
-**Result** *Pass - the user and design expecations are fulfilled*
+**Result:** *Pass - the user and design expecations are fulfilled*
 <br/>
 <br/>
 
 
 ### Layer Indicators
 **User and Design Expectation**
+- Act as a visual cue to the user indicating how many sounds have been selected and are left remaining to be selected in each layer
+- Be designed in keeping with an 80s arcade theme
+- A single square lights up with each individual click of a drum trigger
+- Once all 8 squares in layer 1 are filled the layer 2 square will begin to fill
+- The lit squares should accurately represent the size of the programmed layers at all times
 <br/>
 
 **Testing**
+- The original design was to incorporate single changing integer that represented the number of sounds currently programmed. Early on it was then decided that could be visually represented as blocks to help minimise excess text information and be similar to that of a data 'loading' screen, thereby keeping with the arcade theme
+- On the click of a sound trigger the left-hand most square of layer 1 will turn from purple to orange indicating a sound has been chosen and loaded into the array. Subsequent clicks change the background colour from purple to orange sequentially from left to right until the 1st layer is complete
+- On the 9th drum trigger click the left most square of the 2nd layer will turn from purple to orange and subsequent clicks will repeat the pattern of representational change as in layer 1
+- On testing it was required to create conditional statements to control the size of the programmes layers (arrays), once both layers are full and all indicator squares are orange or 'lit up' the user can continue to experiment with sounds but can clearly see the layers are full until they are reset
 <br/>
 
 **Result** *Pass - the user and design expecations are fulfilled*
@@ -377,21 +402,48 @@ The following is a feature by feature explanation of the manual testing procedur
 
 ### View Instructions
 **User and Design Expectation**
+- The button is clearly named and designed for its purpose
+- Allows the user to view the instructions if so desired
+- Hides the game area for clear viewing of the instructional content
+- Doesn't reset the game when the user returns to the game area
 <br/>
 
 **Testing**
+- The first iteration of this button was styled differently to the control panel buttons. This was later adapted to be more congruent with the styling of the other buttons for a more pleasing aesthetic
+- The entire div was clickable as the button in this first iteration, with the style change this feature became incongruent. The code was adapted for only the button to be clickable, but large enough to be a clear and easy area to click if required
+- The button uses JavaScript to hide the game and control areas and show the instructions as if entering the site for the first time. This provides familiarity for the user as there are only two possible pages to view.
 <br/>
 
 **Result** *Pass - the user and design expecations are fulfilled*
 <br/>
 
 
+### Responsiveness
+**User and Design Expectation**
+- To be able to play the game on any device and screen size
+- For the site to maintain is core structural design in different screen sizes
+<br/>
 
+**Testing**
+- Responsiveness was achieved primarialy through the use of grid to arrange the main parent elements and flexbox to arrange content within the grid. Chrome Dev Tools was the primary tool for testing responsiveness throughout development
+- CSS Media Queries were incorporated to adjust the grid and flex attributes for smaller screens where issues of text size or buttons became too small to be viewed easily. Minimum sizes for buttons and small margins to keep elements seperated were also utilised.
+- Responsiveness was additionally tested in Safari, Firefox, and Edge browers, and using [Am I Responsive](https://ui.dev/amiresponsive) and the [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+<br/>
+
+**Result** *Pass - the user and design expecations are fulfilled - Although additional testing on non-apple devices would be prudent*
+<br/>
+<br/>
 
 ## Code Validation
 This site has been passed successfully through the following code validation sites with no errors or issues:
-- [W3C HTML Validator Results](https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-nickwaldock-awesome80s-mcpve3aeqz3.ws-eu63.gitpod.io%2F)
-- [W3C CSS Validator Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-nickwaldock-awesome80s-mcpve3aeqz3.ws-eu63.gitpod.io%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- [W3C HTML Validator Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fnickwaldock.github.io%2FAwesome-80s%2F)
+<br/>
+<img src="readme-images/screenshots/html-validation.png" width="50%"><br/>
+
+- [W3C CSS Validator Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fnickwaldock.github.io%2FAwesome-80s%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+<br/>
+<img src="readme-images/screenshots/css-validation.png" width="50%"><br/>
+
 - [JSHint Java Script Code Quality Tool](https://jshint.com/)
 - [Responsive Design Checker](https://www.responsivedesignchecker.com/)
 <br/>
@@ -399,9 +451,9 @@ This site has been passed successfully through the following code validation sit
 
 ## Lighthouse Score
 [Google Dev Tools Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) tool was used to check site performance.
-<p align="center">
-<img src="readme-images/lighthouse.png">
-</p>
+<br/>
+
+<img src="readme-images/screenshots/lighthouse.png" width="50%">
 <br />
 <br />
 
@@ -418,9 +470,8 @@ Device | Outcome | Pass/Fail
 [Safari](https://safari.en.softonic.com/mac)| No appearance, responsiveness nor functionality issues. | Pass
 [Edge](https://www.microsoft.com/en-us/edge)| No appearance, responsiveness nor functionality issues. | Pass
 
-* Bugs - The only issue for chrome is the audio library conflicting with [Google's Audio Auto Play Policy](https://developer.chrome.com/blog/autoplay/#webaudio), however the site has no audio that can potentially auto-play. This warning is due to the use of the [Howler](https://howlerjs.com/) audio library.
-<img src="readme-images/chrome.png" width="80%">
-
+* *Bug - The only issue for chrome is the audio library conflicting with [Google's Audio Auto Play Policy](https://developer.chrome.com/blog/autoplay/#webaudio), however the site has no audio that can potentially auto-play. This warning is due to the use of the [Howler](https://howlerjs.com/) audio library*
+<img src="readme-images/screenshots/chrome.png" width="80%">
 
 </br>
 </br>
@@ -428,10 +479,10 @@ Device | Outcome | Pass/Fail
 ## Device Compatibility
 Device | Outcome | Pass/Fail
 --- | --- | ---
-MacBook Pro 15" | No appearance, responsiveness nor functionality issues. | Pass
-iMac 21.5"| No appearance, responsiveness nor functionality issues. | Pass
-iPad Pro 10.5" | No appearance, responsiveness nor functionality issues. | Pass
-iPhone 11 | No appearance, responsiveness nor functionality issues. | Pass
+MacBook Pro 15" | No appearance, responsiveness nor functionality issues | Pass
+iMac 21.5"| No appearance, responsiveness nor functionality issues | Pass
+iPad Pro 10.5" | No appearance, responsiveness nor functionality issues | Pass
+iPhone 11 | No appearance, responsiveness nor functionality issues | Pass
 </br>
 </br>
 
@@ -512,10 +563,11 @@ The following sites were used for syntax checking, problem solving, and general 
 - [background image](https://wallpaperaccess.com/80s)
 - [Free Convert](https://www.freeconvert.com/) for file conversion
 - [Font styling](https://gist.github.com/codingdudecom/1b219d915cfd4c2917a0be45b3cbcdda)
+- [Responsive Design Checker](https://www.responsivedesignchecker.com/)
 
 <br />
 <br />
 
 ## Acknoledgements
-My thanks and gratitude go to my project mentor Marcel for encouraging me to go beyond my capabilities, providing me with thought-provoking ideas to solve the problems faced by this project. Also, to the tutors at Code Institute for their patience and guidance in their assisting me with learning and developing my JavaScript skills.
+My thanks and gratitude go to my project mentor Marcel for encouraging me to go beyond my capabilities, providing me with thought-provoking ideas to solve the problems faced by this project. Also, to the tutors at Code Institute for their patience and guidance in their generous assistance with my learning and developing JavaScript skills.
 
